@@ -1,6 +1,6 @@
 # MyTechOnWeb
 
-## Site de vente de produits tech / Éléctronique
+## Site de vente de produits tech / Électronique
 
 ## Audience
 
