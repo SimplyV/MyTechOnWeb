@@ -39,6 +39,8 @@ Utilisation de la police d'écriture OpenSans ( https://fonts.google.com/specime
 
 ![alt text](https://github.com/SimplyV/MyTechOnWeb/blob/main/color-chart.png "Charte Graphique")
 
+## Maquette 
+Lien vers la maquette : https://www.figma.com/file/cWyzXRTu6TAHlFYFPMewb2/MyTechOnWeb?node-id=0%3A1
 
 
 
