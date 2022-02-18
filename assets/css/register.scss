@@ -1,0 +1,173 @@
+.form-container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
+form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  h2{
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  .input-name-block{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    input{
+      margin-top: 5px;
+      width: 100%;
+      padding: 10px 35px;
+      background: #EDEDED;
+      color: black;
+      border: 1px solid black;
+      border-radius: 5px;
+      outline: none;
+    }
+    label{
+      font-weight: 600;
+    }
+    i{
+      position: absolute;
+      margin-top: 38px;
+      margin-left: 12px;
+      color: #262626;
+    }
+  }
+  .input-firstname{
+    display: flex;
+    flex-direction: column;
+  }
+  .input-lastname{
+    display: flex;
+    flex-direction: column;
+  }
+  .input-email-block{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    input{
+      margin-top: 5px;
+      width: 100%;
+      padding: 10px 35px;
+      background: #EDEDED;
+      color: black;
+      border: 1px solid black;
+      border-radius: 5px;
+      outline: none;
+    }
+    label{
+      font-weight: 600;
+    }
+    i{
+      position: absolute;
+      margin-top: 38px;
+      margin-left: 12px;
+      color: #262626;
+    }
+  }
+  .input-password-block{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    input{
+      margin-top: 5px;
+      width: 100%;
+      padding: 10px 35px;
+      background: #EDEDED;
+      color: black;
+      border: 1px solid black;
+      border-radius: 5px;
+      outline: none;
+    }
+    label{
+      font-weight: 600;
+    }
+    i{
+      position: absolute;
+      margin-top: 38px;
+      margin-left: 12px;
+      color: #262626;
+    }
+    a{
+      color: black;
+      margin-top: 10px;
+      width: 145px;
+      margin-left: auto;
+      text-decoration: underline;
+    }
+  }
+  .input-password-re-block{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    a{
+      width: 230px;
+      color: black;
+      text-decoration: underline;
+    }
+  }
+  .button-block{
+    margin-top: 20px;
+    width: 100%;
+    button{
+      width: 100%;
+      background: black;
+      border-radius: 5px;
+      color: white;
+      outline: none;
+      border: none;
+      padding: 10px 0px;
+      cursor: pointer;
+      transition: .5s ease-out;
+    }
+    button:hover{
+      opacity: .7;
+    }
+  }
+}
+footer{
+  margin-top: 120px;
+  position: relative;
+}
+@media(min-width: 520px){
+  form{
+    width: 500px;
+
+    .input-name-block{
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+      input{
+        margin-top: 10px;
+        width: 220px;
+        padding: 10px 35px;
+        background: #EDEDED;
+        color: black;
+        border: 1px solid black;
+        border-radius: 5px;
+        outline: none;
+      }
+      i{
+        margin-top: 45px;
+      }
+  }
+}
+}
+
+
+@media(min-width: 768px){
+  footer{
+    margin-top: 100px;
+  }
+}
