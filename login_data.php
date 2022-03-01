@@ -12,6 +12,7 @@
 	
 	$donnees = $bdd->query('SELECT email FROM users');
 
+
 	$verify= null;
 	while ($reponse = $donnees->fetch()){
 		if ($_POST['email'] == $reponse['email']){
@@ -29,6 +30,12 @@
 			$verify = false;
 		}
 	}
+
+	$donnees = $bdd->query('SELECT firstname FROM users WHERE email= \''.$_POST["email"].'\'');
+	while($reponse = $donnees->fetch()){
+		$_SESSION['firstname'] = $reponse['firstname'];
+	}
+
 
   $_SESSION['verify'] = $verify;
 	

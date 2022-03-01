@@ -1,16 +1,16 @@
 <?php 
   session_start();
 
-  if(isset($_SESSION['verify']) == true){
-		header('Location: index.php');
-	} 
+  // if(isset($_SESSION['verify']) == true){
+	// 	header('Location: index.php');
+	// } 
   $title ="S'enregistrer"; 
 ?> 
 <?php include('template/parts/header.php'); ?>
 <?php include('template/parts/navbar.php');?>
 
   <div class="form-container">
-    <form action="register_data.php" method="POST" enctype="multipart/form-data">
+    <form action="register_data.php" method="POST" enctype="multipart/form-data" id="register-form">
 
       <h2> S'enregistrer </h2>
 

@@ -179,52 +179,124 @@ html, body {
   margin-top: 10px;
 }
 
-.main-container {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
+.featured-product-swiper {
+  height: 350px;
 }
-
-.featured-product-container {
-  height: 400px;
-}
-
-.swiper.featuredSwiper {
-  width: 100%;
+.featured-product-swiper .swiper.featuredSwiper {
   height: 100%;
 }
-.swiper.featuredSwiper .swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  background: #F2F2F2;
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
-  background-position: center;
-  background-attachment: fixed;
+.featured-product-swiper .swiper.featuredSwiper .swiper-slide {
+  background-image: url("https://via.placeholder.com/1250");
   background-repeat: no-repeat;
+  background-position: center;
   background-size: cover;
 }
-.swiper.featuredSwiper .featured-btn {
+
+.products-showcase {
+  width: 100%;
   margin-bottom: 40px;
-  margin-right: 40px;
-  background: black;
-  color: white;
-  border: none;
-  padding: 15px 25px;
-  width: 150px;
-  height: 50px;
+}
+.products-showcase .products-showcase-title {
+  text-align: center;
+  margin: 40px auto;
+}
+.products-showcase .products-showcase-swiper {
+  width: 80%;
+  margin: 0 auto;
+  height: 300px;
+}
+.products-showcase .products-showcase-swiper .swiper.popularProdSwiper {
+  height: 100%;
+}
+.products-showcase .products-showcase-swiper .swiper.popularProdSwiper .swiper-slide {
+  width: 400px;
+  height: 100%;
+  background-image: url("https://via.placeholder.com/150");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 15px;
   display: flex;
-  justify-content: space-around;
-  align-items: center;
-  border-radius: 100px;
-  font-size: 14px;
-  cursor: pointer;
+  align-items: end;
+}
+.products-showcase .products-showcase-swiper .swiper.popularProdSwiper .swiper-slide div {
+  width: 100%;
+  height: 70px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 0px 0px 15px 15px;
+  padding-top: 15px;
+}
+.products-showcase .products-showcase-swiper .swiper.popularProdSwiper .swiper-slide div span {
+  margin-left: 17px;
+  color: black;
+}
+
+.categories-showcase {
+  width: 100%;
+  margin-bottom: 40px;
+}
+.categories-showcase .categories-showcase-title {
+  text-align: center;
+  margin: 40px auto;
+}
+.categories-showcase .categories-showcase-swiper {
+  width: 80%;
+  margin: 0 auto;
+  height: 300px;
+}
+.categories-showcase .categories-showcase-swiper .swiper.popularCatSwiper {
+  height: 100%;
+}
+.categories-showcase .categories-showcase-swiper .swiper.popularCatSwiper .swiper-slide {
+  width: 400px;
+  height: 100%;
+  background-image: url("https://via.placeholder.com/150");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 15px;
+  display: flex;
+  align-items: end;
+}
+.categories-showcase .categories-showcase-swiper .swiper.popularCatSwiper .swiper-slide span {
+  position: absolute;
+  left: 0;
+  margin-left: 17px;
+  margin-bottom: 17px;
+  background: black;
+  padding: 10px 15px;
+  border-radius: 59px;
+  color: white;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  background: black;
+  width: 52px !important;
+  height: 52px !important;
+  border-radius: 50px;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  color: white;
+  font-size: 26px !important;
+}
+
+.swiper-button-prev::after {
+  margin-right: 5px;
+}
+
+.swiper-button-next::after {
+  margin-left: 5px;
+}
+
+.swiper-pagination-bullet-active {
+  background: black !important;
 }
 
 footer {
   width: 100%;
-  bottom: 0;
   position: absolute;
   padding: 30px;
   display: flex;
@@ -262,6 +334,11 @@ footer .footer-links-fastlinks {
 }
 footer .footer-links-fastlinks a {
   margin-top: 5px;
+}
+
+label.error {
+  margin-top: 5px;
+  color: red;
 }
 
 @media (min-width: 520px) {

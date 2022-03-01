@@ -25,7 +25,7 @@
 <?php include('template/parts/navbar.php');?>
 
 <div class="form-container">
-  <form action="profile_data.php" method="POST">
+  <form action="profile_data.php" method="POST" id="profile-form">
     <h2> Mon profil </h2>
 
     <div class="input-name-block">

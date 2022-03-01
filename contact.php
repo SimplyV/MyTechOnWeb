@@ -29,7 +29,7 @@
       </div>
     </div>
     <div class="contact-form">
-      <form action="contact_data.php" method="POST">
+      <form action="contact_data.php" method="POST" id="contact-form">
 
       <div class="input-name-block">
         <div class="input-firstname">
@@ -52,7 +52,7 @@
 
       <div class="input-message-block">
         <label for="message"> Message </label>
-        <textarea placeholder="Votre message" required></textarea>
+        <textarea name="message" placeholder="Votre message" required></textarea>
       </div>
 
       <div class="input-submit-block">

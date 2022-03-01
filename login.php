@@ -1,9 +1,9 @@
 <?php 
   session_start();
   $title = "Se connecter" ;
-  if(isset($_SESSION['verify']) == true){
-		header('Location: index.php');
-	} 
+  // if(isset($_SESSION['verify']) == true){
+	// 	header('Location: index.php');
+	// } 
   ?>
 
 
@@ -11,7 +11,7 @@
 <?php include('template/parts/navbar.php');?>
 
 <div class="form-container">
-    <form action="login_data.php" method="POST">
+    <form action="login_data.php" method="POST" id="login-form">
 
       <h2> Se connecter </h2>
 
