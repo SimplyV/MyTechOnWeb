@@ -35,6 +35,7 @@ html, body {
   height: 100%;
   margin: 0;
   background: #EDEDED;
+  scroll-behavior: smooth;
   font-family: "Open Sans", sans-serif;
 }
 
@@ -256,7 +257,7 @@ html, body {
   background-size: cover;
   border-radius: 15px;
   display: flex;
-  align-items: end;
+  align-items: flex-end;
 }
 .categories-showcase .categories-showcase-swiper .swiper.popularCatSwiper .swiper-slide span {
   position: absolute;
@@ -271,10 +272,11 @@ html, body {
 
 .swiper-button-prev,
 .swiper-button-next {
-  background: black;
+  background: rgba(0, 0, 0, 0.5);
   width: 52px !important;
   height: 52px !important;
   border-radius: 50px;
+  border: 1px solid #707070 !important;
 }
 
 .swiper-button-prev::after,

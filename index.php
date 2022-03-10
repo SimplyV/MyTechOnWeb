@@ -44,7 +44,7 @@
     <div class="products-showcase-swiper">
       <div class="swiper popularProdSwiper">
         <div class="swiper-wrapper">
-          <a class="swiper-slide">
+          <a class="swiper-slide" href="#">
             <div>
               <span> Article °1 </span>
             </div>
@@ -88,7 +88,7 @@
     <div class="categories-showcase-swiper">
       <div class="swiper popularCatSwiper">
         <div class="swiper-wrapper">
-          <a class="swiper-slide">
+          <a class="swiper-slide" href="#">
             <span> Smartphones </span>
           </a>
           <a class="swiper-slide">
@@ -112,4 +112,5 @@
        </div>
       </div>
   </div>
+  
 <?php include('template/parts/footer.php'); ?>

@@ -1,192 +1,262 @@
-// Menu mobile
+ // Menu mobile
 
-function showMobileMenu() {
-  var x = document.getElementById("mb-container");
-  if (x.style.display === "flex") {
-    x.style.display = "none";
-  } else {
-    x.style.display = "flex";
-  }
+ function showMobileMenu() {
+   var x = document.getElementById("mb-container");
+   if (x.style.display === "flex") {
+     x.style.display = "none";
+   } else {
+     x.style.display = "flex";
+   }
+ }
+
+ const options = {
+  bottom: '64px', // default: '32px'
+  right: '32px', // default: '32px'
+  left: 'unset', // default: 'unset'
+  time: '0.5s', // default: '0.3s'
+  mixColor: '#fff', // default: '#fff'
+  backgroundColor: '#FAFAFA',  // default: '#fff'
+  buttonColorDark: '#100f2c',  // default: '#100f2c'
+  buttonColorLight: '#fff', // default: '#fff'
+  saveInCookies: true, // default: true,
+  label: '🌓', // default: ''
+  autoMatchOsTheme: false, // default: true
 }
 
-// Swiper featured products
+const darkmode = new Darkmode(options);
+darkmode.showWidget();
 
-var swiper = new Swiper(".featuredSwiper", {
-  pagination: {
-    el: ".swiper-pagination"
-  },
-  autoplay: true,
-  mousewheel: {
-    'forceToAxis': true,
-    'invert': false,
-  },
-});
 
-// Swiper popular products
+ jQuery(document).ready(function ($) {
 
-var swiper = new Swiper(".popularProdSwiper", {
-  slidesPerView: 1,
-  spaceBetween: 30,
-  freeMode: true,
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-  mousewheel: {
-    'forceToAxis': true,
-    'invert': false,
-  },
-  breakpoints:{
-    768:{
-      slidesPerView: 2
-    },
-    960:{
-      slidesPerView: 3
-    },
-    1440:{
-      slidesPerView: 4
-    }
-  }
-});
+   // Swiper featured products
 
-// Swiper popular categories
+   var swiper = new Swiper(".featuredSwiper", {
+     pagination: {
+       el: ".swiper-pagination"
+     },
+     autoplay: true,
+     mousewheel: {
+       'forceToAxis': true,
+       'invert': false,
+     },
+   });
 
-var swiper = new Swiper(".popularCatSwiper", {
-  slidesPerView: 1,
-  spaceBetween: 30,
-  freeMode: true,
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-  mousewheel: {
-    'forceToAxis': true,
-    'invert': false,
-  },
-  breakpoints:{
-    768:{
-      slidesPerView: 2
-    },
-    960:{
-      slidesPerView: 3
-    },
-    1440:{
-      slidesPerView: 4
-    }
-  }
-});
+   // Swiper popular products
 
-// jQuery Validator Form 
+   var swiper = new Swiper(".popularProdSwiper", {
+     slidesPerView: 1,
+     spaceBetween: 30,
+     freeMode: true,
+     navigation: {
+       nextEl: ".swiper-button-next",
+       prevEl: ".swiper-button-prev",
+     },
+     mousewheel: {
+       'forceToAxis': true,
+       'invert': false,
+     },
+     breakpoints: {
+       768: {
+         slidesPerView: 2
+       },
+       960: {
+         slidesPerView: 3
+       },
+       1440: {
+         slidesPerView: 4
+       }
+     }
+   });
 
-jQuery(document).ready(function ($) {
+   // Swiper popular categories
 
-  $('#register-form').validate({
-    rules: {
-      firstname:{
-        required: true
-      },
-      lastname:{
-        required: true
-      },
-      email:{
-        required: true,
-        email: true
-      },
-      password:{
-        required: true,
-        minlength: 6,
-        maxlength: 16
-      },
-      passwordconf:{
-        required: true,
-        minlength: 6,
-        maxlength: 16,
-        equalTo: '[name="password"]'
-      }
-    }
-  });
+   var swiper = new Swiper(".popularCatSwiper", {
+     slidesPerView: 1,
+     spaceBetween: 30,
+     freeMode: true,
+     navigation: {
+       nextEl: ".swiper-button-next",
+       prevEl: ".swiper-button-prev",
+     },
+     mousewheel: {
+       'forceToAxis': true,
+       'invert': false,
+     },
+     breakpoints: {
+       768: {
+         slidesPerView: 2
+       },
+       960: {
+         slidesPerView: 3
+       },
+       1440: {
+         slidesPerView: 4
+       }
+     }
+   });
 
-  $('#login-form').validate({
-    rules: {
-      email:{
-        required: true,
-        email: true
-      },
-      password:{
-        required: true
-      }
-    }
-  });
+   $('#register-form').validate({
+     rules: {
+       firstname: {
+         required: true
+       },
+       lastname: {
+         required: true
+       },
+       email: {
+         required: true,
+         email: true
+       },
+       password: {
+         required: true,
+         minlength: 6,
+         maxlength: 16
+       },
+       passwordconf: {
+         required: true,
+         minlength: 6,
+         maxlength: 16,
+         equalTo: '[name="password"]'
+       }
+     }
+   });
 
-  $('#profile-form').validate({
-    rules:{
-      firstname:{
-        required: true
-      },
-      lastname:{
-        required: true
-      },
-      email:{
-        required: true,
-        email: true
-      },
-      street:{
-        required: true
-      },
-      streetnumber:{
-        required: true,
-        number: true
-      },
-      city:{
-        required: true
-      },
-      zipcode:{
-        required: true,
-        number: true
-      },
-      commune:{
-        required: true
-      }
-    }
-  });
+   $('#login-form').validate({
+     rules: {
+       email: {
+         required: true,
+         email: true
+       },
+       password: {
+         required: true
+       }
+     }
+   });
 
-  $('#checkout-form').validate({
-    rules:{
-      street:{
-        required: true
-      },
-      streetnumber:{
-        required: true,
-        number: true
-      },
-      city:{
-        required: true
-      },
-      zipcode:{
-        required: true,
-        number: true
-      },
-      commune:{
-        required: true
-      }
-    }
-  });
+   $('#profile-form').validate({
+     rules: {
+       firstname: {
+         required: true
+       },
+       lastname: {
+         required: true
+       },
+       email: {
+         required: true,
+         email: true
+       },
+       street: {
+         required: true
+       },
+       streetnumber: {
+         required: true,
+         number: true
+       },
+       city: {
+         required: true
+       },
+       zipcode: {
+         required: true,
+         number: true
+       },
+       commune: {
+         required: true
+       }
+     }
+   });
 
-  $('#contact-form').validate({
-    rules:{
-      firstname:{
-        required: true
-      },
-      lastname:{
-        required: true
-      },
-      email:{
-        required: true,
-        email: true
-      },
-      message:{
-        required: true
-      }
-    }
-  });
-});
+   $('#checkout-form').validate({
+     rules: {
+       street: {
+         required: true
+       },
+       streetnumber: {
+         required: true,
+         number: true
+       },
+       city: {
+         required: true
+       },
+       zipcode: {
+         required: true,
+         number: true
+       },
+       commune: {
+         required: true
+       }
+     }
+   });
+
+   $('#contact-form').validate({
+     rules: {
+       firstname: {
+         required: true
+       },
+       lastname: {
+         required: true
+       },
+       email: {
+         required: true,
+         email: true
+       },
+       message: {
+         required: true
+       }
+     }
+   });
+
+   $('.CatSwiper').each(function (i, item) {
+
+     var swiper = new Swiper(item, {
+       slidesPerView: 1,
+       centeredSlides: true,
+       spaceBetween: 0,
+       speed: 800,
+       // autoplay: true,
+       mousewheel: {
+         'forceToAxis': true,
+         'invert': false,
+       },
+       navigation: {
+         nextEl: ".swiper-button-next",
+         prevEl: ".swiper-button-prev",
+       }
+       
+     });
+    
+     $(item).find('.swiper-slide').each(function (i) {
+       var title = $(this).attr('data-nav-title')
+       console.log(title)
+       if (title) {
+         var link = document.createElement('a')
+         link.innerText = title;
+         link.setAttribute('data-slide-id', i);
+         if($(link).attr('data-slide-id') == 0){
+           $(link).addClass('active');
+         }
+         
+         link.addEventListener('click', function () {
+          swiper.slideTo(i);
+         })
+
+         $(item).find('.product-cat-subcategories').append(link)
+       }
+     })
+
+     swiper.on('slideChangeTransitionEnd', function(){
+       currentIndex = swiper.realIndex;
+       $(item).find('.product-cat-subcategories a').removeClass('active')
+       $(item).find('.product-cat-subcategories a').eq(currentIndex).addClass('active')
+     })
+
+
+   })
+
+
+
+
+
+
+
+ });
