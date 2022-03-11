@@ -43,6 +43,13 @@ Utilisation de la police d'écriture OpenSans ( https://fonts.google.com/specime
 Lien vers le wireframe : https://www.figma.com/file/cWyzXRTu6TAHlFYFPMewb2/MyTechOnWeb?node-id=0%3A1
 
 
+## Track travail
+
+11/03/2022 :
+
+- Fin de la page d'acceuil de nos produits 
+- Début de la page d'affichage des produits selon la catégories
+
 
 
 
