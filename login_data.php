@@ -37,12 +37,20 @@
 	}
 
 
+
   $_SESSION['verify'] = $verify;
 	
 	if($verify == true){
-		$donnees = $bdd->query('SELECT id_user FROM users WHERE email= \''.$_POST["email"].'\'');
-		while ($reponse = $donnees->fetch()){
+		$donnes = $bdd->query('SELECT * FROM users WHERE email =\''.$_POST["email"].'\' ');
+		while($reponse = $donnes->fetch()){
 			$_SESSION['id_user'] = $reponse['id_user'];
+			$_SESSION['lastname'] = $reponse['lastname'];
+			$_SESSION['email'] = $reponse['email'];
+			$_SESSION['street'] = $reponse['user_street'];
+			$_SESSION['street_number'] = $reponse['user_street_number'];
+			$_SESSION['city'] = $reponse['user_city'];
+			$_SESSION['commune'] = $reponse['user_commune'];
+			$_SESSION['zipcode'] = $reponse['user_zipcode'];
 		}
 		header('Location: index.php');
 		

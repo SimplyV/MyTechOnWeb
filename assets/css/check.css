@@ -133,7 +133,8 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: flex-start;
+    gap: 10px;
   }
   .check-container .check-container-products {
     width: 70%;
@@ -142,5 +143,6 @@
     display: flex;
     flex-direction: column;
     width: 400px;
+    margin-top: 0px;
   }
 }/*# sourceMappingURL=check.css.map */

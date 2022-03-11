@@ -1,0 +1,294 @@
+.check-container {
+  width: 100%;
+}
+.check-container form {
+  width: 90%;
+  margin: 0px auto;
+  display: flex;
+  margin-top: 20px;
+  flex-direction: column;
+}
+.check-container form .check-adress .check-adress-card {
+  background: white;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  margin-top: 10px;
+  font-weight: 600;
+  border-radius: 10px;
+}
+.check-container form .check-adress .check-adress-title {
+  margin-left: 20px;
+}
+.check-container form .check-adress .check-adress-content {
+  margin-top: 20px;
+}
+.check-container form .check-adress .check-adress-content .input-name-block, .check-container form .check-adress .check-adress-content .input-adress-block {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  margin-top: 10px;
+}
+.check-container form .check-adress .check-adress-content .input-name-block input, .check-container form .check-adress .check-adress-content .input-adress-block input {
+  margin-top: 5px;
+  width: 100%;
+  padding: 10px 0px 10px 35px;
+  background: #EDEDED;
+  color: black;
+  border: 1px solid black;
+  border-radius: 5px;
+  outline: none;
+}
+.check-container form .check-adress .check-adress-content .input-name-block input.disabled, .check-container form .check-adress .check-adress-content .input-adress-block input.disabled {
+  background: #DADADA;
+}
+.check-container form .check-adress .check-adress-content .input-name-block label, .check-container form .check-adress .check-adress-content .input-adress-block label {
+  font-weight: 600;
+}
+.check-container form .check-adress .check-adress-content .input-name-block i, .check-container form .check-adress .check-adress-content .input-adress-block i {
+  position: absolute;
+  margin-top: 38px;
+  margin-left: 12px;
+  color: #262626;
+}
+.check-container form .check-adress .check-adress-content .input-lastname,
+.check-container form .check-adress .check-adress-content .input-streetnumber,
+.check-container form .check-adress .check-adress-content .input-firstname,
+.check-container form .check-adress .check-adress-content .input-street,
+.check-container form .check-adress .check-adress-content .input-city,
+.check-container form .check-adress .check-adress-content .input-zipcode,
+.check-container form .check-adress .check-adress-content .input-commune {
+  display: flex;
+  flex-direction: column;
+}
+.check-container form .check-adress .check-adress-content .input-email-block, .check-container form .check-adress .check-adress-content .input-street-block {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.check-container form .check-adress .check-adress-content .input-email-block input, .check-container form .check-adress .check-adress-content .input-street-block input {
+  margin-top: 5px;
+  width: 100%;
+  padding: 10px 35px;
+  background: #EDEDED;
+  color: black;
+  border: 1px solid black;
+  border-radius: 5px;
+  outline: none;
+}
+.check-container form .check-adress .check-adress-content .input-email-block input.disabled, .check-container form .check-adress .check-adress-content .input-street-block input.disabled {
+  background: #DADADA;
+}
+.check-container form .check-adress .check-adress-content .input-email-block label, .check-container form .check-adress .check-adress-content .input-street-block label {
+  font-weight: 600;
+}
+.check-container form .check-adress .check-adress-content .input-email-block i, .check-container form .check-adress .check-adress-content .input-street-block i {
+  position: absolute;
+  margin-top: 38px;
+  margin-left: 12px;
+  color: #262626;
+}
+.check-container form .check-adress .check-adress-content .check-use-data {
+  margin-top: 20px;
+  background: white;
+  padding: 20px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  text-align: right;
+}
+.check-container form .check-adress .check-adress-content .check-use-data .switch {
+  display: inline-block;
+  height: 34px;
+  position: relative;
+  width: 60px;
+}
+.check-container form .check-adress .check-adress-content .check-use-data .switch input {
+  display: none;
+}
+.check-container form .check-adress .check-adress-content .check-use-data .switch .slider {
+  background-color: #ccc;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: 0.4s;
+}
+.check-container form .check-adress .check-adress-content .check-use-data .switch .slider:before {
+  background-color: #fff;
+  bottom: 4px;
+  content: "";
+  height: 26px;
+  left: 4px;
+  position: absolute;
+  transition: 0.4s;
+  width: 26px;
+}
+.check-container form .check-adress .check-adress-content .check-use-data .switch input:checked + .slider {
+  background-color: #000;
+}
+.check-container form .check-adress .check-adress-content .check-use-data .switch input:checked + .slider:before {
+  transform: translateX(26px);
+}
+.check-container form .check-adress .check-adress-content .check-use-data .switch .slider.round {
+  border-radius: 34px;
+}
+.check-container form .check-adress .check-adress-content .check-use-data .switch .slider.round:before {
+  border-radius: 50%;
+}
+.check-container form .check-pay .check-pay-content {
+  margin-bottom: 20px;
+}
+.check-container form .check-pay .check-pay-content .check-pay-method {
+  margin-top: 20px;
+  background: white;
+  border-radius: 10px;
+  padding: 20px 15px;
+  border: 1px solid #EBEBF8;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.check-container form .check-pay .check-pay-content .check-pay-method .check-pay-method-brand .label-cont {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-size: 19px;
+  padding-top: 2px;
+}
+.check-container form .check-pay .check-pay-content .check-pay-method .check-pay-method-brand .label-cont input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.check-container form .check-pay .check-pay-content .check-pay-method .check-pay-method-brand .checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #fff;
+  border: 1px solid #DADADA;
+  padding: 2px;
+  border-radius: 50%;
+  margin-top: 3px;
+}
+.check-container form .check-pay .check-pay-content .check-pay-method .check-pay-method-brand .label-cont:hover input ~ .checkmark {
+  background-color: #fff;
+}
+.check-container form .check-pay .check-pay-content .check-pay-method .check-pay-method-brand .label-cont input:checked ~ .checkmark {
+  background-color: #fff;
+}
+.check-container form .check-pay .check-pay-content .check-pay-method .check-pay-method-brand .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.check-container form .check-pay .check-pay-content .check-pay-method .check-pay-method-brand .label-cont input:checked ~ .checkmark:after {
+  display: block;
+}
+.check-container form .check-pay .check-pay-content .check-pay-method .check-pay-method-brand .label-cont .checkmark:after {
+  top: 4px;
+  left: 4px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: black;
+}
+.check-container form .check-pay .check-pay-content .check-pay-method .check-pay-method-icon img {
+  width: 50px;
+  height: auto;
+}
+.check-container form .check-total {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.check-container form .check-total .check-total-brand {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.check-container form .check-total .check-total-pay button {
+  width: 100%;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  background: black;
+  color: white;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+footer {
+  width: 100%;
+  position: absolute;
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  margin-top: 100px;
+}
+
+@media (min-width: 520px) {
+  .check-container form {
+    width: 500px;
+  }
+  .check-container form .input-name-block, .check-container form .input-adress-block {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+  .check-container form .input-name-block input, .check-container form .input-adress-block input {
+    margin-top: 10px;
+    width: 220px;
+    padding: 10px 0px 10px 35px;
+    background: #EDEDED;
+    color: black;
+    border: 1px solid black;
+    border-radius: 5px;
+    outline: none;
+  }
+  .check-container form .input-name-block i, .check-container form .input-adress-block i {
+    margin-top: 45px;
+  }
+}
+@media (min-width: 960px) {
+  .check-container form {
+    width: 100%;
+  }
+  .check-container form .check-adress {
+    width: 95%;
+    display: flex;
+    margin: 0 auto;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .check-container form .check-adress .check-adress-container {
+    width: 50%;
+  }
+  .check-container form .check-adress .check-pay-container {
+    width: 400px;
+  }
+}/*# sourceMappingURL=final_check.css.map */

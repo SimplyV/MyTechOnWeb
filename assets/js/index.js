@@ -253,8 +253,44 @@ darkmode.showWidget();
 
    })
 
+   // One checkbox at the time 
+    $("input:checkbox").on('click', function() {
+      var $box = $(this);
+      if ($box.is(":checked")) {
+        var group = "input:checkbox[name='" + $box.attr("name") + "']";
+        $(group).prop("checked", false);
+        $box.prop("checked", true);
+      } else {
+        $box.prop("checked", false);
+      }
+    });
 
+    // Disable form when using profile adress
+    $(' .input-name-block').hide();
+    $('.check-adress-content .input-email-block').hide();
+    $('.check-adress-content .input-street-block').hide();
+    $('.check-adress-content .input-adress-block').hide();
+    $("#checkbox").click(function(){
+      if($(this).is(":checked")){
+        $('.check-adress-content .input-name-block').show();
+        $('.check-adress-content .input-email-block').show();
+        $('.check-adress-content .input-street-block').show();
+        $('.check-adress-content .input-adress-block').show();
+        $(".check-adress-content .check_form").attr("required", "required");
+        $(".check-adress-content .check-adress-card").hide();
 
+      }
+      else{
+        $(".check-adress-content .check_form").removeAttr("required");
+        $('.check-adress-content .input-name-block').hide();
+        $('.check-adress-content .input-email-block').hide();
+        $('.check-adress-content .input-street-block').hide();
+        $('.check-adress-content .input-adress-block').hide();
+        $(".check-adress-content .check-adress-card").show();
+      }
+    })
+   
+   
 
 
 

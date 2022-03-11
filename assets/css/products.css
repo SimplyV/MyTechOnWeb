@@ -121,10 +121,6 @@
   color: white;
 }
 
-.darkmode-toggle {
-  z-index: 9999 !important;
-}
-
 .swiper-button-prev,
 .swiper-button-next {
   top: 400px !important;

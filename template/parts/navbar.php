@@ -73,11 +73,11 @@
   <div class="navbar-mb-container" id="mb-container">
     <a href="products.php"> Nos produits </a>
     <a href="contact.php"> Contact </a>
-    <a href="login.php"> Mon profil </a>
+    <a href="profile.php"> Mon profil </a>
     <a href="checkout.php"> Mon panier <?php if($_SESSION['cart']['product_number'] > 0){
          echo ' (0)';
         } ?></a>
-    <a href="logout.php"></a>
+    <a href="logout.php"> Se déconnecter </a>
   </div>
 
   <?php } ?>

@@ -143,8 +143,15 @@
 
 
 footer{
-  margin-top: 120px;
-  position: relative;
+    width: 100%;
+    position: absolute;
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    margin-top: 100px;
 }
 @media(min-width: 520px){
 .contact-container{
@@ -176,10 +183,25 @@ footer{
 }
 }
 }
+// Darkmode exception
+
+body.darkmode--activated{
+  .contact-container{
+    .contact-form{
+      form{    
+        i{
+          color: white;
+        }
+      }
+    }
+  }
+}
 
 @media(min-width: 768px){
   footer{
-    margin-top: 100px;
+    flex-direction: row;
+    bottom: 0;
+    margin-top: 0;
   }
   .contact-container{
     .contact-form{

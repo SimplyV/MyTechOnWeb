@@ -104,7 +104,7 @@ html, body{
   display: inline-block;
   width: 150px;
   .dropbtn {
-    width: 150px !important;
+    width: 160px !important;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -123,7 +123,7 @@ html, body{
     background-color: #f1f1f1;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
+    z-index: 2;
     a{
       color: black;
       padding: 12px 16px;
@@ -331,6 +331,54 @@ label.error{
   margin-top: 5px;
   color: red;
 }
+// Darkmode exception
+.darkmode-toggle {
+  z-index: 9999 !important;
+}
+.darkmode-background{
+  background: none !important;
+}
+body.darkmode--activated{
+  label.error{
+    color: white;
+    isolation: isolate;
+  }
+  .navbar{
+    .dropdown{
+      .dropbtn{
+        background: white;
+        color: black;
+      }
+    }
+  }
+  footer{
+    background: black;
+    color: white;
+    .footer-brand{
+      h2{
+        color: white;
+      }
+      
+    }
+    .footer-links{
+      .footer-links-info{
+        div{
+          a{
+            color: white;
+          }
+        }
+      }
+      .footer-links-fastlinks{
+        a{
+          color: white;
+        }
+      }
+    }
+    
+  }
+}
+
+
 
 @media(min-width: 520px){
   footer{
