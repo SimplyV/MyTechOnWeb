@@ -206,52 +206,7 @@ darkmode.showWidget();
      }
    });
 
-   $('.CatSwiper').each(function (i, item) {
-
-     var swiper = new Swiper(item, {
-       slidesPerView: 1,
-       centeredSlides: true,
-       spaceBetween: 0,
-       speed: 800,
-       // autoplay: true,
-       mousewheel: {
-         'forceToAxis': true,
-         'invert': false,
-       },
-       navigation: {
-         nextEl: ".swiper-button-next",
-         prevEl: ".swiper-button-prev",
-       }
-       
-     });
-    
-     $(item).find('.swiper-slide').each(function (i) {
-       var title = $(this).attr('data-nav-title')
-       console.log(title)
-       if (title) {
-         var link = document.createElement('a')
-         link.innerText = title;
-         link.setAttribute('data-slide-id', i);
-         if($(link).attr('data-slide-id') == 0){
-           $(link).addClass('active');
-         }
-         
-         link.addEventListener('click', function () {
-          swiper.slideTo(i);
-         })
-
-         $(item).find('.product-cat-subcategories').append(link)
-       }
-     })
-
-     swiper.on('slideChangeTransitionEnd', function(){
-       currentIndex = swiper.realIndex;
-       $(item).find('.product-cat-subcategories a').removeClass('active')
-       $(item).find('.product-cat-subcategories a').eq(currentIndex).addClass('active')
-     })
-
-
-   })
+  
 
    // One checkbox at the time 
     $("input:checkbox").on('click', function() {
@@ -277,7 +232,7 @@ darkmode.showWidget();
         $('.check-adress-content .input-street-block').show();
         $('.check-adress-content .input-adress-block').show();
         $(".check-adress-content .check_form").attr("required", "required");
-        $(".check-adress-content .check-adress-card").hide();
+        $(".check-adress .check-adress-card").hide();
 
       }
       else{
@@ -286,7 +241,7 @@ darkmode.showWidget();
         $('.check-adress-content .input-email-block').hide();
         $('.check-adress-content .input-street-block').hide();
         $('.check-adress-content .input-adress-block').hide();
-        $(".check-adress-content .check-adress-card").show();
+        $(".check-adress .check-adress-card").show();
       }
     })
    

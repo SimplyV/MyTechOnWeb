@@ -252,6 +252,23 @@
   }
 }
 
+body.darkmode--activated{
+  .check-container{
+    form{
+      .check-adress{
+        .check-adress-container{
+          i{
+            color: white;
+          }
+        }
+        }
+        
+      }
+      
+    }
+  }
+
+
 
 footer{
   width: 100%;
@@ -294,6 +311,11 @@ footer{
   }
   }
   
+}
+@media(min-width: 768px){
+  footer{
+    flex-direction: row;
+  }
 }
 @media(min-width: 960px){
   .check-container{

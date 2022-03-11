@@ -29,6 +29,9 @@
       case "Étape finale":
         echo '<link rel="stylesheet" href="assets/css/final_check.css">';
       break;
+      case "Listing des produits":
+        echo '<link rel="stylesheet" href="assets/css/listing_product.css">';
+      break;
     }
   ?>   
   <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>

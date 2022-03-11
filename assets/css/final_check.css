@@ -238,6 +238,10 @@
   padding: 15px;
 }
 
+body.darkmode--activated .check-container form .check-adress .check-adress-container i {
+  color: white;
+}
+
 footer {
   width: 100%;
   position: absolute;
@@ -272,6 +276,11 @@ footer {
   }
   .check-container form .input-name-block i, .check-container form .input-adress-block i {
     margin-top: 45px;
+  }
+}
+@media (min-width: 768px) {
+  footer {
+    flex-direction: row;
   }
 }
 @media (min-width: 960px) {
