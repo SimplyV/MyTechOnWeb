@@ -64,6 +64,11 @@
 .darkmode-toggle{
   z-index: 9999 !important;
 }
+
+footer{
+  margin-top: 125px;
+  position: relative;
+}
 @media(min-width: 510px){
   .cat-prod-container{
     .cat-prod-content{

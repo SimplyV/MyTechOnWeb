@@ -1,5 +1,5 @@
 <?php
-
+  global $router;
 
   try{
     $bdd = new PDO('mysql:host=localhost;dbname=MyTechOnWeb;charset=utf8', 'root', 'root');
@@ -14,14 +14,14 @@
 
   <div class="navbar">
     <div class="navbar-brand">
-      <a href="index.php"> MyTechOnWeb </a>
+      <a href="<?= $router->generate('page',['pageslug'=> 'accueil']); ?>"> MyTechOnWeb </a>
     </div>
     <div class="navbar-links">
-      <a href="products.php"> Nos produits </a>
-      <a href="contact.php"> Contact </a>
-      <button class="user-btn"><a href="login.php"><i class="fas fa-user"></i> Se connecter </a></button>
+      <a href="<?= $router->generate('page',['pageslug'=> 'products']); ?>"> Nos produits </a>
+      <a href="<?= $router->generate('page',['pageslug'=> 'contact']); ?>"> Contact </a>
+      <button class="user-btn"><a href="login"><i class="fas fa-user"></i> Se connecter </a></button>
       <div class="checkcart">
-        <button class="cart-btn"><a href="checkout.php"><i class="fas fa-shopping-cart"></i></a></button>
+        <button class="cart-btn"><a href="<?= $router->generate('page',['pageslug'=> 'checkout']); ?>"><i class="fas fa-shopping-cart"></i></a></button>
         <?php if($_SESSION['cart']['product_number'] > 0){
          echo ' <span> 0 </span>';
         } ?>
@@ -34,30 +34,30 @@
   </div>
 
   <div class="navbar-mb-container" id="mb-container">
-    <a href="products.php"> Nos produits </a>
-    <a href="contact.php"> Contact </a>
-    <a href="login.php"> Se connecter / S'enregistrer </a>
-    <a href="checkout.php"> Mon panier </a>
+    <a href="<?= $router->generate('page',['pageslug'=> 'products']); ?>"> Nos produits </a>
+    <a href="<?= $router->generate('page',['pageslug'=> 'contact']); ?>"> Contact </a>
+    <a href="<?= $router->generate('page',['pageslug'=> 'login']); ?>"> Se connecter / S'enregistrer </a>
+    <a href="<?= $router->generate('page',['pageslug'=> 'checkout']); ?>"> Mon panier </a>
   </div>
 
   <?php } else{ ?>
 
     <div class="navbar">
     <div class="navbar-brand">
-      <a href="index.php"> MyTechOnWeb </a>
+      <a href="<?= $router->generate('page',['pageslug'=> 'accueil']); ?>"> MyTechOnWeb </a>
     </div>
     <div class="navbar-links">
-      <a href="products.php"> Nos produits </a>
-      <a href="contact.php"> Contact </a>
+      <a href="<?= $router->generate('page',['pageslug'=> 'products']); ?>"> Nos produits </a>
+      <a href="<?= $router->generate('page',['pageslug'=> 'contact']); ?>"> Contact </a>
       <div class="dropdown">
         <button class="dropbtn"><i class="fas fa-user"></i> Mon profil</button>
         <div class="dropdown-content">
-          <a href="profile.php"><i class="fa-solid fa-gear"></i> Mon compte </a>
-          <a href="logout.php"><i class="fa-solid fa-arrow-right-from-bracket"></i> Déconnexion</a>
+          <a href="<?= $router->generate('page',['pageslug'=> 'profile']); ?>"><i class="fa-solid fa-gear"></i> Mon compte </a>
+          <a href="<?= $router->generate('page',['pageslug'=> 'logout']); ?>"><i class="fa-solid fa-arrow-right-from-bracket"></i> Déconnexion</a>
         </div>
       </div>
       <div class="checkcart">
-        <button class="cart-btn"><a href="checkout.php"><i class="fas fa-shopping-cart"></i></a></button>
+        <button class="cart-btn"><a href="<?= $router->generate('page',['pageslug'=> 'checkout']); ?>"><i class="fas fa-shopping-cart"></i></a></button>
         <?php if($_SESSION['cart']['product_number'] > 0){
          echo ' <span> 0 </span>';
         } ?>
@@ -71,13 +71,13 @@
   </div>
 
   <div class="navbar-mb-container" id="mb-container">
-    <a href="products.php"> Nos produits </a>
-    <a href="contact.php"> Contact </a>
-    <a href="profile.php"> Mon profil </a>
-    <a href="checkout.php"> Mon panier <?php if($_SESSION['cart']['product_number'] > 0){
+    <a href="<?= $router->generate('page',['pageslug'=> 'products']); ?>"> Nos produits </a>
+    <a href="<?= $router->generate('page',['pageslug'=> 'contact']); ?>"> Contact </a>
+    <a href="<?= $router->generate('page',['pageslug'=> 'profile']); ?>"> Mon profil </a>
+    <a href="<?= $router->generate('page',['pageslug'=> 'checkout']); ?>"> Mon panier <?php if($_SESSION['cart']['product_number'] > 0){
          echo ' (0)';
         } ?></a>
-    <a href="logout.php"> Se déconnecter </a>
+    <a href="<?= $router->generate('page',['pageslug'=> 'logout']); ?>"> Se déconnecter </a>
   </div>
 
   <?php } ?>

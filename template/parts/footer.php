@@ -1,6 +1,6 @@
   <footer>
     <div class="footer-brand">
-      <a href="index.html"><h2> MyTechOnWeb </h2></a>
+      <a href="accueil"><h2> MyTechOnWeb </h2></a>
     </div>
     <div class="footer-links">
       <div class="footer-links-info">
@@ -22,10 +22,9 @@
       </div>
       <div class="footer-links-fastlinks">
         <h2> Liens rapides </h2>
-        <a href="#"> Nos produits </a>
-        <a href="#"> Catégories </a>
-        <a href="#"> Mon panier </a>
-        <a href="#"> Contact </a>
+        <a href="products"> Nos produits </a>
+        <a href="checkout"> Mon panier </a>
+        <a href="contact"> Contact </a>
       </div>
     </div>
 

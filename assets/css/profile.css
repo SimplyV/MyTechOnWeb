@@ -1,29 +1,37 @@
-.form-container {
+.profile-title {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.profile-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.profile-container .form-container {
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-top: 100px;
 }
-
-form {
+.profile-container form {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 90%;
 }
-form h2 {
+.profile-container form h2 {
   font-size: 28px;
   margin-bottom: 20px;
 }
-form .input-name-block, form .input-adress-block {
+.profile-container form .input-name-block, .profile-container form .input-adress-block {
   width: 100%;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
   margin-top: 10px;
 }
-form .input-name-block input, form .input-adress-block input {
+.profile-container form .input-name-block input, .profile-container form .input-adress-block input {
   margin-top: 5px;
   width: 100%;
   padding: 10px 0px 10px 35px;
@@ -33,32 +41,32 @@ form .input-name-block input, form .input-adress-block input {
   border-radius: 5px;
   outline: none;
 }
-form .input-name-block label, form .input-adress-block label {
+.profile-container form .input-name-block label, .profile-container form .input-adress-block label {
   font-weight: 600;
 }
-form .input-name-block i, form .input-adress-block i {
+.profile-container form .input-name-block i, .profile-container form .input-adress-block i {
   position: absolute;
   margin-top: 38px;
   margin-left: 12px;
   color: #262626;
 }
-form .input-lastname,
-form .input-streetnumber,
-form .input-firstname,
-form .input-street,
-form .input-city,
-form .input-zipcode,
-form .input-commune {
+.profile-container form .input-lastname,
+.profile-container form .input-streetnumber,
+.profile-container form .input-firstname,
+.profile-container form .input-street,
+.profile-container form .input-city,
+.profile-container form .input-zipcode,
+.profile-container form .input-commune {
   display: flex;
   flex-direction: column;
 }
-form .input-email-block, form .input-street-block {
+.profile-container form .input-email-block, .profile-container form .input-street-block {
   margin-top: 10px;
   display: flex;
   flex-direction: column;
   width: 100%;
 }
-form .input-email-block input, form .input-street-block input {
+.profile-container form .input-email-block input, .profile-container form .input-street-block input {
   margin-top: 5px;
   width: 100%;
   padding: 10px 35px;
@@ -68,22 +76,22 @@ form .input-email-block input, form .input-street-block input {
   border-radius: 5px;
   outline: none;
 }
-form .input-email-block label, form .input-street-block label {
+.profile-container form .input-email-block label, .profile-container form .input-street-block label {
   font-weight: 600;
 }
-form .input-email-block i, form .input-street-block i {
+.profile-container form .input-email-block i, .profile-container form .input-street-block i {
   position: absolute;
   margin-top: 38px;
   margin-left: 12px;
   color: #262626;
 }
-form .input-password-block {
+.profile-container form .input-password-block {
   margin-top: 10px;
   display: flex;
   flex-direction: column;
   width: 100%;
 }
-form .input-password-block input {
+.profile-container form .input-password-block input {
   margin-top: 5px;
   width: 100%;
   padding: 10px 35px;
@@ -93,39 +101,39 @@ form .input-password-block input {
   border-radius: 5px;
   outline: none;
 }
-form .input-password-block label {
+.profile-container form .input-password-block label {
   font-weight: 600;
 }
-form .input-password-block i {
+.profile-container form .input-password-block i {
   position: absolute;
   margin-top: 38px;
   margin-left: 12px;
   color: #262626;
 }
-form .input-password-block a {
+.profile-container form .input-password-block a {
   color: black;
   margin-top: 10px;
   width: 145px;
   margin-left: auto;
   text-decoration: underline;
 }
-form .input-password-re-block {
+.profile-container form .input-password-re-block {
   margin-top: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
 }
-form .input-password-re-block a {
+.profile-container form .input-password-re-block a {
   width: 230px;
   color: black;
   text-decoration: underline;
 }
-form .button-block {
+.profile-container form .button-block {
   margin-top: 20px;
   width: 100%;
 }
-form .button-block button {
+.profile-container form .button-block button {
   width: 100%;
   background: black;
   border-radius: 5px;
@@ -136,8 +144,56 @@ form .button-block button {
   cursor: pointer;
   transition: 0.5s ease-out;
 }
-form .button-block button:hover {
+.profile-container form .button-block button:hover {
   opacity: 0.7;
+}
+.profile-container .history-container {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+.profile-container .history-container .history-item {
+  display: flex;
+  flex-direction: column;
+  background: white;
+}
+.profile-container .history-container .history-item .history-brand {
+  display: flex;
+  flex-direction: column;
+}
+.profile-container .history-container .history-item .history-brand img {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 15px;
+}
+.profile-container .history-container .history-item .history-brand span {
+  margin-top: 20px;
+  margin-left: 25px;
+  font-size: 1.3rem;
+}
+.profile-container .history-container .history-item .history-infos {
+  width: 90%;
+  margin: 20px auto;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.profile-container .history-container .history-item .history-infos h4 {
+  font-size: 1.2rem;
+}
+.profile-container .history-container .history-item .history-infos span {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.profile-container .history-container .history-item .history-infos .history-infos-brand {
+  margin-top: 20px;
+}
+.profile-container .history-container .history-item .history-infos .history-infos-content {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
 }
 
 body.darkmode--activated .form-container form i {
@@ -180,10 +236,41 @@ footer {
     margin-top: 45px;
   }
 }
+@media (min-width: 560px) {
+  .profile-container .history-container .history-item {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .profile-container .history-container .history-item .history-brand {
+    flex-direction: row;
+  }
+  .profile-container .history-container .history-item .history-brand img {
+    margin: 0;
+  }
+  .profile-container .history-container .history-item .history-infos {
+    flex-direction: row;
+    justify-content: space-around;
+    width: 73%;
+    margin: 20px 10px;
+  }
+  .profile-container .history-container .history-item .history-infos .history-infos-content {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+}
 @media (min-width: 768px) {
   footer {
     flex-direction: row;
     bottom: 0;
     margin-top: 0px;
+  }
+}
+@media (min-width: 1240px) {
+  .profile-container {
+    display: flex;
+    flex-direction: row;
+  }
+  .profile-container .history-container {
+    margin-right: 20px;
   }
 }/*# sourceMappingURL=profile.css.map */

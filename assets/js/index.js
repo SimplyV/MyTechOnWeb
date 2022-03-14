@@ -96,6 +96,16 @@ darkmode.showWidget();
      }
    });
 
+   var swiper = new Swiper(".singleImageSwiper", {
+    mousewheel: {
+      'forceToAxis': true,
+      'invert': false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+    },
+  });
+
    $('#register-form').validate({
      rules: {
        firstname: {
@@ -245,9 +255,63 @@ darkmode.showWidget();
       }
     })
    
+
+    // Filters show by toggle
+  
+
+    $('#showFilters').click(function(){
+      $('.product-list-content-filters').toggleClass('active');
+      // Set condition to be above 768px
+      if($(window).width() > 768){
+        if($('.product-list-content-filters').hasClass('active')){
+          $('.product-list-content-items').width("68%"); 
+        }
+        else{
+          $('.product-list-content-items').width("100%");
+        }
+      }
+     
+    })
+    if($('.product-list-content-filters').hasClass('active')){
+      $('.product-list-content-items').width("68%"); 
+    }
+    else{
+      $('.product-list-content-items').width("100%");
+    }
+    
+   // Favorite check with a IDs
+
+
+
+   // Range slide with filters
+    var price_slider = document.querySelector('.price-slider');
+    noUiSlider.create(price_slider, {
+      start: [0, 5000],
+      connect: true,
+      step: 10,
+      range: {
+        'min': 0,
+        'max': 5000
+      }
+    })
+
+     // Updating the input number with price_slider range
+    var inputPriceNumberMin = document.getElementById('number_price_min');
+    var inputPriceNumberMax = document.getElementById('number_price_max');
+    price_slider.noUiSlider.on('update', function(values, handle){
+      var value = values[handle];
+      if(handle){
+        inputPriceNumberMax.value = Math.round(value);
+      }
+      else{
+        inputPriceNumberMin.value = Math.round(value);
+      }
+    });
+    inputPriceNumberMin.addEventListener('change', function(){
+      price_slider.noUiSlider.set([this.value, null]);
+    });
+    inputPriceNumberMax.addEventListener('change', function(){
+      price_slider.noUiSlider.set([null, this.value]);
+    });
    
-
-
-
-
  });

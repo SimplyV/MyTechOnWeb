@@ -52,11 +52,11 @@
 			$_SESSION['commune'] = $reponse['user_commune'];
 			$_SESSION['zipcode'] = $reponse['user_zipcode'];
 		}
-		header('Location: index.php');
+		header('Location: accueil');
 		
 	}
   else{
-    header('Location: login.php');
+    header('Location: login');
   }
 
 

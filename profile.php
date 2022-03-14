@@ -24,9 +24,13 @@
 <?php include('template/parts/header.php'); ?>
 <?php include('template/parts/navbar.php');?>
 
+<div class="profile-title">
+  <h2><?php echo $title ?> </h2>
+</div>
+<div class="profile-container">
 <div class="form-container">
   <form action="profile_data.php" method="POST" id="profile-form">
-    <h2> Mon profil </h2>
+
 
     <div class="input-name-block">
       <div class="input-firstname">
@@ -80,14 +84,31 @@
     </div>
 
 
-      <div class="input-password-re-block">
-        <a href="#"> Rénitialiser mon mot de passe</a>
-      </div>
-
       <div class="button-block">
         <button type="submit"> Modifier </button>
       </div>
   </form>
 </div>
+  <div class="history-container">
+    <div class="history-item">
+        <div class="history-brand">
+          <img src="https://via.placeholder.com/150">       
+        </div>
+        <div class="history-infos">
+          <div class="history-infos-brand">
+            <span> Produit n°1</span>
+          </div>
+          <div class="history-infos-content">
+            <h4> 02/10/2021 </h4>
+          <span> 234€ </span>
+        </div>         
+        </div>
+      </div>
+    </div>
+    
+</div>
+
+
+
 
 <?php include('template/parts/footer.php'); ?>
