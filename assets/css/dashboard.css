@@ -4,9 +4,6 @@
   vertical-align: text-bottom;
 }
 
-/*
- * Sidebar
- */
 .sidebar {
   position: fixed;
   top: 0;
@@ -62,6 +59,10 @@
   text-transform: uppercase;
 }
 
+html, body {
+  height: auto;
+}
+
 /*
  * Navbar
  */
@@ -93,4 +94,142 @@
 .form-control-dark:focus {
   border-color: transparent;
   box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.25);
+}
+
+.product-add-container {
+  display: flex;
+  flex-direction: column;
+}
+.product-add-container form {
+  display: flex;
+  flex-direction: column;
+}
+.product-add-container form .product-add-col {
+  display: flex;
+  flex-direction: column;
+}
+.product-add-container form .product-add-col .product-add-name {
+  display: flex;
+  flex-direction: column;
+}
+.product-add-container form .product-add-col .product-add-name label {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+.product-add-container form .product-add-col .product-add-name input {
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid black;
+  outline: none;
+}
+.product-add-container form .product-add-col .product-add-category {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+.product-add-container form .product-add-col .product-add-category label {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+.product-add-container form .product-add-col .product-add-category select {
+  margin-top: 10px;
+  padding: 12px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+.product-add-container form .product-add-col .product-add-price {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+.product-add-container form .product-add-col .product-add-price label {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+.product-add-container form .product-add-col .product-add-price input {
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  outline: none;
+}
+.product-add-container form .product-add-col .product-add-brand {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+.product-add-container form .product-add-col .product-add-brand label {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+.product-add-container form .product-add-col .product-add-brand input {
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  outline: none;
+}
+.product-add-container form .product-add-col .product-add-description {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+.product-add-container form .product-add-col .product-add-description label {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+.product-add-container form .product-add-col .product-add-description textarea {
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  outline: none;
+  height: 250px;
+}
+.product-add-container form .product-add-col .product-add-images {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+.product-add-container form .product-add-col .product-add-images .product-image-placeholder {
+  display: flex;
+  flex-direction: column;
+}
+.product-add-container form .product-add-col .product-add-images .product-image-placeholder .product-image-placeholder-brand {
+  flex-direction: column;
+}
+.product-add-container form .product-add-col .product-add-images .product-image-placeholder .product-image-placeholder-brand .p-img-plcholder-big {
+  width: 100%;
+  margin: 0 auto;
+  border: 3px dashed black;
+  height: 400px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.product-add-container form .product-add-col .product-add-images .product-image-placeholder .product-image-placeholder-brand .p-img-plcholder-big .plcholder-img {
+  width: 50%;
+  margin: 10px auto;
+  display: none;
+}
+.product-add-container form .product-add-col .product-add-images .product-image-placeholder .product-image-placeholder-brand .p-img-plcholder-big .plcholder-img img {
+  width: 100%;
+  height: auto;
+}
+.product-add-container form .product-add-col .product-add-images .product-image-placeholder .product-image-placeholder-brand .p-img-plcholder-big i {
+  font-size: 20px;
+}
+
+@media (min-width: 768px) {
+  .product-add-container form .product-add-col .product-add-images .product-image-placeholder .product-image-placeholder-brand .p-img-plcholder-big {
+    width: 600px;
+  }
+  .product-add-container form .product-add-col .product-add-article {
+    display: flex;
+    justify-content: center;
+  }
 }/*# sourceMappingURL=dashboard.css.map */

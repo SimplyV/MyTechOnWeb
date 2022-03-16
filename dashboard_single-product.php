@@ -11,7 +11,7 @@
   <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+  <div class="form-control form-control-dark w-100h" style="padding: 24px;"></div>
   <div class="navbar-nav">
     <div class="nav-item text-nowrap">
       <a class="nav-link px-3" href="<?= $router->generate('page',['pageslug'=> 'logout']);?>">Sign out</a>
@@ -62,150 +62,87 @@
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2"> Ajouter un produit  </h1>   
       </div>
-      <div class="d-flex flex-column">
-        <label for="name"> Nom du produit </label>
-          <input type="text" name="name" required class="mt-3" style="width: 200px;">
-        
-        <div class="d-flex flex-column">
-        <label for="categories" class="mt-3"> Catégories du produit </label>
-        </br>
-          <select name="categories" class="mt-1 p-2" style="width: 200px;">
-            <option> Smartphones </span>
-            <option> Ordinateur </span>
-            <option> Tablette </span>
-          </select>
+      <div class="product-add-container">
+          <form action="add_product.php" method="POST" enctype="multipart/form-data">
+            <div class="product-add-col">
+                <div class="product-add-name">
+                  <label for="name"> Nom du produit </label>
+                  <input type="text" name="name" placeholder="Nom du produit">
+              </div>
+              <div class="product-add-subname">
+                <div class="product-add-category">
+                  <label for="name"> Catégorie du produit </label>
+                  <select type="text" name="category" required>
+                    <option> 1</option> 
+                    <option> 2</option> 
+                    <option> 3</option> 
+                    <option> 4</option> 
+                  </select>
+                </div>
+                <div class="product-add-price">
+                  <label for="price"> Prix </label>
+                  <input type="number" name="price" placeholder="0" required>
+                </div>
+              </div>
+              <div class="product-add-brand">
+                <label for="brand"> Marque </label>
+                <input type="text" name="brand" placeholder="Marque du produit" required>
+              </div>
+              <div class="product-add-description">
+                <label for="description"> Description du produit </label>
+                <textarea name="description" placeholder="Entrez une description du produit..." required></textarea>
+              </div>
+            </div>
+            <div class="product-add-col">
+              <div class="product-add-images">
+                <div class="product-add-images-title">
+                  <h2> Images du produit </h2>
+                </div>
+                <div class="product-image-placeholder">
+                  <div class="product-image-placeholder-brand">
+                    <div class="p-img-plcholder-big">   
+                      <div class="plcholder-img">
+                        <img src="#">
+                      </div>           
+                      <i class="fa-solid fa-image"></i>
+                      <input type="file" name="image-first" required>
+                    </div>
+                    <div class="p-img-plcholder-big">
+                    <div class="plcholder-img">
+                        <img src="#">
+                      </div>           
+                      <i class="fa-solid fa-image"></i>
+                      <input type="file" name="image-second" required>
+                    </div>
+                    <div class="p-img-plcholder-big">   
+                      <div class="plcholder-img">
+                        <img src="#">
+                      </div>           
+                      <i class="fa-solid fa-image"></i>
+                      <input type="file" name="image-first" required>
+                    </div>
+                    <div class="p-img-plcholder-big">
+                    <div class="plcholder-img">
+                        <img src="#">
+                      </div>           
+                      <i class="fa-solid fa-image"></i>
+                      <input type="file" name="image-second" required>
+                    </div>
+                    
+                  </div>
+                  
+                  
+                </div>
+              </div>
+              <div class="product-add-article">
+                <button class="btn btn-primary"type="submit"> Ajouter cet article </button>
+              </div>
+            </div>
+          </form>
         </div>
           
       </div>
-      <!-- <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas> -->
-
-      <!-- <div class="table-responsive">
-        <table class="table table-striped table-sm">
-          <thead>
-            <tr>
-              <th scope="col">ID Produit</th>
-              <th scope="col">Nom de produit</th>
-              <th scope="col">Prix</th>
-              <th scope="col">Catégories</th>
-              <th scope="col">Image produit</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1,001</td>
-              <td>random</td>
-              <td>data</td>
-              <td>placeholder</td>
-              <td>text</td>
-            </tr>
-            <tr>
-              <td>1,002</td>
-              <td>placeholder</td>
-              <td>irrelevant</td>
-              <td>visual</td>
-              <td>layout</td>
-            </tr>
-            <tr>
-              <td>1,003</td>
-              <td>data</td>
-              <td>rich</td>
-              <td>dashboard</td>
-              <td>tabular</td>
-            </tr>
-            <tr>
-              <td>1,003</td>
-              <td>information</td>
-              <td>placeholder</td>
-              <td>illustrative</td>
-              <td>data</td>
-            </tr>
-            <tr>
-              <td>1,004</td>
-              <td>text</td>
-              <td>random</td>
-              <td>layout</td>
-              <td>dashboard</td>
-            </tr>
-            <tr>
-              <td>1,005</td>
-              <td>dashboard</td>
-              <td>irrelevant</td>
-              <td>text</td>
-              <td>placeholder</td>
-            </tr>
-            <tr>
-              <td>1,006</td>
-              <td>dashboard</td>
-              <td>illustrative</td>
-              <td>rich</td>
-              <td>data</td>
-            </tr>
-            <tr>
-              <td>1,007</td>
-              <td>placeholder</td>
-              <td>tabular</td>
-              <td>information</td>
-              <td>irrelevant</td>
-            </tr>
-            <tr>
-              <td>1,008</td>
-              <td>random</td>
-              <td>data</td>
-              <td>placeholder</td>
-              <td>text</td>
-            </tr>
-            <tr>
-              <td>1,009</td>
-              <td>placeholder</td>
-              <td>irrelevant</td>
-              <td>visual</td>
-              <td>layout</td>
-            </tr>
-            <tr>
-              <td>1,010</td>
-              <td>data</td>
-              <td>rich</td>
-              <td>dashboard</td>
-              <td>tabular</td>
-            </tr>
-            <tr>
-              <td>1,011</td>
-              <td>information</td>
-              <td>placeholder</td>
-              <td>illustrative</td>
-              <td>data</td>
-            </tr>
-            <tr>
-              <td>1,012</td>
-              <td>text</td>
-              <td>placeholder</td>
-              <td>layout</td>
-              <td>dashboard</td>
-            </tr>
-            <tr>
-              <td>1,013</td>
-              <td>dashboard</td>
-              <td>irrelevant</td>
-              <td>text</td>
-              <td>visual</td>
-            </tr>
-            <tr>
-              <td>1,014</td>
-              <td>dashboard</td>
-              <td>illustrative</td>
-              <td>rich</td>
-              <td>data</td>
-            </tr>
-            <tr>
-              <td>1,015</td>
-              <td>random</td>
-              <td>tabular</td>
-              <td>information</td>
-              <td>text</td>
-            </tr>
-          </tbody>
-        </table>
-      </div> -->
+      
     </main>
   </div>
 </div>

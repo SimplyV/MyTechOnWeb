@@ -1,15 +1,9 @@
 
-
 .feather {
   width: 16px;
   height: 16px;
   vertical-align: text-bottom;
 }
-
-/*
- * Sidebar
- */
-
 .sidebar {
   position: fixed;
   top: 0;
@@ -62,7 +56,9 @@
   font-size: .75rem;
   text-transform: uppercase;
 }
-
+html, body{
+  height: auto;
+}
 /*
  * Navbar
  */
@@ -95,4 +91,157 @@
 .form-control-dark:focus {
   border-color: transparent;
   box-shadow: 0 0 0 3px rgba(255, 255, 255, .25);
+}
+
+// Dashboard Single Product
+
+.product-add-container{
+  display: flex;
+  flex-direction: column;
+  form{
+    display: flex;
+    flex-direction: column;
+    .product-add-col{
+      display: flex;
+      flex-direction: column;
+      .product-add-name{
+        display: flex;
+        flex-direction: column;
+        label{
+          font-weight: 600;
+          font-size: 1.1rem;
+        }
+        input{
+          margin-top: 10px;
+          padding: 10px;
+          border-radius: 5px;
+          border: 1px solid black;
+          outline: none;
+        }
+      }
+      .product-add-category{
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px;
+        label{
+          font-weight: 600;
+          font-size: 1.1rem;
+        }
+        select{
+          margin-top: 10px;
+          padding: 12px;
+          border: 1px solid black;
+          border-radius: 5px;
+        }
+      }
+      .product-add-price{
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px;
+        label{
+          font-weight: 600;
+          font-size: 1.1rem;
+        }
+        input{
+          margin-top: 10px;
+          padding: 10px;
+          border: 1px solid black;
+          border-radius: 5px;
+          outline: none;
+        }
+      }
+      .product-add-brand{
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px;
+        label{
+          font-weight: 600;
+          font-size: 1.1rem;
+        }
+        input{
+          margin-top: 10px;
+          padding: 10px;
+          border: 1px solid black;
+          border-radius: 5px;
+          outline: none;
+        }
+      }
+      .product-add-description{
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px;
+        label{
+          font-weight: 600;
+          font-size: 1.1rem;
+        }
+        textarea{
+          margin-top: 10px;
+          padding: 10px;
+          border: 1px solid black;
+          border-radius: 5px;
+          outline: none;
+          height: 250px;
+        }
+      }
+      .product-add-images{
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px;
+        .product-image-placeholder{
+          display: flex;
+          flex-direction: column;
+          .product-image-placeholder-brand{
+            flex-direction: column;
+            .p-img-plcholder-big{
+              width: 100%;
+              margin: 0 auto;
+              border: 3px dashed black;
+              height: 400px;
+              border-radius: 10px;
+              margin-bottom: 20px;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              .plcholder-img{
+                width: 50%;
+                margin: 10px auto;
+                display: none;
+                img{
+                  width: 100%;
+                  height: auto;
+                }
+              }
+              i{
+                font-size: 20px;
+              }
+            }
+          }
+        }
+      }
+     
+    }
+  }
+}
+@media(min-width: 768px){
+  .product-add-container{
+    form{
+      .product-add-col{
+        .product-add-images{
+          .product-image-placeholder{
+            .product-image-placeholder-brand{
+              .p-img-plcholder-big{
+                width: 600px;
+            }
+          }
+        }
+      }
+      .product-add-article{
+        display: flex;
+        justify-content: center;
+      }
+    }
+      }
+    }
+    
 }
