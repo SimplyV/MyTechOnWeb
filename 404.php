@@ -11,3 +11,5 @@
   <h2> La page que vous avez essayer d'accéder n'existe pas ! </h2>
   <a href="accueil"> Appuyer pour revenir à la page principale </a>
 </div>
+
+Ceci est du contenu
