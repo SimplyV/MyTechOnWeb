@@ -101,34 +101,70 @@
                 <div class="product-image-placeholder">
                   <div class="product-image-placeholder-brand">
                     <div class="p-img-plcholder-big">   
-                      <div class="plcholder-img">
-                        <img src="#">
-                      </div>           
-                      <i class="fa-solid fa-image"></i>
-                      <input type="file" name="image-first" required>
+                      <div class="file-wrapper">
+                        <div class="file-upload">
+                          <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )"><i
+                              class="fas fa-plus"> </i></button>
+                          <div class="image-upload-wrap">
+                            <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" name="image_edit"
+                              required />
+                            <div class="drag-text">
+                              <h3>Appuyer sur le bouton + pour ajouter une image</h3>
+                            </div>
+                          </div>
+                          <div class="file-upload-content">
+                            <img class="file-upload-image" src="#" alt="your image" />
+                            <div class="image-title-wrap">
+                              <button type="button" onclick="removeUpload()" class="remove-image">Supprimer <span
+                                  class="image-title">Uploaded Image</span></button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                     <div class="p-img-plcholder-big">
-                    <div class="plcholder-img">
-                        <img src="#">
-                      </div>           
-                      <i class="fa-solid fa-image"></i>
-                      <input type="file" name="image-second" required>
-                    </div>
-                    <div class="p-img-plcholder-big">   
-                      <div class="plcholder-img">
-                        <img src="#">
-                      </div>           
-                      <i class="fa-solid fa-image"></i>
-                      <input type="file" name="image-first" required>
+                    <div class="file-wrapper">
+                        <div class="file-upload">
+                          <button class="file-upload-btn" type="button" onclick="$('.file-upload-input-1').trigger( 'click' )"><i
+                              class="fas fa-plus"> </i></button>
+                          <div class="image-upload-wrap-1">
+                            <input class="file-upload-input-1" type='file' onchange="readURL1(this);" accept="image/*" name="image_edit"
+                              required />
+                            <div class="drag-text">
+                              <h3>Appuyer sur le bouton + pour ajouter une image</h3>
+                            </div>
+                          </div>
+                          <div class="file-upload-content-1">
+                            <img class="file-upload-image-1" src="#" alt="your image" />
+                            <div class="image-title-wrap">
+                              <button type="button" onclick="removeUpload1()" class="remove-image">Supprimer <span
+                                  class="image-title-1">Uploaded Image</span></button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                     <div class="p-img-plcholder-big">
-                    <div class="plcholder-img">
-                        <img src="#">
-                      </div>           
-                      <i class="fa-solid fa-image"></i>
-                      <input type="file" name="image-second" required>
-                    </div>
-                    
+                    <div class="file-wrapper">
+                        <div class="file-upload">
+                          <button class="file-upload-btn" type="button" onclick="$('.file-upload-input-2').trigger( 'click' )"><i
+                              class="fas fa-plus"> </i></button>
+                          <div class="image-upload-wrap-2">
+                            <input class="file-upload-input-2" type='file' onchange="readURL2(this);" accept="image/*" name="image_edit"
+                              required />
+                            <div class="drag-text">
+                              <h3>Appuyer sur le bouton + pour ajouter une image</h3>
+                            </div>
+                          </div>
+                          <div class="file-upload-content-2">
+                            <img class="file-upload-image-2" src="#" alt="your image" />
+                            <div class="image-title-wrap">
+                              <button type="button" onclick="removeUpload2()" class="remove-image">Supprimer <span
+                                  class="image-title-2">Uploaded Image</span></button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                   </div>
                   
                   
@@ -147,3 +183,4 @@
   </div>
 </div>
 
+<script src="assets/js/form-image.js"></script>

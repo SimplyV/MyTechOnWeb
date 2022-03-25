@@ -314,4 +314,8 @@ darkmode.showWidget();
       price_slider.noUiSlider.set([null, this.value]);
     });
    
+    // Display image on single-product dashboard
+    
+
+
  });
