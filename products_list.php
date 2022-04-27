@@ -1,19 +1,36 @@
 <?php 
+
   session_start();
-  $categories = $_GET['categories'];
+  if(!empty($_GET['categories'])){
+    $categories = $_GET['categories'];
+
+    $donnees = $bdd->query('SELECT name FROM category WHERE id='.$categories.'');
+    while ($reponse = $donnees->fetch()){
+        $catname = $reponse["name"];
+    }
+  }
+  else{
+    $donnees = $bdd->query('SELECT name FROM category WHERE id=1');
+    while ($reponse = $donnees->fetch()){
+        $catname = $reponse["name"];
+    }
+  }
   $title = "Listing des produits";
+
+  include 'template/parts/db.php';
+
+ 
+
+
 ?>
 <?php include('template/parts/header.php'); ?>
 <?php include('template/parts/navbar.php'); ?>
 
 <div class="product-list-header">
-  <h1> Smartphones </h1>
+  <h1><?php if(!empty($catname)){echo $catname;} ?></h1>
 </div>
 
 <div class="product-list-container">
-  <div class="product-list-title">
-    <h2> Tous les smartphones </h2>
-  </div>
   <div class="product-list-content">
     <div class="product-list-content-topbar">
       <div class="product-list-filters">
@@ -56,114 +73,39 @@
         </form>
       </div>
       <div class="product-list-content-items">
-        <div class="product-list-item">
-          <div class="prod-list-item-brand">
-            <button> <i class="fa-solid fa-heart"></i></button>
-          </div>
-          <div class="prod-list-item-content">
-            <div class="prod-list-item-content-title">
-              <h3> Produit n°1 </h3>
+        <?php 
+        if(!empty($_GET['categories'])){
+          $donnees = $bdd->query('SELECT id, name, price, product_image FROM products WHERE categories_id='.$categories.'');
+        }else{
+          $donnees = $bdd->query('SELECT id, name, price, product_image FROM products WHERE categories_id=1');
+        }
+        while ($reponse = $donnees->fetch()){ ?>
+        <?php 
+          $array = explode(",", $reponse['product_image']);
+          $firstLine = $array[0];
+          ?>
+          <div class="product-list-item">
+            <div class="prod-list-item-brand" style="background-image: url('assets/img/product_images/<?php echo $firstLine ?>');">
+              <button> <i class="fa-solid fa-heart"></i></button>
             </div>
-            <div class="prod-list-item-content-infos">
-              <div class="prod-list-item-price">
-                <span> 345 €</span>
+            <div class="prod-list-item-content">
+              <div class="prod-list-item-content-title">
+                <h3><a href="single-product?prod_id=<?php echo $reponse['id'];?>"> <?php echo $reponse['name']; ?> </a></h3>
               </div>
-              <div class="prod-list-item-button">
-                <button> <i class="fa-solid fa-cart-shopping"></i></button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="product-list-item">
-          <div class="prod-list-item-brand">
-            <button> <i class="fa-solid fa-heart"></i></button>
-          </div>
-          <div class="prod-list-item-content">
-            <div class="prod-list-item-content-title">
-              <h3> Produit n°1 </h3>
-            </div>
-            <div class="prod-list-item-content-infos">
-              <div class="prod-list-item-price">
-                <span> 345 €</span>
-              </div>
-              <div class="prod-list-item-button">
-                <button> <i class="fa-solid fa-cart-shopping"></i></button>
+              <div class="prod-list-item-content-infos">
+                <div class="prod-list-item-price">
+                  <span> <?php echo $reponse['price']; ?> €</span>
+                </div>
+                <div class="prod-list-item-button">
+                  <button> <i class="fa-solid fa-cart-shopping"></i></button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="product-list-item">
-          <div class="prod-list-item-brand">
-            <button> <i class="fa-solid fa-heart"></i></button>
-          </div>
-          <div class="prod-list-item-content">
-            <div class="prod-list-item-content-title">
-              <h3> Produit n°1 </h3>
-            </div>
-            <div class="prod-list-item-content-infos">
-              <div class="prod-list-item-price">
-                <span> 345 €</span>
-              </div>
-              <div class="prod-list-item-button">
-                <button> <i class="fa-solid fa-cart-shopping"></i></button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="product-list-item">
-          <div class="prod-list-item-brand">
-            <button> <i class="fa-solid fa-heart"></i></button>
-          </div>
-          <div class="prod-list-item-content">
-            <div class="prod-list-item-content-title">
-              <h3> Produit n°1 </h3>
-            </div>
-            <div class="prod-list-item-content-infos">
-              <div class="prod-list-item-price">
-                <span> 345 €</span>
-              </div>
-              <div class="prod-list-item-button">
-                <button> <i class="fa-solid fa-cart-shopping"></i></button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="product-list-item">
-          <div class="prod-list-item-brand">
-            <button> <i class="fa-solid fa-heart"></i></button>
-          </div>
-          <div class="prod-list-item-content">
-            <div class="prod-list-item-content-title">
-              <h3> Produit n°1 </h3>
-            </div>
-            <div class="prod-list-item-content-infos">
-              <div class="prod-list-item-price">
-                <span> 345 €</span>
-              </div>
-              <div class="prod-list-item-button">
-                <button> <i class="fa-solid fa-cart-shopping"></i></button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="product-list-item">
-          <div class="prod-list-item-brand">
-            <button> <i class="fa-solid fa-heart"></i></button>
-          </div>
-          <div class="prod-list-item-content">
-            <div class="prod-list-item-content-title">
-              <h3> Produit n°1 </h3>
-            </div>
-            <div class="prod-list-item-content-infos">
-              <div class="prod-list-item-price">
-                <span> 345 €</span>
-              </div>
-              <div class="prod-list-item-button">
-                <button> <i class="fa-solid fa-cart-shopping"></i></button>
-              </div>
-            </div>
-          </div>
-        </div>
+        <?php 
+          }
+          $donnees->closeCursor();
+          ?>
       </div>
     </div>
   </div>

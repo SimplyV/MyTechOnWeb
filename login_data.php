@@ -2,13 +2,7 @@
 
 	session_start();
 
-	try{
-		$bdd = new PDO('mysql:host=localhost;dbname=MyTechOnWeb;charset=utf8', 'root', 'root');
-	}
-
-	catch(Exception $e){
-		die('Erreur : '.$e->getMessage());
-	}
+	include 'template/parts/db.php';
 	
 	$donnees = $bdd->query('SELECT email FROM users');
 
@@ -16,9 +10,9 @@
 	$verify= null;
 	while ($reponse = $donnees->fetch()){
 		if ($_POST['email'] == $reponse['email']){
-			$donnees = $bdd->query('SELECT password FROM users WHERE email= \''.$reponse["email"].'\'');
+			$donnees = $bdd->query('SELECT passworduser FROM users WHERE email= \''.$reponse["email"].'\'');
 			while ($reponse = $donnees->fetch()){
-				if ($_POST['password'] == $reponse['password'] ){
+				if ($_POST['password'] == $reponse['passworduser'] ){
 				$verify = true;
 				}
 				else{
@@ -45,6 +39,7 @@
 		while($reponse = $donnes->fetch()){
 			$_SESSION['id_user'] = $reponse['id_user'];
 			$_SESSION['lastname'] = $reponse['lastname'];
+			$_SESSION['pseudo'] = $reponse['pseudo'];
 			$_SESSION['email'] = $reponse['email'];
 			$_SESSION['street'] = $reponse['user_street'];
 			$_SESSION['street_number'] = $reponse['user_street_number'];

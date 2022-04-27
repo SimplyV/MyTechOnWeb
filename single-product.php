@@ -1,6 +1,42 @@
 <?php
   session_start();
   $title = "Page produit";
+
+  include 'template/parts/db.php';
+
+  if(!empty($_GET['prod_id'])){
+    $product = $_GET['prod_id'];
+
+    $donnees = $bdd->query('SELECT name FROM products WHERE id='.$product.'');
+    while ($reponse = $donnees->fetch()){
+        $prodname = $reponse["name"];
+    }
+    $donnees = $bdd->query('SELECT product_image FROM products WHERE id='.$product.'');
+    while ($reponse = $donnees->fetch()){
+      $prod_images = $reponse['product_image'];
+    }
+    $donnees = $bdd->query('SELECT price FROM products WHERE id='.$product.'');
+    while ($reponse = $donnees->fetch()){
+      $price = $reponse['price'];
+    }
+    $donnees = $bdd->query('SELECT introduction FROM products WHERE id='.$product.'');
+    while ($reponse = $donnees->fetch()){
+      $introduction = $reponse['introduction'];
+    }
+    $donnees = $bdd->query('SELECT description FROM products WHERE id='.$product.'');
+    while ($reponse = $donnees->fetch()){
+      $description = $reponse['description'];
+    }
+    $donnees = $bdd->query('SELECT brand FROM products WHERE id='.$product.'');
+    while ($reponse = $donnees->fetch()){
+      $brand = $reponse['brand'];
+    }
+
+    
+  }
+  else{
+    header('Location: 404');
+  }
 ?>
 <?php include('template/parts/header.php'); ?>
 <?php include('template/parts/navbar.php'); ?>
@@ -10,9 +46,13 @@
       <div class="single-product-images">
         <div class="swiper singleImageSwiper">
           <div class="swiper-wrapper">
-            <div class="swiper-slide"><img src="https://via.placeholder.com/150"></div>
-            <div class="swiper-slide"><img src="https://via.placeholder.com/150"></div>
-            <div class="swiper-slide"><img src="https://via.placeholder.com/150"></div>
+            <?php 
+            $array_prod_image = explode(",", $prod_images);
+            foreach($array_prod_image as $image_item){ ?>
+               <div class="swiper-slide"><img src="assets/img/product_images/<?php echo $image_item?>"></div>
+            <?php
+            }
+            ?>
           </div>
           <div class="swiper-pagination"></div>
         </div>
@@ -20,7 +60,7 @@
       <div class="single-product-infos">
         <div class="single-product-infos-header">
           <div class="single-product-infos-title">
-            <h2> Produit n°1 </h2>
+            <h2><?php echo $prodname ?></h2>
           </div>
           <div class="single-product-infos-stars">
             <div class="single-product-infos-stars-icons">
@@ -35,12 +75,12 @@
             </div>
           </div>
           <div class="single-product-infos-price">
-            <h3> 100€</h3>
+            <h3> <?php echo $price ?>€</h3>
           </div>
         </div>
         <div class="single-product-infos-subheader">
           <div class="single-product-infos-subheader-description">
-            <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam placeat commodi impedit alias libero doloremque minus perspiciatis. Quasi nulla cumque libero vel quaerat. Earum fuga perspiciatis, fugiat id saepe laborum.</p>
+            <p> <?php echo $introduction ?></p>
           </div>
           <div class="single-product-infos-subheader-buttons">
             <form action="add_cart.php" method="POST">
@@ -54,14 +94,26 @@
         </div>
       </div>
     </div>
-    <div class="single-product-description">
-      <div class="single-product-description-title">
-        <h2> Description de l'article </h2>
+    <div class="single-product-double-row">
+      <div class="single-product-description">
+        <div class="single-product-description-title">
+          <h2> Description de l'article </h2>
+        </div>
+        <div class="single-product-description-content">
+          <p> <?php echo $description ?></p>
+        </div>
       </div>
-      <div class="single-product-description-content">
-        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi rem maiores magni eos totam ipsa explicabo praesentium unde voluptatem iusto deserunt perferendis cum, voluptate accusamus, a, earum laboriosam temporibus repudiandae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus vitae enim perferendis cumque quaerat commodi molestiae asperiores libero doloribus fuga ratione laboriosam et quas, architecto at dolor. Aut, illum praesentium.</p>
+      <div class="single-product-perks">
+        <div class="single-product-perks-title">
+          <h2> Caractéristiques du produit </h2>
+        </div>
+        <div class="single-product-perk">
+          <span> Marque </span>
+          <h4><?php echo $brand ?></h4>
+        </div>
       </div>
     </div>
+    
     <div class="single-product-reviews">
       <div class="single-product-reviews-title">
         <h2> Avis du produit </h2>

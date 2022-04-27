@@ -2,7 +2,7 @@
 	
 	session_start();
 
-	include 'functions.php';$
+	include 'functions.php';
 	include 'template/parts/db.php';
 
 	if($_POST['password'] == $_POST['passwordconf']){

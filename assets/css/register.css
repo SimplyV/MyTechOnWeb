@@ -41,9 +41,15 @@ form .input-name-block i {
   margin-left: 12px;
   color: #262626;
 }
+form .input-pseudo {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
 form .input-firstname {
   display: flex;
   flex-direction: column;
+  margin-bottom: 10px;
 }
 form .input-lastname {
   display: flex;
@@ -160,12 +166,10 @@ footer {
   form .input-name-block {
     width: 100%;
     display: flex;
-    justify-content: space-between;
-    flex-direction: row;
   }
   form .input-name-block input {
     margin-top: 10px;
-    width: 220px;
+    width: 100%;
     padding: 10px 35px;
     background: #EDEDED;
     color: black;

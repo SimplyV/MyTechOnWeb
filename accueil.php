@@ -1,8 +1,11 @@
 <?php
 
-
   session_start();
   $title = "Acceuil";
+
+  include 'template/parts/db.php';
+
+
 ?>
 <?php include('template/parts/header.php'); ?>
 <?php include('template/parts/navbar.php');?>
@@ -80,24 +83,16 @@
     <div class="categories-showcase-swiper">
       <div class="swiper popularCatSwiper">
         <div class="swiper-wrapper">
-          <a class="swiper-slide" href="#">
-            <span> Smartphones </span>
-          </a>
-          <a class="swiper-slide">
-            <span> Ordinateur </span>
-          </a>
-          <a class="swiper-slide">
-            <span> Accessoires </span>
-          </a>
-          <a class="swiper-slide">
-            <span> Tablette </span>
-          </a>
-          <a class="swiper-slide">
-            <span> Écran </span>
-          </a>
-          <a class="swiper-slide">
-            <span> Périphériques </span>
-          </a>
+        <?php 
+            $donnees = $bdd->query('SELECT id, name, cover_image FROM category');
+            while ($reponse = $donnees->fetch()){ ?>
+              <a class="swiper-slide" style="background-image: url('assets/img/category_images/<?php echo $reponse['cover_image'] ?>');">
+                <span> <?php echo $reponse['name']?> 
+              </a>
+            <?php 
+          }
+          $donnees->closeCursor();
+        ?>
         </div>
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>

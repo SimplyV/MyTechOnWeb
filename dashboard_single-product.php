@@ -5,6 +5,7 @@
   global $router;
 
   include 'template/parts/header.php';
+  include 'template/parts/db.php';
 ?>
 <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
   <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="<?= $router->generate('page',['pageslug'=> 'accueil']); ?>">MyTechOnWebS</a>
@@ -73,10 +74,14 @@
                 <div class="product-add-category">
                   <label for="name"> Catégorie du produit </label>
                   <select type="text" name="category" required>
-                    <option> 1</option> 
-                    <option> 2</option> 
-                    <option> 3</option> 
-                    <option> 4</option> 
+                    <?php 
+                     $donnees = $bdd->query('SELECT id, name FROM category');
+                     while ($reponse = $donnees->fetch()){ ?>
+                      <option value="<?php echo $reponse['id']; ?>"><?php echo $reponse['name']; ?></option> 
+                    <?php 
+                   }
+                   $donnees->closeCursor();
+                ?>
                   </select>
                 </div>
                 <div class="product-add-price">
@@ -87,6 +92,10 @@
               <div class="product-add-brand">
                 <label for="brand"> Marque </label>
                 <input type="text" name="brand" placeholder="Marque du produit" required>
+              </div>
+              <div class="product-add-description">
+                <label for="introduction"> Introduction du produit </label>
+                <textarea name="introduction" placeholder="Entrez une introduction du produit..." required></textarea>
               </div>
               <div class="product-add-description">
                 <label for="description"> Description du produit </label>
@@ -106,7 +115,7 @@
                           <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )"><i
                               class="fas fa-plus"> </i></button>
                           <div class="image-upload-wrap">
-                            <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" name="image_edit"
+                            <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" name="image_prod"
                               required />
                             <div class="drag-text">
                               <h3>Appuyer sur le bouton + pour ajouter une image</h3>
@@ -128,7 +137,7 @@
                           <button class="file-upload-btn" type="button" onclick="$('.file-upload-input-1').trigger( 'click' )"><i
                               class="fas fa-plus"> </i></button>
                           <div class="image-upload-wrap-1">
-                            <input class="file-upload-input-1" type='file' onchange="readURL1(this);" accept="image/*" name="image_edit"
+                            <input class="file-upload-input-1" type='file' onchange="readURL1(this);" accept="image/*" name="image_prod_1"
                               required />
                             <div class="drag-text">
                               <h3>Appuyer sur le bouton + pour ajouter une image</h3>
@@ -150,7 +159,7 @@
                           <button class="file-upload-btn" type="button" onclick="$('.file-upload-input-2').trigger( 'click' )"><i
                               class="fas fa-plus"> </i></button>
                           <div class="image-upload-wrap-2">
-                            <input class="file-upload-input-2" type='file' onchange="readURL2(this);" accept="image/*" name="image_edit"
+                            <input class="file-upload-input-2" type='file' onchange="readURL2(this);" accept="image/*" name="image_prod_2"
                               required />
                             <div class="drag-text">
                               <h3>Appuyer sur le bouton + pour ajouter une image</h3>

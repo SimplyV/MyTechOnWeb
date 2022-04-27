@@ -15,6 +15,11 @@
       <h2> S'enregistrer </h2>
 
       <div class="input-name-block">
+      <div class="input-pseudo">
+          <label for="pseudo"> Pseudo </label>
+          <input type="text" name="pseudo" placeholder="Entrez votre pseudo" autocomplete="off" required>
+          <i class="fa-solid fa-user"></i>
+        </div>
         <div class="input-firstname">
           <label for="firstname"> Prénom </label>
           <input type="text" name="firstname" placeholder="Entrez votre prénom" autocomplete="off" required>

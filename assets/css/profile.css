@@ -1,276 +1,382 @@
-.profile-title {
+.profil-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
   margin-top: 40px;
-  text-align: center;
 }
-
-.profile-container {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
+.profil-container .profil-navigation {
+  width: 310px;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
 }
-.profile-container .form-container {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-.profile-container form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 90%;
-}
-.profile-container form h2 {
-  font-size: 28px;
-  margin-bottom: 20px;
-}
-.profile-container form .input-name-block, .profile-container form .input-adress-block {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  margin-top: 10px;
-}
-.profile-container form .input-name-block input, .profile-container form .input-adress-block input {
-  margin-top: 5px;
-  width: 100%;
-  padding: 10px 0px 10px 35px;
-  background: #EDEDED;
+.profil-container .profil-navigation a {
   color: black;
-  border: 1px solid black;
-  border-radius: 5px;
-  outline: none;
+  padding: 20px;
+  border-radius: 10px;
+  transition: 0.3s ease-in-out;
 }
-.profile-container form .input-name-block label, .profile-container form .input-adress-block label {
-  font-weight: 600;
-}
-.profile-container form .input-name-block i, .profile-container form .input-adress-block i {
-  position: absolute;
-  margin-top: 38px;
-  margin-left: 12px;
-  color: #262626;
-}
-.profile-container form .input-lastname,
-.profile-container form .input-streetnumber,
-.profile-container form .input-firstname,
-.profile-container form .input-street,
-.profile-container form .input-city,
-.profile-container form .input-zipcode,
-.profile-container form .input-commune {
-  display: flex;
-  flex-direction: column;
-}
-.profile-container form .input-email-block, .profile-container form .input-street-block {
-  margin-top: 10px;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-.profile-container form .input-email-block input, .profile-container form .input-street-block input {
-  margin-top: 5px;
-  width: 100%;
-  padding: 10px 35px;
-  background: #EDEDED;
-  color: black;
-  border: 1px solid black;
-  border-radius: 5px;
-  outline: none;
-}
-.profile-container form .input-email-block label, .profile-container form .input-street-block label {
-  font-weight: 600;
-}
-.profile-container form .input-email-block i, .profile-container form .input-street-block i {
-  position: absolute;
-  margin-top: 38px;
-  margin-left: 12px;
-  color: #262626;
-}
-.profile-container form .input-password-block {
-  margin-top: 10px;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-.profile-container form .input-password-block input {
-  margin-top: 5px;
-  width: 100%;
-  padding: 10px 35px;
-  background: #EDEDED;
-  color: black;
-  border: 1px solid black;
-  border-radius: 5px;
-  outline: none;
-}
-.profile-container form .input-password-block label {
-  font-weight: 600;
-}
-.profile-container form .input-password-block i {
-  position: absolute;
-  margin-top: 38px;
-  margin-left: 12px;
-  color: #262626;
-}
-.profile-container form .input-password-block a {
-  color: black;
-  margin-top: 10px;
-  width: 145px;
-  margin-left: auto;
-  text-decoration: underline;
-}
-.profile-container form .input-password-re-block {
-  margin-top: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-}
-.profile-container form .input-password-re-block a {
-  width: 230px;
-  color: black;
-  text-decoration: underline;
-}
-.profile-container form .button-block {
-  margin-top: 20px;
-  width: 100%;
-}
-.profile-container form .button-block button {
-  width: 100%;
+.profil-container .profil-navigation a.active {
   background: black;
-  border-radius: 5px;
   color: white;
-  outline: none;
-  border: none;
-  padding: 10px 0px;
-  cursor: pointer;
-  transition: 0.5s ease-out;
+  border-radius: 10px;
 }
-.profile-container form .button-block button:hover {
-  opacity: 0.7;
+.profil-container .profil-navigation a:hover {
+  background: rgba(0, 0, 0, 0.829);
+  color: white;
 }
-.profile-container .history-container {
+.profil-container .profil-content {
   width: 90%;
   margin: 0 auto;
   margin-top: 30px;
 }
-.profile-container .history-container .history-item {
-  display: flex;
-  flex-direction: column;
-  background: white;
+.profil-container .profil-content .profil-content-informations {
+  width: 100%;
+  display: none;
 }
-.profile-container .history-container .history-item .history-brand {
-  display: flex;
-  flex-direction: column;
-}
-.profile-container .history-container .history-item .history-brand img {
-  width: 90%;
-  margin: 0 auto;
-  margin-top: 15px;
-}
-.profile-container .history-container .history-item .history-brand span {
-  margin-top: 20px;
-  margin-left: 25px;
-  font-size: 1.3rem;
-}
-.profile-container .history-container .history-item .history-infos {
-  width: 90%;
-  margin: 20px auto;
-  margin-top: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-.profile-container .history-container .history-item .history-infos h4 {
-  font-size: 1.2rem;
-}
-.profile-container .history-container .history-item .history-infos span {
-  font-size: 1.2rem;
-  font-weight: 600;
-}
-.profile-container .history-container .history-item .history-infos .history-infos-brand {
-  margin-top: 20px;
-}
-.profile-container .history-container .history-item .history-infos .history-infos-content {
+.profil-container .profil-content .profil-content-informations form {
   width: 100%;
   display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
+  flex-direction: column;
 }
-
-body.darkmode--activated .form-container form i {
-  color: white;
-}
-
-footer {
+.profil-container .profil-content .profil-content-informations form .profil-content-image {
+  display: flex;
   width: 100%;
+}
+.profil-container .profil-content .profil-content-informations form .profil-content-image .profil-content-image-brand {
+  margin-right: 20px;
+}
+.profil-container .profil-content .profil-content-informations form .profil-content-image .profil-content-image-brand label {
   position: absolute;
-  padding: 30px;
+  z-index: 1;
+  margin-left: 40px;
+  font-size: 1.2rem;
+  width: 200px;
+  height: 50px;
+}
+.profil-container .profil-content .profil-content-informations form .profil-content-image .profil-content-image-brand input {
+  position: absolute;
+  transform: translateX(-1px);
+  width: 56px;
+  height: 50px;
+  opacity: 0;
+  z-index: 1;
+  cursor: pointer;
+}
+.profil-container .profil-content .profil-content-informations form .profil-content-image .profil-content-image-brand img {
+  width: 50px;
+  height: 50px;
+  border-radius: 100px;
+}
+.profil-container .profil-content .profil-content-informations form .profil-content-image .profil-content-image-text span {
+  color: #7a7a7a;
+}
+.profil-container .profil-content .profil-content-informations form .profil-content-name-block {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+}
+.profil-container .profil-content .profil-content-informations form .profil-content-name-block .profil-content-firstname {
+  display: flex;
+  flex-direction: column;
+}
+.profil-container .profil-content .profil-content-informations form .profil-content-name-block .profil-content-firstname input {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border: 1px solid #7a7a7a;
+  background: none;
+  border-radius: 5px;
+  outline: none;
+  padding: 10px 10px;
+}
+.profil-container .profil-content .profil-content-informations form .profil-content-name-block .profil-content-lastname {
+  display: flex;
+  flex-direction: column;
+}
+.profil-container .profil-content .profil-content-informations form .profil-content-name-block .profil-content-lastname input {
+  margin-top: 5px;
+  border: 1px solid #7a7a7a;
+  background: none;
+  border-radius: 5px;
+  outline: none;
+  padding: 10px 10px;
+}
+.profil-container .profil-content .profil-content-informations form .profil-content-email {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5px;
+}
+.profil-container .profil-content .profil-content-informations form .profil-content-email input {
+  margin-top: 5px;
+  border: 1px solid #7a7a7a;
+  background: none;
+  border-radius: 5px;
+  outline: none;
+  padding: 10px 10px;
+}
+.profil-container .profil-content .profil-content-informations form .profil-content-street {
+  display: flex;
+  flex-direction: column;
+}
+.profil-container .profil-content .profil-content-informations form .profil-content-street .profil-content-street-street {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5px;
+}
+.profil-container .profil-content .profil-content-informations form .profil-content-street .profil-content-street-street input {
+  margin-top: 5px;
+  border: 1px solid #7a7a7a;
+  background: none;
+  border-radius: 5px;
+  outline: none;
+  padding: 10px 10px;
+}
+.profil-container .profil-content .profil-content-informations form .profil-content-street .profil-content-street-number {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5px;
+}
+.profil-container .profil-content .profil-content-informations form .profil-content-street .profil-content-street-number input {
+  margin-top: 5px;
+  border: 1px solid #7a7a7a;
+  background: none;
+  border-radius: 5px;
+  outline: none;
+  padding: 10px 10px;
+}
+.profil-container .profil-content .profil-content-informations form .profil-content-city {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5px;
+}
+.profil-container .profil-content .profil-content-informations form .profil-content-city input {
+  margin-top: 5px;
+  border: 1px solid #7a7a7a;
+  background: none;
+  border-radius: 5px;
+  outline: none;
+  padding: 10px 10px;
+}
+.profil-container .profil-content .profil-content-informations form .profil-content-adress-second {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5px;
+}
+.profil-container .profil-content .profil-content-informations form .profil-content-adress-second .profil-content-adress-second-zipcode {
+  display: flex;
+  flex-direction: column;
+}
+.profil-container .profil-content .profil-content-informations form .profil-content-adress-second .profil-content-adress-second-zipcode input {
+  margin-top: 5px;
+  border: 1px solid #7a7a7a;
+  background: none;
+  border-radius: 5px;
+  outline: none;
+  padding: 10px 10px;
+}
+.profil-container .profil-content .profil-content-informations form .profil-content-adress-second .profil-content-adress-second-commune {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5px;
+}
+.profil-container .profil-content .profil-content-informations form .profil-content-adress-second .profil-content-adress-second-commune input {
+  margin-top: 5px;
+  border: 1px solid #7a7a7a;
+  background: none;
+  border-radius: 5px;
+  outline: none;
+  padding: 10px 10px;
+}
+.profil-container .profil-content .profil-content-informations form .profil-submit {
+  margin: 20px 0px;
+}
+.profil-container .profil-content .profil-content-informations form .profil-submit button {
+  width: 100%;
+  outline: none;
+  background: black;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  color: white;
+  cursor: pointer;
+}
+.profil-container .profil-content .profil-content-informations.active {
+  display: flex;
+}
+.profil-container .profil-content .profil-content-orders {
+  display: flex;
+  flex-direction: column;
+  display: none;
+}
+.profil-container .profil-content .profil-content-orders .profil-content-orders-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 20px 0px 40px 0px;
+}
+.profil-container .profil-content .profil-content-orders .profil-content-orders-content .profil-content-order {
+  width: 100%;
+  border: 1px solid #c4c4c4;
+  border-radius: 10px;
+}
+.profil-container .profil-content .profil-content-orders .profil-content-orders-content .profil-content-order .profil-content-order-brand {
+  display: flex;
+  padding: 20px 10px;
+}
+.profil-container .profil-content .profil-content-orders .profil-content-orders-content .profil-content-order .profil-content-order-brand .profil-content-order-brand-image {
+  width: 50px;
+}
+.profil-container .profil-content .profil-content-orders .profil-content-orders-content .profil-content-order .profil-content-order-brand .profil-content-order-brand-image img {
+  width: 50%;
+  height: auto;
+}
+.profil-container .profil-content .profil-content-orders .profil-content-orders-content .profil-content-order .profil-content-order-brand .profil-content-order-brand-name span {
+  color: #7a7a7a;
+}
+.profil-container .profil-content .profil-content-orders .profil-content-orders-content .profil-content-order .profil-content-order-informations {
   display: flex;
   justify-content: space-between;
-  flex-direction: column;
-  align-items: center;
-  background-color: white;
-  margin-top: 100px;
+  margin-top: 20px;
+  border-top: 1px solid #c4c4c4;
+  padding: 10px;
+}
+.profil-container .profil-content .profil-content-orders.active {
+  display: flex;
 }
 
-@media (min-width: 520px) {
-  form {
-    width: 500px;
-  }
-  form .input-name-block, form .input-adress-block {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-  }
-  form .input-name-block input, form .input-adress-block input {
-    margin-top: 10px;
-    width: 220px;
-    padding: 10px 0px 10px 35px;
-    background: #EDEDED;
-    color: black;
-    border: 1px solid black;
-    border-radius: 5px;
-    outline: none;
-  }
-  form .input-name-block i, form .input-adress-block i {
-    margin-top: 45px;
-  }
+.profil-content-wishlist {
+  display: flex;
+  display: none;
+  flex-direction: column;
+  margin-bottom: 20px;
 }
-@media (min-width: 560px) {
-  .profile-container .history-container .history-item {
-    flex-direction: row;
-    justify-content: space-between;
+.profil-content-wishlist .profil-content-wishlist-content {
+  margin-top: 20px;
+  border: 1px solid #c4c4c4;
+  padding: 20px;
+  border-radius: 10px;
+}
+.profil-content-wishlist .profil-content-wishlist-content .profil-content-wishlist-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.profil-content-wishlist .profil-content-wishlist-content .profil-content-wishlist-item .profil-content-wishlist-item-brand {
+  display: flex;
+}
+.profil-content-wishlist .profil-content-wishlist-content .profil-content-wishlist-item .profil-content-wishlist-item-brand .profil-content-wishlist-item-brand-image {
+  width: 50px;
+}
+.profil-content-wishlist .profil-content-wishlist-content .profil-content-wishlist-item .profil-content-wishlist-item-brand .profil-content-wishlist-item-brand-image img {
+  width: 50%;
+  height: auto;
+}
+.profil-content-wishlist .profil-content-wishlist-content .profil-content-wishlist-item .profil-content-wishlist-item-brand .profil-content-wishlist-item-brand-name span {
+  color: #7a7a7a;
+}
+.profil-content-wishlist .profil-content-wishlist-content .profil-content-wishlist-item .profil-content-wishlist-item-button button {
+  padding: 10px 20px;
+  border: 1px solid #c4c4c4;
+  border-radius: 10px;
+  background: none;
+}
+
+.profil-content-wishlist.active {
+  display: flex;
+}
+
+.profil-content-security {
+  display: flex;
+  display: none;
+  flex-direction: column;
+}
+.profil-content-security .profil-content-security-content {
+  margin: 20px 0px 40px 0px;
+}
+.profil-content-security .profil-content-security-content .profil-content-security-password-change {
+  padding-bottom: 30px;
+  border-bottom: 1px solid #7a7a7a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.profil-content-security .profil-content-security-content .profil-content-security-password-change .profil-content-security-password-change-brand span {
+  color: #7a7a7a;
+}
+.profil-content-security .profil-content-security-content .profil-content-security-password-change .profil-content-security-password-change-button button {
+  padding: 10px 20px;
+  border: 1px solid #c4c4c4;
+  border-radius: 10px;
+  outline: none;
+  cursor: pointer;
+  background: none;
+  width: 100px;
+}
+.profil-content-security .profil-content-security-content .profil-content-security-authentification {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.profil-content-security .profil-content-security-content .profil-content-security-authentification .profil-content-security-authentification-brand span {
+  color: #7a7a7a;
+}
+.profil-content-security .profil-content-security-content .profil-content-security-authentification .profil-content-security-authentification-button button {
+  padding: 10px 20px;
+  border: 1px solid #c4c4c4;
+  border-radius: 10px;
+  outline: none;
+  cursor: pointer;
+  background: none;
+  width: 100px;
+}
+
+.profil-content-security.active {
+  display: flex;
+}
+
+@media (min-width: 480px) {
+  .profil-container .profil-navigation {
+    width: 450px;
   }
-  .profile-container .history-container .history-item .history-brand {
-    flex-direction: row;
+  .profil-container .profil-content .profil-content-orders .profil-content-orders-content .profil-content-order .profil-content-order-informations .profil-content-order-informations-content {
+    display: flex;
+    align-items: center;
   }
-  .profile-container .history-container .history-item .history-brand img {
-    margin: 0;
+  .profil-container .profil-content .profil-content-orders .profil-content-orders-content .profil-content-order .profil-content-order-informations .profil-content-order-informations-content h4 {
+    margin-right: 10px;
   }
-  .profile-container .history-container .history-item .history-infos {
-    flex-direction: row;
-    justify-content: space-around;
-    width: 73%;
-    margin: 20px 10px;
-  }
-  .profile-container .history-container .history-item .history-infos .history-infos-content {
-    flex-direction: column;
-    align-items: flex-end;
+  .profil-container .profil-content .profil-content-orders .profil-content-orders-content .profil-content-order .profil-content-order-informations .profil-content-order-informations-content span {
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 30px;
   }
 }
 @media (min-width: 768px) {
-  footer {
-    flex-direction: row;
-    bottom: 0;
-    margin-top: 0px;
+  .profil-container .profil-navigation {
+    width: 720px;
   }
 }
-@media (min-width: 1240px) {
-  .profile-container {
+@media (min-width: 960px) {
+  .profil-container {
+    width: 80%;
     display: flex;
     flex-direction: row;
+    margin: 0 auto;
+    margin-top: 40px;
+    gap: 40px;
   }
-  .profile-container .history-container {
-    margin-right: 20px;
+  .profil-container .profil-navigation {
+    width: 220px;
+    display: flex;
+    flex-direction: column;
+  }
+  .profil-container .profil-content {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
   }
 }/*# sourceMappingURL=profile.css.map */

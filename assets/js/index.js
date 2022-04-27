@@ -229,33 +229,7 @@ darkmode.showWidget();
         $box.prop("checked", false);
       }
     });
-
-    // Disable form when using profile adress
-    $(' .input-name-block').hide();
-    $('.check-adress-content .input-email-block').hide();
-    $('.check-adress-content .input-street-block').hide();
-    $('.check-adress-content .input-adress-block').hide();
-    $("#checkbox").click(function(){
-      if($(this).is(":checked")){
-        $('.check-adress-content .input-name-block').show();
-        $('.check-adress-content .input-email-block').show();
-        $('.check-adress-content .input-street-block').show();
-        $('.check-adress-content .input-adress-block').show();
-        $(".check-adress-content .check_form").attr("required", "required");
-        $(".check-adress .check-adress-card").hide();
-
-      }
-      else{
-        $(".check-adress-content .check_form").removeAttr("required");
-        $('.check-adress-content .input-name-block').hide();
-        $('.check-adress-content .input-email-block').hide();
-        $('.check-adress-content .input-street-block').hide();
-        $('.check-adress-content .input-adress-block').hide();
-        $(".check-adress .check-adress-card").show();
-      }
-    })
-   
-
+    
     // Filters show by toggle
   
 
@@ -284,38 +258,61 @@ darkmode.showWidget();
 
 
    // Range slide with filters
-    var price_slider = document.querySelector('.price-slider');
-    noUiSlider.create(price_slider, {
-      start: [0, 5000],
-      connect: true,
-      step: 10,
-      range: {
-        'min': 0,
-        'max': 5000
+  
+
+     // Updating the input number with price_slider range
+
+     $(document).ready(function() {
+      if (window.location.pathname == '/MyTechOnWebS/products_list'){
+        var price_slider = document.querySelector('.price-slider');
+        noUiSlider.create(price_slider, {
+          start: [0, 5000],
+          connect: true,
+          step: 10,
+          range: {
+            'min': 0,
+            'max': 5000
+          }
+        })
+        var inputPriceNumberMin = document.getElementById('number_price_min');
+        var inputPriceNumberMax = document.getElementById('number_price_max');
+        price_slider.noUiSlider.on('update', function(values, handle){
+          var value = values[handle];
+          if(handle){
+            inputPriceNumberMax.value = Math.round(value);
+          }
+          else{
+            inputPriceNumberMin.value = Math.round(value);
+          }
+        });
+        inputPriceNumberMin.addEventListener('change', function(){
+          price_slider.noUiSlider.set([this.value, null]);
+        });
+        inputPriceNumberMax.addEventListener('change', function(){
+          price_slider.noUiSlider.set([null, this.value]);
+        });
+
       }
     })
 
-     // Updating the input number with price_slider range
-    var inputPriceNumberMin = document.getElementById('number_price_min');
-    var inputPriceNumberMax = document.getElementById('number_price_max');
-    price_slider.noUiSlider.on('update', function(values, handle){
-      var value = values[handle];
-      if(handle){
-        inputPriceNumberMax.value = Math.round(value);
-      }
-      else{
-        inputPriceNumberMin.value = Math.round(value);
-      }
-    });
-    inputPriceNumberMin.addEventListener('change', function(){
-      price_slider.noUiSlider.set([this.value, null]);
-    });
-    inputPriceNumberMax.addEventListener('change', function(){
-      price_slider.noUiSlider.set([null, this.value]);
-    });
    
-    // Display image on single-product dashboard
-    
+   
+    // Profile navigation
 
+   $('.profil-navigation a').click(function(){
+      $('.profil-navigation a').removeClass('active');
+      $(this).addClass('active');
+
+      var destination = $(this).attr('href');
+      var destination_final = destination.substring(1, destination.length);
+
+      $('.profil-content .active').removeClass('active');
+      var content = $('.profil-content').find('div[id='+destination_final+']');
+      $(content).addClass('active');
+
+
+
+   });
+    
 
  });
