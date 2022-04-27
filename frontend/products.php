@@ -1,6 +1,5 @@
 <?php 
 
-  session_start();
   $title = "Nos produits";
 
 ?>
@@ -78,6 +77,3 @@
 
   </div>
 </div>
-
- 
-<?php include('template/parts/footer.php'); ?>

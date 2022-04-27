@@ -1,9 +1,5 @@
 <?php 
 
-	session_start();
-
-	include 'template/parts/db.php';
-	
 	$donnees = $bdd->query('SELECT email FROM users');
 
 

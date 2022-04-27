@@ -11,7 +11,7 @@
 <?php include('template/parts/navbar.php');?>
 
 <div class="form-container">
-    <form action="login_data.php" method="POST" id="login-form">
+    <form action="<?= $router->generate('login'); ?>" method="POST" id="login-form">
 
       <h2> Se connecter </h2>
 
