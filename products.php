@@ -4,9 +4,6 @@
 
 ?>
 
-<?php include('template/parts/header.php'); ?>
-<?php include('template/parts/navbar.php'); ?>
-
 <div class="cat-prod-header">
   <h1> Nos produits </h1>
 </div>
@@ -46,7 +43,7 @@
   $donnees->closeCursor();
   ?>
     </div>
-      
+</div>
       
         
     
@@ -70,6 +67,7 @@
   }
   $donnees->closeCursor();
   ?>
+
     
    
   

@@ -1,9 +1,5 @@
 <?php 
 
-  session_start();
-  $title = "Dashboard";
-  global $router;
-
   include 'template/parts/header.php';
 ?>
 <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">

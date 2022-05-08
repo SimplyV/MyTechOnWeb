@@ -1,11 +1,8 @@
 <?php
 
-  session_start();
   $title = "Contact";
 
 ?>
-<?php include('template/parts/header.php'); ?>
-<?php include('template/parts/navbar.php');?>
 
   <div class="contact-container">
     <div class="contact-brand">
@@ -63,5 +60,3 @@
     </div>  
   </div>
 
-
-<?php include('template/parts/footer.php'); ?>

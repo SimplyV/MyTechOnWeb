@@ -1,14 +1,9 @@
 <?php 
-  session_start();
   $title = "Se connecter" ;
   // if(isset($_SESSION['verify']) == true){
 	// 	header('Location: index.php');
 	// } 
   ?>
-
-
-<?php include('template/parts/header.php'); ?>
-<?php include('template/parts/navbar.php');?>
 
 <div class="form-container">
     <form action="<?= $router->generate('login'); ?>" method="POST" id="login-form">
@@ -34,6 +29,3 @@
   </div>
 
 
-
-
-<?php include('template/parts/footer.php'); ?>

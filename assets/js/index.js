@@ -1,5 +1,3 @@
- // Menu mobile
-
  function showMobileMenu() {
    var x = document.getElementById("mb-container");
    if (x.style.display === "flex") {
@@ -103,6 +101,16 @@ darkmode.showWidget();
     },
     pagination: {
       el: ".swiper-pagination",
+    },
+  });
+
+  var swiper = new Swiper(".swiperTestimonials", {
+    slidesPerView: "auto",
+    centeredSlides: true,
+    spaceBetween: 30,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
     },
   });
 

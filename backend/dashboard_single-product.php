@@ -192,4 +192,4 @@
   </div>
 </div>
 
-<script src="assets/js/form-image.js"></script>
+<script src="../assets/js/form-image.js"></script>

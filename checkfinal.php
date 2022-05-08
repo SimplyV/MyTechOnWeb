@@ -2,8 +2,6 @@
   session_start();
   $title = "Étape finale";
 ?>
-<?php include('template/parts/header.php'); ?>
-<?php include('template/parts/navbar.php'); ?>
 
 <div class="check-container">
   <form action="checkout_process.php" method="POST">
@@ -143,5 +141,3 @@
   
   </form>
 </div>
-
-<?php include('template/parts/footer.php'); ?>

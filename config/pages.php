@@ -2,7 +2,7 @@
 
 $pages = [];
 $pages['products'] = [
-  'title' => 'Nos produits',
+  'title' => ['Nos produits'],
   'css' => [
     'assets/css/products.css'
   ]
@@ -37,7 +37,7 @@ $pages['checkout'] = [
     'assets/css/check.css'
   ]
 ];
-$pages['products_list'] = [
+$pages['productslist'] = [
   'title' => 'Listing des produits',
   'css' => [
     'assets/css/listing_product.css',
@@ -47,10 +47,15 @@ $pages['products_list'] = [
     'node_modules/nouislider/dist/nouislider.min.js'
   ]
 ];
+$pages['singleproduct'] = [
+  'title' => 'Page produit',
+  'css' => [
+    'assets/css/single_product.css'
+  ] 
+];
 $pages['dashboard'] = [
   'title' => 'Dashboard',
   'css' => [
-    'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css',
     'assets/css/dashboard.css',
   ],
   'cssWithOptions' => [

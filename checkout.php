@@ -5,10 +5,6 @@
 
   ?>
 
-
-<?php include('template/parts/header.php'); ?>
-<?php include('template/parts/navbar.php'); ?>
-
 <div class="wrapper">
 
     <div class="check-container-title">
@@ -98,6 +94,4 @@
   </div>
  
 </div>
-
-<?php include('template/parts/footer.php'); ?>
 

@@ -6,11 +6,9 @@
 	// } 
   $title ="S'enregistrer"; 
 ?> 
-<?php include('template/parts/header.php'); ?>
-<?php include('template/parts/navbar.php');?>
 
   <div class="form-container">
-    <form action="register_data.php" method="POST" enctype="multipart/form-data" id="register-form">
+    <form action="<?= $router->generate('register'); ?>" method="POST" enctype="multipart/form-data" id="register-form">
 
       <h2> S'enregistrer </h2>
 
@@ -62,5 +60,3 @@
       </div>
     </form>
   </div>
-
-<?php include('template/parts/footer.php'); ?>

@@ -1,8 +1,6 @@
 <?php
-  session_start();
   $title = "Page produit";
 
-  include 'template/parts/db.php';
 
   if(!empty($_GET['prod_id'])){
     $product = $_GET['prod_id'];
@@ -38,8 +36,6 @@
     header('Location: 404');
   }
 ?>
-<?php include('template/parts/header.php'); ?>
-<?php include('template/parts/navbar.php'); ?>
 
 <div class="single-product-container">
     <div class="single-product-main">
@@ -213,5 +209,3 @@
   </div>
 </div>
 
-
-<?php include('template/parts/footer.php'); ?>

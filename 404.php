@@ -1,8 +1,4 @@
 <?php 
-
-  session_start();
-  $title = "404 Not found";
-
   include 'template/parts/header.php';
 ?>
 

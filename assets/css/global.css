@@ -296,6 +296,79 @@ html, body {
   background: black !important;
 }
 
+.home-about {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+.home-about .home-about-image {
+  width: 80%;
+  margin: 0 auto;
+}
+.home-about .home-about-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+.home-about .home-about-text {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+
+.home-testimonials {
+  width: 100%;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+.home-testimonials .home-testimonials-title {
+  width: 80%;
+  margin: 0 auto;
+}
+.home-testimonials .home-testimonials-title h2 {
+  text-align: center;
+}
+.home-testimonials .swiper.swiperTestimonials {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 30px;
+  padding-bottom: 40px;
+}
+.home-testimonials .swiper.swiperTestimonials .swiper-slide {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.home-testimonials .swiper.swiperTestimonials .swiper-slide img {
+  width: 120px;
+  height: 120px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 100%;
+  margin-bottom: 20px;
+}
+.home-testimonials .swiper.swiperTestimonials .swiper-slide p {
+  text-align: left;
+}
+.home-testimonials .swiper.swiperTestimonials .swiper-pagination {
+  position: absolute;
+  bottom: 0;
+}
+.home-testimonials .swiper.swiperTestimonials .swiper-pagination .swiper-pagination-bullet {
+  background-color: white;
+  border: 1px solid black;
+  padding: 6px;
+  opacity: 1;
+}
+.home-testimonials .swiper.swiperTestimonials .swiper-pagination .swiper-pagination-bullet-active {
+  background: black;
+}
+
 footer {
   width: 100%;
   position: absolute;
@@ -436,5 +509,16 @@ body.darkmode--activated footer .footer-links .footer-links-fastlinks a {
   }
   footer .footer-links-fastlinks a {
     margin-top: 5px;
+  }
+}
+@media (min-width: 1240px) {
+  .home-about {
+    flex-direction: row;
+    width: 80%;
+    margin: 80px auto 20px auto;
+    gap: 30px;
+  }
+  .home-about .home-about-text h2 {
+    margin-bottom: 20px;
   }
 }/*# sourceMappingURL=global.css.map */

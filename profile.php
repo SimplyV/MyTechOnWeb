@@ -21,8 +21,6 @@
   $title = "Mon profil";
 
 ?>
-<?php include('template/parts/header.php'); ?>
-<?php include('template/parts/navbar.php');?>
 
   <div class="profil-container">
     <div class="profil-navigation">
@@ -169,7 +167,3 @@
     </div>
   </div>
 
-
-
-
-<?php include('template/parts/footer.php'); ?>

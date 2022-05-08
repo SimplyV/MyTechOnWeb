@@ -11,6 +11,7 @@
 
     $router->map('GET', '/', 'accueil','home');
     $router->map('POST', '/connect', 'login_data','login');
+    $router->map('POST', '/registeruser', 'register_data','register');
     $router->map('GET', '/backend/[*:backendslug]', 'backend','backend');
     //$router->map('GET', '/login', 'login','login');
     $router->map('GET', '/[a:pageslug]', 'page','page');
@@ -21,9 +22,10 @@
       die('Erreur : '.$e->getMessage());
     }
 
+
     $isFrontend = true;
 
-    if( is_array($match)  ) {
+    if(is_array($match)) {
       $attempt = null;
       if(isset($match['params']['pageslug'])){
         $attempt = $match['params']['pageslug'];
@@ -40,6 +42,7 @@
     $attempt .= '.php';
     if(!file_exists($attempt)){
       $attempt = '404.php';
+      $isFrontend = false;
     }
 
     if($isFrontend){
@@ -53,4 +56,7 @@
       require('template/parts/footer.php');
     }
 ?>
+
+
+
 

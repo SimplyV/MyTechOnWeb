@@ -1,6 +1,5 @@
 <?php 
 
-  session_start();
   if(!empty($_GET['categories'])){
     $categories = $_GET['categories'];
 
@@ -15,16 +14,8 @@
         $catname = $reponse["name"];
     }
   }
-  $title = "Listing des produits";
-
-  include 'template/parts/db.php';
-
  
-
-
 ?>
-<?php include('template/parts/header.php'); ?>
-<?php include('template/parts/navbar.php'); ?>
 
 <div class="product-list-header">
   <h1><?php if(!empty($catname)){echo $catname;} ?></h1>
@@ -111,5 +102,3 @@
   </div>
 </div>
 
-
-<?php include('template/parts/footer.php'); ?>
