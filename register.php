@@ -1,14 +1,16 @@
 <?php 
-  session_start();
-
-  // if(isset($_SESSION['verify']) == true){
-	// 	header('Location: index.php');
-	// } 
-  $title ="S'enregistrer"; 
+  if(isset($_SESSION['verify']) && !empty($_SESSION['verify'])){
+    if($_SESSION['verify'] == true){
+      header('Location: accueil');
+    }	
+	} 
+  if(!isset($_SESSION['passwordconferror']) && empty($_SESSION['passwordconferror'])){
+    $_SESSION['passwordconferror'] = false;
+  }
 ?> 
 
   <div class="form-container">
-    <form action="<?= $router->generate('register'); ?>" method="POST" enctype="multipart/form-data" id="register-form">
+    <form action="<?= $router->generate('register'); ?>" method="POST" id="register-form">
 
       <h2> S'enregistrer </h2>
 
@@ -40,19 +42,20 @@
           <label for="password"> Mot de passe </label>
           <input type="password" name="password" placeholder="Entrez votre mot de passe" autocomplete="off" required>
           <i class="fa-solid fa-lock"></i>
+        
       </div>
 
       <div class="input-password-block">
           <label for="passwordconf"> Confirmation de votre mot de passe  </label>
           <input type="password" name="passwordconf" placeholder="Entrez à nouveau votre mot de passe" autocomplete="off" required>
           <i class="fa-solid fa-lock"></i>
-          <a href="login.php"> J'ai déja un compte </a>
+          <a href="<?= $router->generate('page',['pageslug'=> 'login']); ?>"> J'ai déja un compte </a>
       </div>
-      <?php if($_SESSION['passwordconferror' === true]){
+      <?php if($_SESSION['passwordconferror'] == true){
           echo '<div class="password-conf-error">';
           echo '<span> Les mots de passe ne correspondent pas </span>';
           echo '</div>';
-      }
+          }
       ?>
 
       <div class="button-block">

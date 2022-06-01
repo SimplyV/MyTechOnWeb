@@ -5,7 +5,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href="assets/css/global.css">
   <?php 
 
     require 'config/pages.php';
@@ -14,6 +13,12 @@
     if($uriSegments[2] == 'backend'){
       $curPageName = 'dashboard';
     }
+    if($curPageName == 'dashboard'){
+      echo '<link rel="stylesheet" href="../assets/css/global.css">';
+    } else{
+      echo '<link rel="stylesheet" href="assets/css/global.css">';
+    }
+    
 
     if(isset($pages[''.$curPageName.'']['title']) && !empty($pages[''.$curPageName.'']['title'])){
       $title = $pages[''.$curPageName.'']['title'];
@@ -23,7 +28,10 @@
         if($curPageName == 'dashboard'){
           echo '<link rel="stylesheet" href="../'.$cssLink.'">';
         }
-        echo '<link rel="stylesheet" href="'.$cssLink.'">';
+        else{
+          echo '<link rel="stylesheet" href="'.$cssLink.'">';
+        }
+       
       }
     } 
     if(isset($pages[''.$curPageName.'']['cssWithOptions']) && !empty($pages[''.$curPageName.'']['cssWithOptions'])){

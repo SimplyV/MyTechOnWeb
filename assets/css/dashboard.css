@@ -20,6 +20,21 @@
   box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.1);
 }
 
+.row-tr td:not(:nth-child(5)) {
+  padding-top: 10px;
+}
+
+.row-tr td:nth-child(5) {
+  display: flex;
+  flex-direction: row;
+}
+
+.row-tr td:nth-child(5) a button {
+  background: #222;
+  border: 1px solid black;
+  margin-right: 10px;
+}
+
 @media (max-width: 767.98px) {
   .sidebar {
     top: 5rem;
@@ -155,21 +170,22 @@ html, body {
   border-radius: 5px;
   outline: none;
 }
-.product-add-container form .product-add-col .product-add-brand {
+.product-add-container form .product-add-col .product-add-perks {
   display: flex;
   flex-direction: column;
   margin-top: 10px;
 }
-.product-add-container form .product-add-col .product-add-brand label {
+.product-add-container form .product-add-col .product-add-perks label {
   font-weight: 600;
   font-size: 1.1rem;
 }
-.product-add-container form .product-add-col .product-add-brand input {
+.product-add-container form .product-add-col .product-add-perks textarea {
   margin-top: 10px;
   padding: 10px;
   border: 1px solid black;
   border-radius: 5px;
   outline: none;
+  height: 250px;
 }
 .product-add-container form .product-add-col .product-add-description {
   display: flex;

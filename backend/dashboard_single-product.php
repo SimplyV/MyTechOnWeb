@@ -1,12 +1,3 @@
-<?php 
-
-  session_start();
-  $title = "Dashboard";
-  global $router;
-
-  include 'template/parts/header.php';
-  include 'template/parts/db.php';
-?>
 <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
   <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="<?= $router->generate('page',['pageslug'=> 'accueil']); ?>">MyTechOnWebS</a>
   <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,49 +13,14 @@
 
 <div class="container-fluid">
   <div class="row">
-    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
-      <div class="position-sticky pt-3">
-        <ul class="nav flex-column">
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="<?= $router->generate('page',['pageslug'=> 'dashboard']);?>">
-              <span data-feather="home"></span>
-              Dashboard
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="<?= $router->generate('page',['pageslug'=> 'dashboard_orders']);?>">
-              <span data-feather="file"></span>
-              Commandes
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="<?= $router->generate('page',['pageslug'=> 'dashboard_products']);?>">
-              <span data-feather="shopping-cart"></span>
-              Produits
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="<?= $router->generate('page',['pageslug'=> 'dashboard_users']);?>">
-              <span data-feather="users"></span>
-              Clients
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="<?= $router->generate('page',['pageslug'=> 'dashboard_reviews']);?>">
-              <span data-feather="bar-chart-2"></span>
-              Avis produits
-            </a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+    <?php include 'includes/backend-nav.php'; ?>
 
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2"> Ajouter un produit  </h1>   
       </div>
       <div class="product-add-container">
-          <form action="add_product.php" method="POST" enctype="multipart/form-data">
+          <form action="<?= $router->generate('addproduct'); ?>" method="POST" enctype="multipart/form-data">
             <div class="product-add-col">
                 <div class="product-add-name">
                   <label for="name"> Nom du produit </label>
@@ -89,9 +45,9 @@
                   <input type="number" name="price" placeholder="0" required>
                 </div>
               </div>
-              <div class="product-add-brand">
-                <label for="brand"> Marque </label>
-                <input type="text" name="brand" placeholder="Marque du produit" required>
+              <div class="product-add-perks">
+                <label for="brand"> Caractéristiques </label>
+                <textarea type="text" name="brand" placeholder="Caractéristiques du produit" required></textarea>
               </div>
               <div class="product-add-description">
                 <label for="introduction"> Introduction du produit </label>

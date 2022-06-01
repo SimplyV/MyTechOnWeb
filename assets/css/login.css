@@ -75,6 +75,7 @@ body.darkmode--activated .form-container form i {
 
 footer {
   width: 100%;
+  margin-top: 185px;
   position: absolute;
   padding: 30px;
   display: flex;
@@ -82,7 +83,6 @@ footer {
   flex-direction: column;
   align-items: center;
   background-color: white;
-  margin-top: 600px;
 }
 
 @media (min-width: 520px) {
@@ -95,6 +95,5 @@ footer {
     flex-direction: row;
     margin-top: 215px;
     bottom: 0;
-    margin-top: 0;
   }
 }/*# sourceMappingURL=login.css.map */

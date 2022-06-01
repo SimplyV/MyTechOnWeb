@@ -6,9 +6,9 @@
 	$verify= null;
 	while ($reponse = $donnees->fetch()){
 		if ($_POST['email'] == $reponse['email']){
-			$donnees = $bdd->query('SELECT passworduser FROM users WHERE email= \''.$reponse["email"].'\'');
+			$donnees = $bdd->query('SELECT password FROM users WHERE email= \''.$reponse["email"].'\'');
 			while ($reponse = $donnees->fetch()){
-				if ($_POST['password'] == $reponse['passworduser'] ){
+				if ($_POST['password'] == $reponse['password'] ){
 				$verify = true;
 				}
 				else{
@@ -37,11 +37,11 @@
 			$_SESSION['lastname'] = $reponse['lastname'];
 			$_SESSION['pseudo'] = $reponse['pseudo'];
 			$_SESSION['email'] = $reponse['email'];
-			$_SESSION['street'] = $reponse['user_street'];
-			$_SESSION['street_number'] = $reponse['user_street_number'];
-			$_SESSION['city'] = $reponse['user_city'];
-			$_SESSION['commune'] = $reponse['user_commune'];
-			$_SESSION['zipcode'] = $reponse['user_zipcode'];
+			$_SESSION['street'] = $reponse['street'];
+			$_SESSION['street_number'] = $reponse['street_number'];
+			$_SESSION['city'] = $reponse['city'];
+			$_SESSION['commune'] = $reponse['commune'];
+			$_SESSION['zipcode'] = $reponse['zipcode'];
 		}
 		header('Location: accueil');
 		

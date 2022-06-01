@@ -71,7 +71,7 @@
 }
 .single-product-container .single-product-main .single-product-infos .single-product-infos-subheader .single-product-infos-subheader-favorite button {
   padding: 15px 20px;
-  width: 220px;
+  width: 250px;
   background: white;
   border: none;
   border-radius: 5px;
@@ -81,6 +81,10 @@
   cursor: pointer;
   font-size: 1.05rem;
   box-shadow: 0 0 9px 1px rgb(225, 225, 225);
+}
+.single-product-container .single-product-main .single-product-infos .single-product-infos-subheader .single-product-infos-subheader-favorite button.active {
+  background: red;
+  color: white;
 }
 .single-product-container .single-product-double-row {
   display: flex;

@@ -1,12 +1,6 @@
 <?php
-  global $router;
-
-  try{
-    $bdd = new PDO('mysql:host=localhost;dbname=MyTechOnWeb;charset=utf8', 'root', 'root');
-  }
-
-  catch(Exception $e){
-    die('Erreur : '.$e->getMessage());
+  if(!isset($_SESSION['verify']) && empty($_SESSION['verify'])){
+    $_SESSION['verify'] = false;
   }
 
 ?>
@@ -21,11 +15,7 @@
       <a href="<?= $router->generate('page',['pageslug'=> 'contact']); ?>"> Contact </a>
       <button class="user-btn"><a href="login"><i class="fas fa-user"></i> Se connecter </a></button>
       <div class="checkcart">
-        <button class="cart-btn"><a href="<?= $router->generate('page',['pageslug'=> 'checkout']); ?>"><i class="fas fa-shopping-cart"></i></a></button>
-        <?php if($_SESSION['cart']['product_number'] > 0){
-         echo ' <span> 0 </span>';
-        } ?>
-        
+        <button class="cart-btn"><a href="<?= $router->generate('page',['pageslug'=> 'checkout']); ?>"><i class="fas fa-shopping-cart"></i></a></button>        
       </div>
     </div>
     <div class="navbar-links-mb-button">
@@ -58,10 +48,6 @@
       </div>
       <div class="checkcart">
         <button class="cart-btn"><a href="<?= $router->generate('page',['pageslug'=> 'checkout']); ?>"><i class="fas fa-shopping-cart"></i></a></button>
-        <?php if($_SESSION['cart']['product_number'] > 0){
-         echo ' <span> 0 </span>';
-        } ?>
-        
       </div>
      
     </div>

@@ -262,16 +262,23 @@
     padding: 20px;
     border-radius: 10px;
     .profil-content-wishlist-item{
+      &:not(:last-child){
+        border-bottom: 1px solid #c4c4c4;
+      }
       display: flex;
       justify-content: space-between;
       align-items: center;
+      padding: 20px 0px;
       .profil-content-wishlist-item-brand{
         display: flex;
+        align-items: center;
         .profil-content-wishlist-item-brand-image{
-          width: 50px;
+          width: 100px;
           img{
-            width: 50%;
-            height: auto;
+            width: 75%;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 5px;
           }
         }
         .profil-content-wishlist-item-brand-name{
@@ -387,6 +394,7 @@
       width: 720px;
     }
   }
+
 }
 @media(min-width: 960px){
   .profil-container{
@@ -407,6 +415,10 @@
       flex-direction: column;
       margin: 0;
     }
+  } 
+}
+@media(min-width: 1024px){
+  footer{
+    bottom: 0;
   }
 }
-

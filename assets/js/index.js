@@ -27,19 +27,6 @@ darkmode.showWidget();
 
  jQuery(document).ready(function ($) {
 
-   // Swiper featured products
-
-   var swiper = new Swiper(".featuredSwiper", {
-     pagination: {
-       el: ".swiper-pagination"
-     },
-     autoplay: true,
-     mousewheel: {
-       'forceToAxis': true,
-       'invert': false,
-     },
-   });
-
    // Swiper popular products
 
    var swiper = new Swiper(".popularProdSwiper", {
@@ -108,6 +95,9 @@ darkmode.showWidget();
     slidesPerView: "auto",
     centeredSlides: true,
     spaceBetween: 30,
+    autoplay: {
+      delay: 5000
+    },
     pagination: {
       el: ".swiper-pagination",
       clickable: true,
@@ -227,10 +217,10 @@ darkmode.showWidget();
   
 
    // One checkbox at the time 
-    $("input:checkbox").on('click', function() {
+    $("input:radio").on('click', function() {
       var $box = $(this);
       if ($box.is(":checked")) {
-        var group = "input:checkbox[name='" + $box.attr("name") + "']";
+        var group = "input:radio[data-name='" + $box.attr("data-name") + "']";
         $(group).prop("checked", false);
         $box.prop("checked", true);
       } else {
@@ -261,9 +251,6 @@ darkmode.showWidget();
       $('.product-list-content-items').width("100%");
     }
     
-   // Favorite check with a IDs
-
-
 
    // Range slide with filters
   
@@ -318,9 +305,13 @@ darkmode.showWidget();
       var content = $('.profil-content').find('div[id='+destination_final+']');
       $(content).addClass('active');
 
-
-
    });
-    
+
+   // Disable form when checking 
+
+   $('.switch input').on('click', function(e){
+    $('.check-container-form input:not(.check-container-useadress-switch input)').toggleClass('disabled');
+   });
+  
 
  });

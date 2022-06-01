@@ -1,5 +1,4 @@
 <?php 
-  $title = "Se connecter" ;
   // if(isset($_SESSION['verify']) == true){
 	// 	header('Location: index.php');
 	// } 
@@ -19,11 +18,11 @@
           <label for="password"> Mot de passe </label>
           <input type="password" name="password" placeholder="Entrez votre mot de passe" autocomplete="off" required>
           <i class="fa-solid fa-lock"></i>
-          <a href="register.php"> Vous n'avez pas de compte ?</a>
+          <a href="<?= $router->generate('page',['pageslug'=> 'register']); ?>"> Vous n'avez pas de compte ?</a>
         </div>
 
       <div class="button-block">
-        <button type="submit"> M'enregistrer </button>
+        <button type="submit"> Se connecter </button>
       </div>
     </form>
   </div>

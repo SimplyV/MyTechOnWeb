@@ -160,7 +160,8 @@ footer{
   flex-direction: column;
   align-items: center;
   background-color: white;
-  margin-top: 600px;
+  margin-top: 185px;
+  bottom: 0;
 }
 @media(min-width: 520px){
   form{
@@ -190,7 +191,6 @@ footer{
 @media(min-width: 768px){
   footer{
     flex-direction: row;
-    bottom: 0;
-    margin-top: 0px;
+    margin-top: 54px;
   }
 }

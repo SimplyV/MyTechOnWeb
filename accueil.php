@@ -1,23 +1,16 @@
+<?php
 
-  <div class="featured-product-swiper">
-    <div class="swiper featuredSwiper">
-      <div class="swiper-wrapper">
-        <a class="swiper-slide" href="#">
-          
-        </a>
-        <div class="swiper-slide">
-          Slide 2
-        </div>
-        <div class="swiper-slide">
-          Slide 3
-        </div>
-        <div class="swiper-slide">
-          Slide 4
-        </div>
-        <div class="swiper-slide">
-          Slide 5
-        </div>
-      </div>
+  $donnees = $bdd->query('SELECT * from products LIMIT 5');
+ 
+
+?>
+  <div class="featured-product-header">
+    <div class="featured-prod-text">
+      <h1> Bienvenue sur <br><b>MyTechOnWebS.</b></h1>
+      <p> Vous retrouverez ici un large assortiment de produits éléctroniques.</p>
+    </div>
+    <div class="featured-prod-img">
+      <img src="assets/img/utilities/header-section.svg">
     </div>
   </div>
 
@@ -28,36 +21,18 @@
     <div class="products-showcase-swiper">
       <div class="swiper popularProdSwiper">
         <div class="swiper-wrapper">
-          <a class="swiper-slide" href="#">
+          <?php 
+          $donnees = $bdd->query('SELECT * from products LIMIT 6'); 
+          while($reponse = $donnees->fetch()){
+          $imageFilename = getFiles('assets/img/product_images/'.$reponse['id'].'');
+          ?>
+          <a class="swiper-slide" href="singleproduct?prod_id=<?php echo $reponse['id'] ?>" style="background-image: url('assets/img/product_images/<?php echo $reponse['id'] ?>/<?php echo $imageFilename['3'];?>')">
             <div>
-              <span> Article °1 </span>
+              <span><?php echo $reponse['name'] ?> </span>
             </div>
           </a>
-          <a class="swiper-slide">
-            <div>
-                <span> Article °1 </span>
-              </div>
-            </a>
-          <a class="swiper-slide">
-            <div>
-                <span> Article °1 </span>
-              </div>
-            </a>
-          <a class="swiper-slide">
-            <div>
-                <span> Article °1 </span>
-              </div>
-            </a>
-          <a class="swiper-slide">
-            <div>
-                <span> Article °1 </span>
-              </div>
-            </a>
-          <a class="swiper-slide">
-            <div>
-                <span> Article °1 </span>
-            </div>
-          </a>
+          <?php }?>
+          
         </div>
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
@@ -73,10 +48,11 @@
       <div class="swiper popularCatSwiper">
         <div class="swiper-wrapper">
         <?php 
-            $donnees = $bdd->query('SELECT id, name, cover_image FROM category');
+            $donnees = $bdd->query('SELECT id, name FROM category');
             while ($reponse = $donnees->fetch()){ ?>
-              <a class="swiper-slide" style="background-image: url('assets/img/category_images/<?php echo $reponse['cover_image'] ?>');">
-                <span> <?php echo $reponse['name']?> 
+            <?php $imageFilename = getFiles('assets/img/category_images/'.$reponse['id'].''); ?>
+              <a href="productslist?cat=<?php echo $reponse['id'] ?>"class="swiper-slide" style="background-image: url('assets/img/category_images/<?php echo $reponse['id']?>/<?php echo $imageFilename['4'] ?>');">
+                <span> <?php echo $reponse['name']?> </span>
               </a>
             <?php 
           }
@@ -91,7 +67,7 @@
 
   <div class="home-about">
     <div class="home-about-image">
-      <img src="assets/img/about.jpg" alt="">
+      <img src="assets/img/utilities/about.jpg" alt="">
     </div>
     <div class="home-about-text">
       <h2> À propos</h2>
@@ -106,23 +82,23 @@
       <div class="swiper swiperTestimonials">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
-            <img src="assets/img/avatar1.jpg" alt="">
+            <img src="assets/img/utilities/avatar1.jpg" alt="">
             <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam quaerat harum iure pariatur praesentium asperiores quidem, ipsum voluptatum voluptas, animi ab veritatis. Vitae cum, rerum deleniti incidunt nisi corrupti esse!</p>
           </div>
           <div class="swiper-slide">
-            <img src="assets/img/avatar2.jpg" alt="">
+            <img src="assets/img/utilities/avatar2.jpg" alt="">
             <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam quaerat harum iure pariatur praesentium asperiores quidem, ipsum voluptatum voluptas, animi ab veritatis. Vitae cum, rerum deleniti incidunt nisi corrupti esse!</p>
           </div>
           <div class="swiper-slide">
-            <img src="assets/img/avatar3.jpg" alt="">
+            <img src="assets/img/utilities/avatar3.jpg" alt="">
             <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam quaerat harum iure pariatur praesentium asperiores quidem, ipsum voluptatum voluptas, animi ab veritatis. Vitae cum, rerum deleniti incidunt nisi corrupti esse!</p>
           </div>
           <div class="swiper-slide">
-            <img src="assets/img/avatar4.jpg" alt="">
+            <img src="assets/img/utilities/avatar4.jpg" alt="">
             <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam quaerat harum iure pariatur praesentium asperiores quidem, ipsum voluptatum voluptas, animi ab veritatis. Vitae cum, rerum deleniti incidunt nisi corrupti esse!</p>
           </div>
           <div class="swiper-slide">
-            <img src="assets/img/avatar5.jpg" alt="">
+            <img src="assets/img/utilities/avatar5.jpg" alt="">
             <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam quaerat harum iure pariatur praesentium asperiores quidem, ipsum voluptatum voluptas, animi ab veritatis. Vitae cum, rerum deleniti incidunt nisi corrupti esse!</p>
           </div>
         </div>

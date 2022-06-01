@@ -1,36 +1,39 @@
 <?php
-  $title = "Page produit";
 
+  $_SESSION['prev_loc'] = $attempt;
 
-  if(!empty($_GET['prod_id'])){
+  if(!empty($_GET['prod_id']) && isset($_GET['prod_id'])){
+
+    $donnees = $bdd->query('SELECT id FROM products');
+    while($reponse = $donnees->fetch()){
+      $id[] = $reponse['id'];
+    }
+    if(!in_array($_GET['prod_id'], $id)){
+      header('Location: 404');
+      die;
+    }
+  
     $product = $_GET['prod_id'];
 
-    $donnees = $bdd->query('SELECT name FROM products WHERE id='.$product.'');
-    while ($reponse = $donnees->fetch()){
-        $prodname = $reponse["name"];
-    }
-    $donnees = $bdd->query('SELECT product_image FROM products WHERE id='.$product.'');
-    while ($reponse = $donnees->fetch()){
-      $prod_images = $reponse['product_image'];
-    }
-    $donnees = $bdd->query('SELECT price FROM products WHERE id='.$product.'');
-    while ($reponse = $donnees->fetch()){
-      $price = $reponse['price'];
-    }
-    $donnees = $bdd->query('SELECT introduction FROM products WHERE id='.$product.'');
-    while ($reponse = $donnees->fetch()){
-      $introduction = $reponse['introduction'];
-    }
-    $donnees = $bdd->query('SELECT description FROM products WHERE id='.$product.'');
-    while ($reponse = $donnees->fetch()){
-      $description = $reponse['description'];
-    }
-    $donnees = $bdd->query('SELECT brand FROM products WHERE id='.$product.'');
-    while ($reponse = $donnees->fetch()){
-      $brand = $reponse['brand'];
+    if(isset($_SESSION['id_user']) && !empty($_SESSION['id_user'])){
+      $datawishlist = $bdd->query('SELECT * FROM wishlist WHERE user_id='.$_SESSION['id_user'].'');
+      while($reponsewishlist = $datawishlist->fetch()){ 
+        $id_product_wishlist[] = $reponsewishlist['product_id'];
+      }
     }
 
-    
+
+    $donnees = $bdd->query('SELECT * FROM products WHERE id='.$product.'');
+    while ($reponse = $donnees->fetch()){
+        $prodname = $reponse["name"];
+        $price = $reponse['price'];
+        $introduction = $reponse['introduction'];
+        $description = $reponse['description'];
+        $perks = $reponse['perks'] ?? '';
+    }
+    $donnees = $bdd->query('SELECT * FROM products WHERE id='.$product.'');
+
+
   }
   else{
     header('Location: 404');
@@ -43,11 +46,15 @@
         <div class="swiper singleImageSwiper">
           <div class="swiper-wrapper">
             <?php 
-            $array_prod_image = explode(",", $prod_images);
-            foreach($array_prod_image as $image_item){ ?>
-               <div class="swiper-slide"><img src="assets/img/product_images/<?php echo $image_item?>"></div>
+             while ($reponse = $donnees->fetch()){
+              $imageFilename = getFiles('assets/img/product_images/'.$reponse['id'].'');
+              unset($imageFilename['2']);
+              foreach($imageFilename as $imageItem){
+           
+            ?>
+               <div class="swiper-slide"><img src="assets/img/product_images/<?php echo $reponse['id']?>/<?php echo $imageItem ?>"></div>
             <?php
-            }
+            }}
             ?>
           </div>
           <div class="swiper-pagination"></div>
@@ -79,13 +86,23 @@
             <p> <?php echo $introduction ?></p>
           </div>
           <div class="single-product-infos-subheader-buttons">
-            <form action="add_cart.php" method="POST">
-              <input type="number" name="prod_quantity" min="1" max="999" value="1" required>
+            <form action="<?= $router->generate('addbasket'); ?>" method="POST">
+              <input type="number" name="quantity_prod" min="1" max="999" value="1" required>
+              <input type="hidden" name="id_product" value="<?php echo $product ?>">
+              <input type="hidden" name="product_price" value="<?php echo $price ?>">
               <button type="submit"> Ajouter au panier </button>
             </form>
           </div>
           <div class="single-product-infos-subheader-favorite"> 
-            <button> <i class="fa-solid fa-heart"></i> Ajouter au favoris </button>
+          <?php if($_SESSION['verify']){ ?> 
+            <?php if(in_array($product,$id_product_wishlist)){ ?>
+              <a href="wishlist?id_prod=<?php echo $product?>"><button class="active"><i class="fa-solid fa-heart"></i>Supprimer des favoris </button></a>
+            <?php } else {?>
+              <a href="wishlist?id_prod=<?php echo $product?>"><button> <i class="fa-solid fa-heart"></i>Ajouter au favoris</button></a>
+          <?php } ?>
+        <?php } else{ ?>
+          <a href="<?= $router->generate('page',['pageslug'=> 'login']); ?>"><button><i class="fa-solid fa-heart"></i> Ajouter au favoris</button></a>
+        <?php  } ?>
           </div>
         </div>
       </div>
@@ -104,8 +121,7 @@
           <h2> Caractéristiques du produit </h2>
         </div>
         <div class="single-product-perk">
-          <span> Marque </span>
-          <h4><?php echo $brand ?></h4>
+          <p><?php echo $perks ?></p>
         </div>
       </div>
     </div>
