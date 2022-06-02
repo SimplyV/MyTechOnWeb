@@ -1,7 +1,7 @@
 <?php
   
 
-  if(!empty($_POST['quantity_prod']) && isset($_POST['quantity_prod'])){
+  if(check($_POST['quantity_prod'])){
     $quantity = $_POST['quantity_prod'];
   } else{
     header('Location: 404');
@@ -11,7 +11,7 @@
   $price = $_POST['product_price'];
 
 
-  if(!isset($_SESSION['basket_id']) && empty($_SESSION['basket_id'])){
+  if(check($_SESSION['basket_id'])){
     $_SESSION['basket_id'] = rand(10, 10000);
   }
 
@@ -20,22 +20,25 @@
   settype($price, 'double');
 
   
-  $donnees = $bdd->query('SELECT * FROM basketline WHERE basket_id='.$_SESSION['basket_id'].'');
+  $donnees = $bdd->prepare('SELECT * FROM basketline WHERE basket_id=:basket_id');
+  $donnees->execute([':basket_id' => $_SESSION['basket_id']]);
   while($reponse = $donnees->fetch()){
     $products[] = $reponse['product_id']; 
   }
 
   if(in_array($product_id, $products)){
 
-    $donnees = $bdd->query('SELECT quantity FROM basketline WHERE product_id = '.$product_id.' AND basket_id='.$_SESSION['basket_id'].'');
+    $donnees = $bdd->prepare('SELECT quantity FROM basketline WHERE product_id=:product_id AND basket_id=:basket_id');
+    $donnees->execute([':product_id' => $product_id, ':basket_id'=> $_SESSION['basket_id']]);
     while($reponse = $donnees->fetch()){
       $actualQuantity = $reponse['quantity'];
     }
 
     $updatedQuantity = $actualQuantity + $quantity;
 
-    $rep = $bdd->prepare('UPDATE basketline SET quantity = :quantity WHERE product_id = :product_id AND basket_id='.$_SESSION['basket_id'].'');
+    $rep = $bdd->prepare('UPDATE basketline SET quantity = :quantity WHERE product_id = :product_id AND basket_id=:basket_id');
 		$rep->execute(array(
+      'basket_id' => $_SESSION['basket_id'],
 			'product_id'=> $product_id, 
       'quantity'=> $updatedQuantity
 		));
@@ -57,7 +60,6 @@
     
   }
 
-  
-  header('Location: checkout');
+  header('Location: basket');
 
 ?>

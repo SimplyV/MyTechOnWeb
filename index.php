@@ -6,6 +6,7 @@
     session_start();
 
     require_once 'config/db.php';
+    require 'config/pages.php';
     require_once 'functions.php';
 
     require 'assets/AltoRouter/AltoRouter.php';
@@ -14,25 +15,31 @@
     $router->setBasePath('/MyTechOnWebS');
 
     $router->map('GET', '/', 'accueil','home');
-    $router->map('POST', '/connect', 'logindata','login');
-    $router->map('POST', '/registeruser', 'registerdata','register');
-    $router->map('POST', '/modifyprofile', 'profiledata','profilemodify');
-    $router->map('POST', '/contact', 'contactprocess','contact');
-    $router->map('POST', '/addbasket', 'checkoutprocess','addbasket');
-    $router->map('POST', '/search', 'search','search');
+    $router->map('GET', '/products', 'product/products', 'products');
+    $router->map('GET', '/productslist', 'product/productslist', 'productslist');
+    $router->map('GET', '/singleproduct', 'product/singleproduct', 'singleproduct');
+    $router->map('GET', '/contact-us', 'contact/contact', 'contact');
+    $router->map('GET', '/basket', 'checkout/checkout', 'basket');
+    $router->map('GET', '/logme', 'login/login', 'login');
+    $router->map('GET', '/registerme', 'register/register', 'register');
+    $router->map('GET', '/my-profile', 'profile/profile', 'profile');
 
-
-    $router->map('POST', '/backend/product/add', 'product/addproduct','addproduct');
-    $router->map('POST', '/backend/product/remove', 'product/removeproduct','removeproduct');
-    $router->map('POST', '/backend/product/modify', 'product/modifyproduct','modifyproduct');
+    $router->map('POST', '/connect', 'login/process','loginprocess');
+    $router->map('POST', '/registerprocess', 'register/process','registerprocess');
+    $router->map('POST', '/modifyprofile', 'profile/profiledata','profilemodify');
+    $router->map('POST', '/contactprocess', 'contact/contactprocess','contactprocess');
+    $router->map('POST', '/addtobasket', 'checkout/add', 'addbasket');
+    $router->map('POST', '/deletebasket', 'checkout/delete','deletebasket');
+    $router->map('POST', '/searchprocess', 'search/search','search');
+    $router->map('GET', '/wishlistprocess', 'wishlist/wishlist', 'wishlist');
+                  
+    $router->map('POST', '/backendadd', 'backend/product/add','addproduct');
+    $router->map('POST', '/backendremove', 'backend/product/remove','removeproduct');
+    $router->map('POST', '/backendmodify', 'backend/product/modify','modifyproduct');
 
     //$router->map('POST', '/product/[a:action]', 'product','removeproduct');
-    
-    $router->map('POST', '/backend/deletebasket', 'deletebasketprod','deletebasket');
-
 
     $router->map('GET', '/backend/[*:backendslug]?', 'backend','backend');
-    //$router->map('GET', '/login', 'login','login');
     $router->map('GET', '/[a:pageslug]', 'page','page');
     
     try{
@@ -41,29 +48,32 @@
       die('Erreur : '.$e->getMessage());
     }
 
+    // pre($match);
+
     $bdd->query("SET GLOBAL sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));"); 
 
     $isFrontend = true;
 
     if(is_array($match)) {
-      var_dump($match);
       $attempt = null;
       if(isset($match['params']['pageslug'])){
         $attempt = $match['params']['pageslug'];
       }
       else if(isset($match['params']['backendslug'])){
         $attempt = 'backend/'.$match['params']['backendslug'];
-        $isFrontend = false;
+        $isFrontend = false;    
       }
-      else if (isset($match['target'])){
+      else if(isset($match['target'])){
         if($match['target'] === 'backend' && empty($match['params'])){
           $attempt = 'backend/dashboard';
           $isFrontend = false;
         }
-        else
+        else{
           $attempt = $match['target'];
+        }
       }
     }
+
 
     $attempt .= '.php';
     if(!file_exists($attempt)){

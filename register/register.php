@@ -49,7 +49,7 @@
           <label for="passwordconf"> Confirmation de votre mot de passe  </label>
           <input type="password" name="passwordconf" placeholder="Entrez à nouveau votre mot de passe" autocomplete="off" required>
           <i class="fa-solid fa-lock"></i>
-          <a href="<?= $router->generate('page',['pageslug'=> 'login']); ?>"> J'ai déja un compte </a>
+          <a href="<?= $router->generate('login'); ?>"> J'ai déja un compte </a>
       </div>
       <?php if($_SESSION['passwordconferror'] == true){
           echo '<div class="password-conf-error">';

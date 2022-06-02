@@ -1,43 +1,43 @@
 <?php
 
 $pages = [];
-$pages['products'] = [
+$pages['product/products'] = [
   'title' => ['Nos produits'],
   'css' => [
     'assets/css/products.css'
   ]
 ];
-$pages['register'] = [
+$pages['register/register'] = [
   'title' => 'S\'enregistrer',
   'css' => [
     'assets/css/register.css'
   ]
 ];
-$pages['login'] = [
-  'title' => 'S\'enregistrer',
+$pages['login/login'] = [
+  'title' => 'Se connecter',
   'css' => [
     'assets/css/login.css'
   ]
 ];
-$pages['profile'] = [
+$pages['profile/profile'] = [
   'title' => 'Mon profil',
   'css' => [
     'assets/css/profile.css'
   ]
 ];
-$pages['contact'] = [
+$pages['contact/contact'] = [
   'title' => 'Contact',
   'css' => [
     'assets/css/contact.css'
   ]
 ];
-$pages['checkout'] = [
+$pages['checkout/checkout'] = [
   'title' => 'Mon panier',
   'css' => [
     'assets/css/check.css'
   ]
 ];
-$pages['productslist'] = [
+$pages['product/productslist'] = [
   'title' => 'Listing des produits',
   'css' => [
     'assets/css/listing_product.css',
@@ -47,7 +47,7 @@ $pages['productslist'] = [
     'node_modules/nouislider/dist/nouislider.min.js'
   ]
 ];
-$pages['singleproduct'] = [
+$pages['product/singleproduct'] = [
   'title' => 'Page produit',
   'css' => [
     'assets/css/single_product.css'
@@ -67,7 +67,8 @@ $pages['dashboard'] = [
   'jsWithOptions' => [
     '<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous" defer></script>',
     '<script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script>',
-    '<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script>'
+    '<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script>',
+    '<script src="../assets/js/form-image.js" defer></script>'
   ]
 ];
 

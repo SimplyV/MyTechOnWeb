@@ -1,6 +1,6 @@
 <?php 
 
-  if(!empty($_POST['firstname']) && !empty($_POST['lastname']) && !empty($_POST['email']) && !empty($_POST['message'])){
+  if(check($_POST['firstname']) && check($_POST['lastname']) && check($_POST['email']) && check($_POST['message'])){
     $firstname = htmlentities($_POST['firstname']);
     $lastname = htmlentities($_POST['lastname']);
     $email = htmlentities($_POST['email']);

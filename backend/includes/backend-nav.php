@@ -8,19 +8,19 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?= $router->generate('backend',['backendslug'=> 'dashboard_orders']);?>">
+            <a class="nav-link" href="<?= $router->generate('backend',['backendslug'=> 'orders']);?>">
               <span data-feather="file"></span>
               Commandes
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?= $router->generate('backend',['backendslug'=> 'dashboard_users']);?>">
+            <a class="nav-link" href="<?= $router->generate('backend',['backendslug'=> 'users']);?>">
               <span data-feather="users"></span>
               Clients
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?= $router->generate('backend', ['backendslug'=> 'dashboard_reviews']);?>">
+            <a class="nav-link" href="<?= $router->generate('backend', ['backendslug'=> 'reviews']);?>">
               <span data-feather="bar-chart-2"></span>
               Avis produits
             </a>

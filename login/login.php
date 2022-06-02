@@ -1,11 +1,11 @@
 <?php 
-  // if(isset($_SESSION['verify']) == true){
-	// 	header('Location: index.php');
-	// } 
+  if(isset($_SESSION['verify']) == true){
+		header('Location: accueil');
+	} 
   ?>
 
 <div class="form-container">
-    <form action="<?= $router->generate('login'); ?>" method="POST" id="login-form">
+    <form action="<?= $router->generate('loginprocess'); ?>" method="POST" id="login-form">
 
       <h2> Se connecter </h2>
 
@@ -18,7 +18,7 @@
           <label for="password"> Mot de passe </label>
           <input type="password" name="password" placeholder="Entrez votre mot de passe" autocomplete="off" required>
           <i class="fa-solid fa-lock"></i>
-          <a href="<?= $router->generate('page',['pageslug'=> 'register']); ?>"> Vous n'avez pas de compte ?</a>
+          <a href="<?= $router->generate('register'); ?>"> Vous n'avez pas de compte ?</a>
         </div>
 
       <div class="button-block">

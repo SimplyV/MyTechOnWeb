@@ -47,7 +47,7 @@
               </div>
               <div class="product-add-perks">
                 <label for="brand"> Caractéristiques </label>
-                <textarea type="text" name="brand" placeholder="Caractéristiques du produit" required></textarea>
+                <textarea type="text" name="perks" placeholder="Caractéristiques du produit" required></textarea>
               </div>
               <div class="product-add-description">
                 <label for="introduction"> Introduction du produit </label>

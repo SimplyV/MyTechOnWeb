@@ -2,11 +2,11 @@
 
 	$donnees = $bdd->query('SELECT email FROM users');
 
-
 	$verify= null;
 	while ($reponse = $donnees->fetch()){
 		if ($_POST['email'] == $reponse['email']){
-			$donnees = $bdd->query('SELECT password FROM users WHERE email= \''.$reponse["email"].'\'');
+			$donnees = $bdd->prepare('SELECT password FROM users WHERE email=:email');
+			$donnees->execute([':email' => $reponse['email']]);
 			while ($reponse = $donnees->fetch()){
 				if ($_POST['password'] == $reponse['password'] ){
 				$verify = true;
@@ -21,7 +21,8 @@
 		}
 	}
 
-	$donnees = $bdd->query('SELECT firstname FROM users WHERE email= \''.$_POST["email"].'\'');
+	$donnees = $bdd->prepare('SELECT firstname FROM users WHERE email=:email');
+	$donnees->execute([':email' => $_POST['email']]);
 	while($reponse = $donnees->fetch()){
 		$_SESSION['firstname'] = $reponse['firstname'];
 	}

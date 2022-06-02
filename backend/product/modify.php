@@ -1,13 +1,14 @@
 <?php 
 
-  if(isset($_POST['id']) && !empty($_POST['id'])){
+  if(check($_POST['id'])){
     $product_id = $_POST['id'];
   }
   else{
     header('Location: 404');
   }
 
-  $request = $bdd->query('SELECT * from products WHERE id='.$product_id.'');
+  $request = $bdd->prepare('SELECT * from products WHERE id=:id');
+  $request->execute([':id' => $product_id]);
   while($reponse = $request->fetch()){
     $name = $reponse['name'];
     $price = $reponse['price'];
@@ -18,19 +19,19 @@
 
   settype($price, 'float');
 
-  if(empty($_POST['name'])){
+  if(check($_POST['name'])){
     $_POST['name'] = $name;
   }
-  if(empty($_POST['price'])){
+  if(check($_POST['price'])){
     $_POST['price'] = $price;
   }
-  if(empty($_POST['perks'])){
+  if(check($_POST['perks'])){
     $_POST['perks'] = $perks;
   }
-  if(empty($_POST['introduction'])){
+  if(check($_POST['introduction'])){
     $_POST['introduction'] = $introduction;
   }
-  if(empty($_POST['description'])){
+  if(check($_POST['description'])){
     $_POST['description'] = $description;
   }
 
@@ -39,7 +40,7 @@ var_dump($_FILES);
   $extensions_autorisees = array('jpg', 'jpeg', 'png');
   $path_to_img = 'assets/img/product_images/';
   foreach($_FILES as $img_name => $img_prop){
-    if(!empty($img_prop) && isset($img_prop) AND $img_prop['error'] == 0){  
+    if(check($img_prop) && $img_prop['error'] == 0){  
       if ($img_prop['size'] <= 1000000000000000){
 
         $infosfichier = pathinfo($img_prop['name']);

@@ -1,15 +1,19 @@
 <?php 
 
-  if(!empty($_GET['cat'])){
+  if(check($_GET['cat'])){
     $categories = $_GET['cat'];
 
-    $donnees = $bdd->query('SELECT * FROM category WHERE id='.$categories.'');
+    $donnees = $bdd->prepare('SELECT * FROM category WHERE id=:category_id');
+    $donnees->execute([':category_id' => $categories]);
+
     while ($reponse = $donnees->fetch()){
         $catname = $reponse['name'];
         $category_id[] = $reponse['id']; 
     }
-    if(isset($_SESSION['id_user']) && !empty($_SESSION['id_user'])){
-      $datawishlist = $bdd->query('SELECT * FROM wishlist WHERE user_id='.$_SESSION['id_user'].'');
+
+    if(check($_SESSION['id_user'])){
+      $datawishlist = $bdd->prepare('SELECT * FROM wishlist WHERE user_id=:user_id');
+      $datawishlist->execute([':user_id' => $_SESSION['id_user']]);
       while($reponsewishlist = $datawishlist->fetch()){ 
       $id_product_wishlist[] = $reponsewishlist['product_id'];
       }
@@ -73,19 +77,20 @@
       </div>
       <div class="product-list-content-items">
         <?php 
-        $donnees = $bdd->query('SELECT products.id, products.name, products.price FROM products JOIN product_category ON products.id = product_category.product_id WHERE product_category.category_id='.$categories.'');
+        $donnees = $bdd->prepare('SELECT products.id, products.name, products.price FROM products JOIN product_category ON products.id = product_category.product_id WHERE product_category.category_id=:category_id');
+        $donnees->execute([':category_id' => $categories]);
         while ($reponse = $donnees->fetch()){ ?>
         <?php $imageFilename = getFiles('assets/img/product_images/'.$reponse['id'].''); ?>
         <div class="product-list-item">
             <div class="prod-list-item-brand" style="background-image: url('assets/img/product_images/<?php echo $reponse['id'] ?>/<?php echo $imageFilename['3']?> ');">
             <?php if($_SESSION['verify']){ ?> 
               <?php if(in_array($reponse['id'],$id_product_wishlist)){ ?>
-                <a href="wishlist?id_prod=<?php echo $reponse['id']?>"><button class="active"> <i class="fa-solid fa-heart"></i></button></a>
+                <a href="wishlistprocess?id_prod=<?php echo $reponse['id']?>"><button class="active"> <i class="fa-solid fa-heart"></i></button></a>
               <?php } else {?>
-                <a href="wishlist?id_prod=<?php echo $reponse['id']?>"><button> <i class="fa-solid fa-heart"></i></button></a>
+                <a href="wishlistprocess?id_prod=<?php echo $reponse['id']?>"><button> <i class="fa-solid fa-heart"></i></button></a>
             <?php } ?>
           <?php } else{ ?>
-            <a href="<?= $router->generate('page',['pageslug'=> 'login']); ?>"><button><i class="fa-solid fa-heart"></i></button></a>
+            <a href="<?= $router->generate('login'); ?>"><button><i class="fa-solid fa-heart"></i></button></a>
           <?php  } ?>
             </div>
             <div class="prod-list-item-content">

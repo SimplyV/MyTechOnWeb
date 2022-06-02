@@ -2,7 +2,7 @@
 
   $_SESSION['prev_loc'] = $attempt;
 
-  if(!empty($_GET['prod_id']) && isset($_GET['prod_id'])){
+  if(check($_GET['prod_id'])){
 
     $donnees = $bdd->query('SELECT id FROM products');
     while($reponse = $donnees->fetch()){
@@ -15,15 +15,17 @@
   
     $product = $_GET['prod_id'];
 
-    if(isset($_SESSION['id_user']) && !empty($_SESSION['id_user'])){
-      $datawishlist = $bdd->query('SELECT * FROM wishlist WHERE user_id='.$_SESSION['id_user'].'');
+    if(check($_SESSION['id_user'])){
+      $datawishlist = $bdd->prepare('SELECT * FROM wishlist WHERE user_id=:user_id');
+      $datawishlist->execute([':user_id' => $_SESSION['id_user']]);
       while($reponsewishlist = $datawishlist->fetch()){ 
         $id_product_wishlist[] = $reponsewishlist['product_id'];
       }
     }
 
 
-    $donnees = $bdd->query('SELECT * FROM products WHERE id='.$product.'');
+    $donnees = $bdd->prepare('SELECT * FROM products WHERE id=:product_id');
+    $donnees->execute([':product_id' => $product]);
     while ($reponse = $donnees->fetch()){
         $prodname = $reponse["name"];
         $price = $reponse['price'];
@@ -31,7 +33,8 @@
         $description = $reponse['description'];
         $perks = $reponse['perks'] ?? '';
     }
-    $donnees = $bdd->query('SELECT * FROM products WHERE id='.$product.'');
+    $donnees = $bdd->prepare('SELECT * FROM products WHERE id=:product_id');
+    $donnees->execute([':product_id' => $product]);
 
 
   }
@@ -96,12 +99,12 @@
           <div class="single-product-infos-subheader-favorite"> 
           <?php if($_SESSION['verify']){ ?> 
             <?php if(in_array($product,$id_product_wishlist)){ ?>
-              <a href="wishlist?id_prod=<?php echo $product?>"><button class="active"><i class="fa-solid fa-heart"></i>Supprimer des favoris </button></a>
+              <a href="wishlistprocess?id_prod=<?php echo $product?>"><button class="active"><i class="fa-solid fa-heart"></i>Supprimer des favoris </button></a>
             <?php } else {?>
-              <a href="wishlist?id_prod=<?php echo $product?>"><button> <i class="fa-solid fa-heart"></i>Ajouter au favoris</button></a>
+              <a href="wishlistprocess?id_prod=<?php echo $product?>"><button> <i class="fa-solid fa-heart"></i>Ajouter au favoris</button></a>
           <?php } ?>
         <?php } else{ ?>
-          <a href="<?= $router->generate('page',['pageslug'=> 'login']); ?>"><button><i class="fa-solid fa-heart"></i> Ajouter au favoris</button></a>
+          <a href="<?= $router->generate('login'); ?>"><button><i class="fa-solid fa-heart"></i> Ajouter au favoris</button></a>
         <?php  } ?>
           </div>
         </div>

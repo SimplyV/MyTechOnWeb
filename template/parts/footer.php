@@ -22,9 +22,9 @@
       </div>
       <div class="footer-links-fastlinks">
         <h2> Liens rapides </h2>
-        <a href="products"> Nos produits </a>
-        <a href="checkout"> Mon panier </a>
-        <a href="contact"> Contact </a>
+        <a href="<?= $router->generate('products'); ?>"> Nos produits </a>
+        <a href="<?= $router->generate('basket'); ?>"> Mon panier </a>
+        <a href="<?= $router->generate('contact'); ?>"> Contact </a>
       </div>
     </div>
 

@@ -20,7 +20,7 @@
       </div>
     </div>
     <div class="contact-form">
-      <form action="<?= $router->generate('contact'); ?>" method="POST" id="contact-form">
+      <form action="<?= $router->generate('contactprocess'); ?>" method="POST" id="contact-form">
 
       <div class="input-name-block">
         <div class="input-firstname">

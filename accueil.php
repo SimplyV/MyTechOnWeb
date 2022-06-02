@@ -2,8 +2,8 @@
 
   $donnees = $bdd->query('SELECT * from products LIMIT 5');
  
-
 ?>
+
   <div class="featured-product-header">
     <div class="featured-prod-text">
       <h1> Bienvenue sur <br><b>MyTechOnWebS.</b></h1>
@@ -56,7 +56,6 @@
               </a>
             <?php 
           }
-          $donnees->closeCursor();
         ?>
         </div>
         <div class="swiper-button-next"></div>

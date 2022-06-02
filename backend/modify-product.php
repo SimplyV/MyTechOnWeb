@@ -1,17 +1,19 @@
 <?php 
 
-  if(isset($_GET['id']) && !empty($_GET['id'])){
+  if(check($_GET['id'])){
     $product_id = $_GET['id'];
-  } else{
+  }
+  else{
     header('Location: backend/dashboard');
   }
 
-  $joinquery = $bdd->query('SELECT products.id, products.name, products.price, products.perks, products.introduction, products.description, category.name, category.id
+  $joinquery = $bdd->prepare('SELECT products.id, products.name, products.price, products.perks, products.introduction, products.description, category.name, category.id
   FROM products 
   INNER JOIN product_category ON products.id=product_category.product_id 
   INNER JOIN category ON product_category.category_id = category.id 
-  WHERE products.id = '.$product_id.' 
+  WHERE products.id =:product_id 
   GROUP BY products.id');
+  $joinquery->execute([':product_id' => $product_id]);
 
   while($reponse = $joinquery->fetch()){
     $productname = $reponse[1];
@@ -24,16 +26,16 @@
   }
   $imageFilename = getFiles('assets/img/product_images/'.$product_id.'');
   unset($imageFilename['2']);
-  if(isset($imageFilename['3']) && !empty($imageFilename['3'])){
+
+  if(check($imageFilename['3'])){
     $firstimage = $imageFilename['3'];
   }
-  if(isset($imageFilename['4']) && !empty($imageFilename['4'])){
+  if(check($imageFilename['4'])){
     $secondimage = $imageFilename['4'];
   }
-  if(isset($imageFilename['5']) && !empty($imageFilename['5'])){
+  if(check($imageFilename['5'])){
     $thirdimage = $imageFilename['5'];
   }
-
 
 ?>
 
@@ -107,6 +109,23 @@
                 <div class="product-add-images-title">
                   <h2> Images du produit </h2>
                 </div>
+                <div class="product-add-images-content">
+                   <div class="product-add-images-item">
+                     <div class="product-add-image-item-brand">
+                       <img src="#">
+                     </div>
+                     <div class="product-add-image-item-actions">
+                       <label for="imageproduct">
+                         <span> Ajouter une image </span>
+                         <i class="fa-solid fa-file-image"></i>
+                         <input type="file" accept="image/*">
+                        </label>
+                       
+                     </div>
+                   </div>
+                </div>
+
+
                 <div class="product-image-placeholder">
                   <div class="product-image-placeholder-brand">
                     <div class="p-img-plcholder-big">   
@@ -193,4 +212,4 @@
   </div>
 </div>
 
-<script src="../assets/js/form-image.js"></script>
+

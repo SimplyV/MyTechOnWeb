@@ -1,8 +1,8 @@
 <?php 
 
-  $_SESSION['prev_loc'] = 'products';
+  $_SESSION['prev_loc'] = $attempt;
 
-  if(isset($_SESSION['id_user']) && !empty($_SESSION['id_user'])){
+  if(check($_SESSION['id_user'])){
     $id_user = $_SESSION['id_user'];
 
     $datawishlist = $bdd->prepare('SELECT * FROM wishlist WHERE user_id=:user_id');
@@ -40,9 +40,9 @@
 
         <?php if($_SESSION['verify']){ ?> 
             <?php if(in_array($reponse['id'],$id_product_wishlist)){ ?>
-              <a href="wishlist?id_prod=<?php echo $reponse['id']?>"><button class="active"> <i class="fa-solid fa-heart"></i></button></a>
+              <a href="wishlistprocess?id_prod=<?php echo $reponse['id']?>"><button class="active"> <i class="fa-solid fa-heart"></i></button></a>
             <?php } else {?>
-              <a href="wishlist?id_prod=<?php echo $reponse['id']?>"><button> <i class="fa-solid fa-heart"></i></button></a>
+              <a href="wishlistprocess?id_prod=<?php echo $reponse['id']?>"><button> <i class="fa-solid fa-heart"></i></button></a>
           <?php } ?>
         <?php } else{ ?>
           <a href="<?= $router->generate('page',['pageslug'=> 'login']); ?>"><button><i class="fa-solid fa-heart"></i></button></a>
@@ -70,7 +70,6 @@
       </div>
     <?php 
   }
-  $donnees->closeCursor();
   ?>
     </div>
 </div>

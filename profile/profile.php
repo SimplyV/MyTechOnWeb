@@ -4,21 +4,20 @@
 	$bdname->execute(array('id_user'=>$_SESSION['id_user']));
 	$profil = $bdname->fetch();
 
-  $joinquery = $bdd->query('SELECT products.id, products.name, category.name
+  $joinquery = $bdd->prepare('SELECT products.id, products.name, category.name
   FROM products 
   INNER JOIN product_category ON products.id=product_category.product_id 
   INNER JOIN category ON product_category.category_id = category.id 
   INNER JOIN wishlist ON products.id = wishlist.product_id
-  WHERE wishlist.product_id = products.id AND wishlist.user_id = '.$_SESSION['id_user'].' 
+  WHERE wishlist.product_id = products.id AND wishlist.user_id = :user_id 
   GROUP BY products.id');
+  $joinquery->execute([':user_id' => $_SESSION['id_user']]);
   if($joinquery->rowCount() > 0){
     $wishlistStatus = 'full';
   }
   else{
     $wishlistStatus = 'empty';
   }
-
- 
 ?>
 
   <div class="profil-container">
@@ -36,7 +35,7 @@
             <div class="profil-content-image-brand">
               <label for="image"><i class="fa-solid fa-plus"></i> </label>
               <input type="file" name="image">
-              <?php if(!empty($profil['avatar'])){
+              <?php if(check($profil['avatar'])){
                 echo '<img src="assets/img/user_images/'.$profil['avatar'].'">';
               } 
               else{

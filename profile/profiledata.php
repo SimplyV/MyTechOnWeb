@@ -2,7 +2,8 @@
 
 	$_SESSION['email'] = $_POST['email']; 
 
-	$donnees = $bdd->query('SELECT * FROM users WHERE NOT id_user='.$_SESSION['id_user'].'');
+	$donnees = $bdd->prepare('SELECT * FROM users WHERE NOT id_user=:user_id');
+	$donnees->prepare([':user_id' => $_SESSION['id_user']]);
 	while($reponse = $donnees->fetch()){
 		$profilenick[] = $reponse['nickname'];
 		$profilemail[] = $reponse['email'];
@@ -38,7 +39,7 @@
 		}
 	}
 
-	if(isset($_SESSION['id_user']) && !empty($_SESSION['id_user'])){
+	if(check($_SESSION['id_user'])){
 		$rep = $bdd->prepare('UPDATE users SET lastname=:nom, firstname=:prenom, email=:mail, street=:street, street_number=:streetnumber, zipcode=:zipcode, city=:city, commune=:commune, nickname=:nickname, avatar=:avatar WHERE id_user=:id_user');
 
 		$firstname = $_POST['firstname'];
