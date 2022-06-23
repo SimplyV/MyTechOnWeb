@@ -1,0 +1,690 @@
+.profil-container{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 40px;
+  .profil-navigation{
+    width: 310px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    a{
+      color: black;
+      padding: 20px;
+      border-radius: 10px;
+      transition: .3s ease-in-out;
+
+    }
+    a.active{
+      background: black;
+      color: white;
+      border-radius: 10px;
+    }
+    a:hover{
+      background: rgba(0, 0, 0, 0.829);
+      color: white;
+      
+    }
+  }
+  .profil-content{
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 30px;
+
+    .profil-content-informations{
+      width: 100%;
+      display: none;
+      form{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        .profil-content-image{
+          display: flex;
+          width: 100%;
+          .profil-content-image-brand{
+            margin-right: 20px;
+            label{
+              position: absolute;
+              z-index: 1;
+              margin-left: 40px;
+              font-size: 1.2rem;
+              width: 200px;
+              height: 50px;
+            }
+            input{
+              position: absolute;
+              transform: translateX(-1px);
+              width: 56px;
+              height: 50px;
+              opacity: 0;
+              z-index: 1;
+              cursor: pointer;
+            }
+            img{
+              width: 50px;
+              height: 50px;
+              border-radius: 100px;
+            }
+          }
+          .profil-content-image-text{
+            span{
+              color: #7a7a7a;
+            }
+          }
+        }
+        .profil-content-name-block{
+          margin-top: 30px;
+          display: flex;
+          flex-direction: column;
+          .profil-content-firstname{
+            display: flex;
+            flex-direction: column;
+            input{
+              margin-top: 5px;
+              margin-bottom: 5px;
+              border: 1px solid #7a7a7a;
+              background: none;
+              border-radius: 5px;
+              outline: none;
+              padding: 10px 10px;
+            }
+          }
+          .profil-content-lastname{
+            display: flex;
+            flex-direction: column;
+            input{
+              margin-top: 5px;
+              border: 1px solid #7a7a7a;
+              background: none;
+              border-radius: 5px;
+              outline: none;
+              padding: 10px 10px;
+            }
+          }
+        }
+        .profil-content-email{
+          display: flex;
+          flex-direction: column;
+          margin-top: 5px;
+          input{
+            margin-top: 5px;
+            border: 1px solid #7a7a7a;
+            background: none;
+            border-radius: 5px;
+            outline: none;
+            padding: 10px 10px;
+          }
+        }
+        .profil-content-street{
+          display: flex;
+          flex-direction: column;
+          .profil-content-street-street{
+            display: flex;
+            flex-direction: column;
+            margin-top: 5px;
+            input{
+              margin-top: 5px;
+              border: 1px solid #7a7a7a;
+              background: none;
+              border-radius: 5px;
+              outline: none;
+              padding: 10px 10px;
+            }
+          }
+          .profil-content-street-number{
+            display: flex;
+            flex-direction: column;
+            margin-top: 5px;
+            input{
+              margin-top: 5px;
+              border: 1px solid #7a7a7a;
+              background: none;
+              border-radius: 5px;
+              outline: none;
+              padding: 10px 10px;
+            }
+          }
+        }
+        .profil-content-city{
+          display: flex;
+          flex-direction: column;
+          margin-top: 5px;
+          input{
+            margin-top: 5px;
+            border: 1px solid #7a7a7a;
+            background: none;
+            border-radius: 5px;
+            outline: none;
+            padding: 10px 10px;
+          }
+        }
+        .profil-content-adress-second{
+          display: flex;
+          flex-direction: column;
+          margin-top: 5px;
+          .profil-content-adress-second-zipcode{
+            display: flex;
+            flex-direction: column;
+            input{
+              margin-top: 5px;
+              border: 1px solid #7a7a7a;
+              background: none;
+              border-radius: 5px;
+              outline: none;
+              padding: 10px 10px;
+            }
+          }
+          .profil-content-adress-second-commune{
+            display: flex;
+            flex-direction: column;
+            margin-top: 5px;
+            input{
+              margin-top: 5px;
+              border: 1px solid #7a7a7a;
+              background: none;
+              border-radius: 5px;
+              outline: none;
+              padding: 10px 10px;
+            }
+          }
+        }
+        .profil-submit{
+          margin: 20px 0px;
+          button{
+            width: 100%;
+            outline: none;
+            background: black;
+            border: none;
+            outline: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            color: white;
+            cursor: pointer;
+          }
+        }
+        
+      }
+    }
+    .profil-content-informations.active{
+      display: flex;
+    }
+    .profil-content-adresses{
+      display: none;
+      flex-direction: column;
+      &.active{
+        display: flex;
+      }
+      .profil-content-adresses-title{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        #addAdress{
+            border: none;
+            border-radius: 50px;
+            background: none;
+            width: 30px;
+            height: 30px;
+            position: relative;
+            background: rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            &:hover{
+              &:before{
+                opacity: 1;
+              }
+            }
+            &:before{
+              content: '';
+              position: absolute;
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              width: 100%;
+              height: 100%;
+              background: rgba(0, 0, 0, 0.15);
+              border-radius: 50px;
+              opacity: 0;
+              transition: opacity .3s ease-in-out;
+            }
+
+        }
+      }
+      .profil-content-adresses-content{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin-top: 30px;
+        .profil-content-adresses-item{
+          display: flex;
+          flex-direction: column;
+          background: #fff;
+          border: 1px solid #DADADA;
+          border-radius: 10px;
+          padding: 20px;
+          max-height: 80px;
+          margin: 20px 0px;
+          overflow: hidden;
+          &.active{
+            max-height: initial;
+          }
+          .profil-content-adresses-header{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            .profil-content-adresses-header-brand{
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              i{
+                font-size: 1.3rem;
+              }
+              p{
+                margin-left: 15px;
+                max-width: 70%;
+              }
+            }
+            .profil-content-adresses-header-action{
+              button{
+                border: none;
+                border-radius: 50px;
+                background: none;
+                width: 30px;
+                height: 30px;
+                position: relative;
+                cursor: pointer;
+                &:hover{
+                  &:before{
+                    opacity: 1;
+                  }
+                }
+                &:before{
+                  content: '';
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  right: 0;
+                  bottom: 0;
+                  width: 100%;
+                  height: 100%;
+                  background: rgba(0, 0, 0, 0.1);
+                  border-radius: 50px;
+                  opacity: 0;
+                  transition: opacity .3s ease-in-out;
+                }
+              }
+            }
+          }
+          .profil-content-adresses-form{
+            margin-top: 25px;
+            form{
+              &:nth-child(2){
+                .delete-btn{
+                  width: 100%;
+                  padding: 10px 15px;
+                  background: rgb(216, 57, 57);
+                  border-radius: 5px;
+                  border: none;
+                  color: white;
+                  margin-top: 20px;
+                  transition: .5s ease-in-out;
+                  cursor: pointer;
+                }
+              }
+              width: 100%;
+              .profil-adresses-street{
+                display: flex;
+                flex-direction: column;
+                input{
+                  margin: 5px 0px;
+                  border: 1px solid #7a7a7a;
+                  background: none;
+                  border-radius: 5px;
+                  outline: none;
+                  padding: 10px 10px;
+                }
+              }
+              .profil-adresses-city-block{
+                display: flex;
+                flex-direction: row;
+                gap: 20px;
+                margin-top: 10px;
+                .profil-adresses-streetnumber{
+                  display: flex;
+                  flex-direction: column;
+                  width: 35%;
+                  input{
+                    margin: 5px 0px;
+                    border: 1px solid #7a7a7a;
+                    background: none;
+                    border-radius: 5px;
+                    outline: none;
+                    padding: 10px 10px;
+                  }
+                }
+                .profil-adresses-city{
+                  display: flex;
+                  flex-direction: column;
+                  width: 65%;
+               
+                  input{
+                    margin: 5px 0px;
+                    border: 1px solid #7a7a7a;
+                    background: none;
+                    border-radius: 5px;
+                    outline: none;
+                    padding: 10px 10px;
+                  }
+                }  
+              }
+              .profil-adresses-commune-block{
+                display: flex;
+                flex-direction: row;
+                gap: 20px;
+                margin-top: 10px;
+                .profil-adresses-commune{
+                  display: flex;
+                  flex-direction: column;
+                  width: 65%;
+                  input{
+                    margin: 5px 0px;
+                    border: 1px solid #7a7a7a;
+                    background: none;
+                    border-radius: 5px;
+                    outline: none;
+                    padding: 10px 10px;
+                  }
+                }
+                .profil-adresses-zipcode{
+                  display: flex;
+                  flex-direction: column;
+                  width: 35%;
+               
+                  input{
+                    margin: 5px 0px;
+                    border: 1px solid #7a7a7a;
+                    background: none;
+                    border-radius: 5px;
+                    outline: none;
+                    padding: 10px 10px;
+                  }
+                } 
+              }
+              .profil-adresses-submit{
+                margin-top: 20px;
+                button{
+                  width: 100%;
+                  padding: 10px 15px;
+                  background: black;
+                  border-radius: 5px;
+                  color: white;
+                  border: 1px solid black;
+                  transition: .5s ease-in-out;
+                  cursor: pointer;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .profil-content-orders{
+      display: flex;
+      flex-direction: column;
+      display: none;
+      .profil-content-orders-content{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin: 20px 0px 40px 0px;
+        .profil-content-order{
+          width: 100%;
+          border: 1px solid #c4c4c4;
+          border-radius: 10px;
+          .profil-content-order-brand{
+            display: flex;
+            padding: 20px 10px;
+            .profil-content-order-brand-image{
+              width: 50px;
+              img{
+                width: 50%;
+                height: auto;
+              }
+            }
+            .profil-content-order-brand-name span{
+              color: #7a7a7a;
+            }
+          }
+          .profil-content-order-informations{
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            border-top: 1px solid #c4c4c4;
+            padding: 10px;
+          }
+        }
+      }
+    }
+    .profil-content-orders.active{
+      display: flex;
+    }
+  }
+}
+.profil-content-wishlist{
+  display: flex;
+  display: none;
+  flex-direction: column;
+  margin-bottom:20px;
+  .profil-content-wishlist-content{
+    margin-top: 20px;
+    border: 1px solid #c4c4c4;
+    padding: 20px;
+    border-radius: 10px;
+    .profil-content-wishlist-item{
+      &:not(:last-child){
+        border-bottom: 1px solid #c4c4c4;
+      }
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0px;
+      .profil-content-wishlist-item-brand{
+        display: flex;
+        align-items: center;
+        .profil-content-wishlist-item-brand-image{
+          width: 100px;
+          img{
+            width: 75%;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 5px;
+          }
+        }
+        .profil-content-wishlist-item-brand-name{
+          span{
+            color: #7a7a7a;
+          }
+        }
+      }
+      .profil-content-wishlist-item-button{
+        button{
+          padding: 10px 20px;
+          border: 1px solid #c4c4c4;
+          border-radius: 10px;
+          background: none;
+        }
+      }
+    }
+  }
+}
+.profil-content-wishlist.active{
+  display: flex;
+}
+
+.profil-content-security{
+  display: flex;
+  display: none;
+  flex-direction: column;
+  .profil-content-security-content{
+    margin: 20px 0px 40px 0px;
+    .profil-content-security-password-change{
+      padding-bottom: 30px;
+      border-bottom: 1px solid #7a7a7a;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .profil-content-security-password-change-brand{
+        span{
+          color: #7a7a7a;
+        }
+      }
+      .profil-content-security-password-change-button{
+        button{
+          padding: 10px 20px;
+          border: 1px solid #c4c4c4;
+          border-radius: 10px;
+          outline: none;
+          cursor: pointer;
+          background: none;
+          width: 100px;
+        }
+      }
+    }
+    .profil-content-security-authentification{
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .profil-content-security-authentification-brand{
+        span{
+          color: #7a7a7a;
+        }
+      }
+      .profil-content-security-authentification-button{
+        button{
+          padding: 10px 20px;
+          border: 1px solid #c4c4c4;
+          border-radius: 10px;
+          outline: none;
+          cursor: pointer;
+          background: none;
+          width: 100px;
+        }
+      }
+    }
+  }
+}
+.profil-content-security.active{
+  display: flex;
+}
+
+.remodal{
+  border-radius: 10px;
+  .remodal-close{
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 10px 0px 0px 0px;
+  }
+  .addAdress-form-container{
+    form{
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+      div{
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        &:last-child{
+          margin-top: 30px;
+          button{
+            width: 100%;
+            padding: 10px 15px;
+            background: black;
+            border-radius: 5px;
+            color: white;
+            border: 1px solid black;
+            transition: .5s ease-in-out;
+            cursor: pointer;
+          }
+        }
+        input{
+          margin-top: 10px;
+          border: 1px solid #7a7a7a;
+          background: none;
+          border-radius: 5px;
+          outline: none;
+          padding: 10px 10px;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+
+@media(min-width: 480px){
+  .profil-container{
+    .profil-navigation{
+      width: 450px;
+    }
+    .profil-content{
+      .profil-content-orders{
+        .profil-content-orders-content{
+            .profil-content-order{
+              .profil-content-order-informations{
+                .profil-content-order-informations-content{
+                  display: flex;
+                  align-items: center;
+                  h4{
+                    margin-right: 10px;
+                  }
+                  span{
+                    border: 1px solid black;
+                    padding: 10px;
+                    border-radius: 30px;
+                  }
+                }
+              }
+            }
+
+        }
+      }
+    }
+  }
+}
+@media(min-width: 768px){
+  .profil-container{
+    .profil-navigation{
+      width: 720px;
+    }
+  }
+
+}
+@media(min-width: 960px){
+  .profil-container{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    margin-top: 40px;
+    gap: 40px;
+    .profil-navigation{
+      width: 220px;
+      display: flex;
+      flex-direction: column;
+    }
+    .profil-content{
+      width: 60%;
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+    }
+  } 
+}
+@media(min-width: 1024px){
+  footer{
+    bottom: 0;
+  }
+}

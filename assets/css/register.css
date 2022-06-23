@@ -1,0 +1,190 @@
+.form-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+}
+form h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+form .input-name-block {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+form .input-name-block input {
+  margin-top: 5px;
+  width: 100%;
+  padding: 10px 35px;
+  background: #EDEDED;
+  color: black;
+  border: 1px solid black;
+  border-radius: 5px;
+  outline: none;
+}
+form .input-name-block label {
+  font-weight: 600;
+}
+form .input-name-block i {
+  position: absolute;
+  margin-top: 38px;
+  margin-left: 12px;
+  color: #262626;
+}
+form .input-pseudo {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+form .input-firstname {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+form .input-lastname {
+  display: flex;
+  flex-direction: column;
+}
+form .input-email-block {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+form .input-email-block input {
+  margin-top: 5px;
+  width: 100%;
+  padding: 10px 35px;
+  background: #EDEDED;
+  color: black;
+  border: 1px solid black;
+  border-radius: 5px;
+  outline: none;
+}
+form .input-email-block label {
+  font-weight: 600;
+}
+form .input-email-block i {
+  position: absolute;
+  margin-top: 38px;
+  margin-left: 12px;
+  color: #262626;
+}
+form .input-password-block {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+form .input-password-block input {
+  margin-top: 5px;
+  width: 100%;
+  padding: 10px 35px;
+  background: #EDEDED;
+  color: black;
+  border: 1px solid black;
+  border-radius: 5px;
+  outline: none;
+}
+form .input-password-block label {
+  font-weight: 600;
+}
+form .input-password-block i {
+  position: absolute;
+  margin-top: 38px;
+  margin-left: 12px;
+  color: #262626;
+}
+form .input-password-block a {
+  color: black;
+  margin-top: 10px;
+  width: 145px;
+  margin-left: auto;
+  text-decoration: underline;
+}
+form .input-password-re-block {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+form .input-password-re-block a {
+  width: 230px;
+  color: black;
+  text-decoration: underline;
+}
+form .button-block {
+  margin-top: 20px;
+  width: 100%;
+}
+form .button-block button {
+  width: 100%;
+  background: black;
+  border-radius: 5px;
+  color: white;
+  outline: none;
+  border: none;
+  padding: 10px 0px;
+  cursor: pointer;
+  transition: 0.5s ease-out;
+}
+form .button-block button:hover {
+  opacity: 0.7;
+}
+
+body.darkmode--activated .form-container form i {
+  color: white;
+}
+
+footer {
+  width: 100%;
+  position: absolute;
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  margin-top: 185px;
+  bottom: 0;
+}
+
+@media (min-width: 520px) {
+  form {
+    width: 500px;
+  }
+  form .input-name-block {
+    width: 100%;
+    display: flex;
+  }
+  form .input-name-block input {
+    margin-top: 10px;
+    width: 100%;
+    padding: 10px 35px;
+    background: #EDEDED;
+    color: black;
+    border: 1px solid black;
+    border-radius: 5px;
+    outline: none;
+  }
+  form .input-name-block i {
+    margin-top: 45px;
+  }
+}
+@media (min-width: 768px) {
+  footer {
+    flex-direction: row;
+    margin-top: 54px;
+  }
+}/*# sourceMappingURL=register.css.map */

@@ -1,0 +1,99 @@
+.form-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+}
+form h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+form .input-email, form .input-password {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+form .input-email input, form .input-password input {
+  margin-top: 5px;
+  width: 100%;
+  padding: 10px 35px;
+  background: #EDEDED;
+  color: black;
+  border: 1px solid black;
+  border-radius: 5px;
+  outline: none;
+}
+form .input-email label, form .input-password label {
+  font-weight: 600;
+}
+form .input-email i, form .input-password i {
+  position: absolute;
+  margin-top: 38px;
+  margin-left: 12px;
+  color: #262626;
+}
+form .input-email a, form .input-password a {
+  color: black;
+  margin-top: 10px;
+  width: 215px;
+  margin-left: auto;
+  text-decoration: underline;
+}
+form .input-password {
+  margin-top: 20px;
+}
+form .button-block {
+  margin-top: 20px;
+  width: 100%;
+}
+form .button-block button {
+  width: 100%;
+  background: black;
+  border-radius: 5px;
+  color: white;
+  outline: none;
+  border: none;
+  padding: 10px 0px;
+  cursor: pointer;
+  transition: 0.5s ease-out;
+}
+form .button-block button:hover {
+  opacity: 0.7;
+}
+
+body.darkmode--activated .form-container form i {
+  color: white;
+}
+
+footer {
+  width: 100%;
+  margin-top: 185px;
+  position: absolute;
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+}
+
+@media (min-width: 520px) {
+  form {
+    width: 500px;
+  }
+}
+@media (min-width: 768px) {
+  footer {
+    flex-direction: row;
+    margin-top: 215px;
+    bottom: 0;
+  }
+}/*# sourceMappingURL=login.css.map */

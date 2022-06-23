@@ -1,0 +1,646 @@
+.profil-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 40px;
+}
+.profil-container .profil-navigation {
+  width: 310px;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.profil-container .profil-navigation a {
+  color: black;
+  padding: 20px;
+  border-radius: 10px;
+  transition: 0.3s ease-in-out;
+}
+.profil-container .profil-navigation a.active {
+  background: black;
+  color: white;
+  border-radius: 10px;
+}
+.profil-container .profil-navigation a:hover {
+  background: rgba(0, 0, 0, 0.829);
+  color: white;
+}
+.profil-container .profil-content {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+.profil-container .profil-content .profil-content-informations {
+  width: 100%;
+  display: none;
+}
+.profil-container .profil-content .profil-content-informations form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.profil-container .profil-content .profil-content-informations form .profil-content-image {
+  display: flex;
+  width: 100%;
+}
+.profil-container .profil-content .profil-content-informations form .profil-content-image .profil-content-image-brand {
+  margin-right: 20px;
+}
+.profil-container .profil-content .profil-content-informations form .profil-content-image .profil-content-image-brand label {
+  position: absolute;
+  z-index: 1;
+  margin-left: 40px;
+  font-size: 1.2rem;
+  width: 200px;
+  height: 50px;
+}
+.profil-container .profil-content .profil-content-informations form .profil-content-image .profil-content-image-brand input {
+  position: absolute;
+  transform: translateX(-1px);
+  width: 56px;
+  height: 50px;
+  opacity: 0;
+  z-index: 1;
+  cursor: pointer;
+}
+.profil-container .profil-content .profil-content-informations form .profil-content-image .profil-content-image-brand img {
+  width: 50px;
+  height: 50px;
+  border-radius: 100px;
+}
+.profil-container .profil-content .profil-content-informations form .profil-content-image .profil-content-image-text span {
+  color: #7a7a7a;
+}
+.profil-container .profil-content .profil-content-informations form .profil-content-name-block {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+}
+.profil-container .profil-content .profil-content-informations form .profil-content-name-block .profil-content-firstname {
+  display: flex;
+  flex-direction: column;
+}
+.profil-container .profil-content .profil-content-informations form .profil-content-name-block .profil-content-firstname input {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border: 1px solid #7a7a7a;
+  background: none;
+  border-radius: 5px;
+  outline: none;
+  padding: 10px 10px;
+}
+.profil-container .profil-content .profil-content-informations form .profil-content-name-block .profil-content-lastname {
+  display: flex;
+  flex-direction: column;
+}
+.profil-container .profil-content .profil-content-informations form .profil-content-name-block .profil-content-lastname input {
+  margin-top: 5px;
+  border: 1px solid #7a7a7a;
+  background: none;
+  border-radius: 5px;
+  outline: none;
+  padding: 10px 10px;
+}
+.profil-container .profil-content .profil-content-informations form .profil-content-email {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5px;
+}
+.profil-container .profil-content .profil-content-informations form .profil-content-email input {
+  margin-top: 5px;
+  border: 1px solid #7a7a7a;
+  background: none;
+  border-radius: 5px;
+  outline: none;
+  padding: 10px 10px;
+}
+.profil-container .profil-content .profil-content-informations form .profil-content-street {
+  display: flex;
+  flex-direction: column;
+}
+.profil-container .profil-content .profil-content-informations form .profil-content-street .profil-content-street-street {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5px;
+}
+.profil-container .profil-content .profil-content-informations form .profil-content-street .profil-content-street-street input {
+  margin-top: 5px;
+  border: 1px solid #7a7a7a;
+  background: none;
+  border-radius: 5px;
+  outline: none;
+  padding: 10px 10px;
+}
+.profil-container .profil-content .profil-content-informations form .profil-content-street .profil-content-street-number {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5px;
+}
+.profil-container .profil-content .profil-content-informations form .profil-content-street .profil-content-street-number input {
+  margin-top: 5px;
+  border: 1px solid #7a7a7a;
+  background: none;
+  border-radius: 5px;
+  outline: none;
+  padding: 10px 10px;
+}
+.profil-container .profil-content .profil-content-informations form .profil-content-city {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5px;
+}
+.profil-container .profil-content .profil-content-informations form .profil-content-city input {
+  margin-top: 5px;
+  border: 1px solid #7a7a7a;
+  background: none;
+  border-radius: 5px;
+  outline: none;
+  padding: 10px 10px;
+}
+.profil-container .profil-content .profil-content-informations form .profil-content-adress-second {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5px;
+}
+.profil-container .profil-content .profil-content-informations form .profil-content-adress-second .profil-content-adress-second-zipcode {
+  display: flex;
+  flex-direction: column;
+}
+.profil-container .profil-content .profil-content-informations form .profil-content-adress-second .profil-content-adress-second-zipcode input {
+  margin-top: 5px;
+  border: 1px solid #7a7a7a;
+  background: none;
+  border-radius: 5px;
+  outline: none;
+  padding: 10px 10px;
+}
+.profil-container .profil-content .profil-content-informations form .profil-content-adress-second .profil-content-adress-second-commune {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5px;
+}
+.profil-container .profil-content .profil-content-informations form .profil-content-adress-second .profil-content-adress-second-commune input {
+  margin-top: 5px;
+  border: 1px solid #7a7a7a;
+  background: none;
+  border-radius: 5px;
+  outline: none;
+  padding: 10px 10px;
+}
+.profil-container .profil-content .profil-content-informations form .profil-submit {
+  margin: 20px 0px;
+}
+.profil-container .profil-content .profil-content-informations form .profil-submit button {
+  width: 100%;
+  outline: none;
+  background: black;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  color: white;
+  cursor: pointer;
+}
+.profil-container .profil-content .profil-content-informations.active {
+  display: flex;
+}
+.profil-container .profil-content .profil-content-adresses {
+  display: none;
+  flex-direction: column;
+}
+.profil-container .profil-content .profil-content-adresses.active {
+  display: flex;
+}
+.profil-container .profil-content .profil-content-adresses .profil-content-adresses-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.profil-container .profil-content .profil-content-adresses .profil-content-adresses-title #addAdress {
+  border: none;
+  border-radius: 50px;
+  background: none;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  background: rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+.profil-container .profil-content .profil-content-adresses .profil-content-adresses-title #addAdress:hover:before {
+  opacity: 1;
+}
+.profil-container .profil-content .profil-content-adresses .profil-content-adresses-title #addAdress:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 50px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+.profil-container .profil-content .profil-content-adresses .profil-content-adresses-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+}
+.profil-container .profil-content .profil-content-adresses .profil-content-adresses-content .profil-content-adresses-item {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid #DADADA;
+  border-radius: 10px;
+  padding: 20px;
+  max-height: 80px;
+  margin: 20px 0px;
+  overflow: hidden;
+}
+.profil-container .profil-content .profil-content-adresses .profil-content-adresses-content .profil-content-adresses-item.active {
+  max-height: initial;
+}
+.profil-container .profil-content .profil-content-adresses .profil-content-adresses-content .profil-content-adresses-item .profil-content-adresses-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.profil-container .profil-content .profil-content-adresses .profil-content-adresses-content .profil-content-adresses-item .profil-content-adresses-header .profil-content-adresses-header-brand {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.profil-container .profil-content .profil-content-adresses .profil-content-adresses-content .profil-content-adresses-item .profil-content-adresses-header .profil-content-adresses-header-brand i {
+  font-size: 1.3rem;
+}
+.profil-container .profil-content .profil-content-adresses .profil-content-adresses-content .profil-content-adresses-item .profil-content-adresses-header .profil-content-adresses-header-brand p {
+  margin-left: 15px;
+  max-width: 70%;
+}
+.profil-container .profil-content .profil-content-adresses .profil-content-adresses-content .profil-content-adresses-item .profil-content-adresses-header .profil-content-adresses-header-action button {
+  border: none;
+  border-radius: 50px;
+  background: none;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  cursor: pointer;
+}
+.profil-container .profil-content .profil-content-adresses .profil-content-adresses-content .profil-content-adresses-item .profil-content-adresses-header .profil-content-adresses-header-action button:hover:before {
+  opacity: 1;
+}
+.profil-container .profil-content .profil-content-adresses .profil-content-adresses-content .profil-content-adresses-item .profil-content-adresses-header .profil-content-adresses-header-action button:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 50px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+.profil-container .profil-content .profil-content-adresses .profil-content-adresses-content .profil-content-adresses-item .profil-content-adresses-form {
+  margin-top: 25px;
+}
+.profil-container .profil-content .profil-content-adresses .profil-content-adresses-content .profil-content-adresses-item .profil-content-adresses-form form {
+  width: 100%;
+}
+.profil-container .profil-content .profil-content-adresses .profil-content-adresses-content .profil-content-adresses-item .profil-content-adresses-form form:nth-child(2) .delete-btn {
+  width: 100%;
+  padding: 10px 15px;
+  background: rgb(216, 57, 57);
+  border-radius: 5px;
+  border: none;
+  color: white;
+  margin-top: 20px;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+}
+.profil-container .profil-content .profil-content-adresses .profil-content-adresses-content .profil-content-adresses-item .profil-content-adresses-form form .profil-adresses-street {
+  display: flex;
+  flex-direction: column;
+}
+.profil-container .profil-content .profil-content-adresses .profil-content-adresses-content .profil-content-adresses-item .profil-content-adresses-form form .profil-adresses-street input {
+  margin: 5px 0px;
+  border: 1px solid #7a7a7a;
+  background: none;
+  border-radius: 5px;
+  outline: none;
+  padding: 10px 10px;
+}
+.profil-container .profil-content .profil-content-adresses .profil-content-adresses-content .profil-content-adresses-item .profil-content-adresses-form form .profil-adresses-city-block {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  margin-top: 10px;
+}
+.profil-container .profil-content .profil-content-adresses .profil-content-adresses-content .profil-content-adresses-item .profil-content-adresses-form form .profil-adresses-city-block .profil-adresses-streetnumber {
+  display: flex;
+  flex-direction: column;
+  width: 35%;
+}
+.profil-container .profil-content .profil-content-adresses .profil-content-adresses-content .profil-content-adresses-item .profil-content-adresses-form form .profil-adresses-city-block .profil-adresses-streetnumber input {
+  margin: 5px 0px;
+  border: 1px solid #7a7a7a;
+  background: none;
+  border-radius: 5px;
+  outline: none;
+  padding: 10px 10px;
+}
+.profil-container .profil-content .profil-content-adresses .profil-content-adresses-content .profil-content-adresses-item .profil-content-adresses-form form .profil-adresses-city-block .profil-adresses-city {
+  display: flex;
+  flex-direction: column;
+  width: 65%;
+}
+.profil-container .profil-content .profil-content-adresses .profil-content-adresses-content .profil-content-adresses-item .profil-content-adresses-form form .profil-adresses-city-block .profil-adresses-city input {
+  margin: 5px 0px;
+  border: 1px solid #7a7a7a;
+  background: none;
+  border-radius: 5px;
+  outline: none;
+  padding: 10px 10px;
+}
+.profil-container .profil-content .profil-content-adresses .profil-content-adresses-content .profil-content-adresses-item .profil-content-adresses-form form .profil-adresses-commune-block {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  margin-top: 10px;
+}
+.profil-container .profil-content .profil-content-adresses .profil-content-adresses-content .profil-content-adresses-item .profil-content-adresses-form form .profil-adresses-commune-block .profil-adresses-commune {
+  display: flex;
+  flex-direction: column;
+  width: 65%;
+}
+.profil-container .profil-content .profil-content-adresses .profil-content-adresses-content .profil-content-adresses-item .profil-content-adresses-form form .profil-adresses-commune-block .profil-adresses-commune input {
+  margin: 5px 0px;
+  border: 1px solid #7a7a7a;
+  background: none;
+  border-radius: 5px;
+  outline: none;
+  padding: 10px 10px;
+}
+.profil-container .profil-content .profil-content-adresses .profil-content-adresses-content .profil-content-adresses-item .profil-content-adresses-form form .profil-adresses-commune-block .profil-adresses-zipcode {
+  display: flex;
+  flex-direction: column;
+  width: 35%;
+}
+.profil-container .profil-content .profil-content-adresses .profil-content-adresses-content .profil-content-adresses-item .profil-content-adresses-form form .profil-adresses-commune-block .profil-adresses-zipcode input {
+  margin: 5px 0px;
+  border: 1px solid #7a7a7a;
+  background: none;
+  border-radius: 5px;
+  outline: none;
+  padding: 10px 10px;
+}
+.profil-container .profil-content .profil-content-adresses .profil-content-adresses-content .profil-content-adresses-item .profil-content-adresses-form form .profil-adresses-submit {
+  margin-top: 20px;
+}
+.profil-container .profil-content .profil-content-adresses .profil-content-adresses-content .profil-content-adresses-item .profil-content-adresses-form form .profil-adresses-submit button {
+  width: 100%;
+  padding: 10px 15px;
+  background: black;
+  border-radius: 5px;
+  color: white;
+  border: 1px solid black;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+}
+.profil-container .profil-content .profil-content-orders {
+  display: flex;
+  flex-direction: column;
+  display: none;
+}
+.profil-container .profil-content .profil-content-orders .profil-content-orders-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 20px 0px 40px 0px;
+}
+.profil-container .profil-content .profil-content-orders .profil-content-orders-content .profil-content-order {
+  width: 100%;
+  border: 1px solid #c4c4c4;
+  border-radius: 10px;
+}
+.profil-container .profil-content .profil-content-orders .profil-content-orders-content .profil-content-order .profil-content-order-brand {
+  display: flex;
+  padding: 20px 10px;
+}
+.profil-container .profil-content .profil-content-orders .profil-content-orders-content .profil-content-order .profil-content-order-brand .profil-content-order-brand-image {
+  width: 50px;
+}
+.profil-container .profil-content .profil-content-orders .profil-content-orders-content .profil-content-order .profil-content-order-brand .profil-content-order-brand-image img {
+  width: 50%;
+  height: auto;
+}
+.profil-container .profil-content .profil-content-orders .profil-content-orders-content .profil-content-order .profil-content-order-brand .profil-content-order-brand-name span {
+  color: #7a7a7a;
+}
+.profil-container .profil-content .profil-content-orders .profil-content-orders-content .profil-content-order .profil-content-order-informations {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  border-top: 1px solid #c4c4c4;
+  padding: 10px;
+}
+.profil-container .profil-content .profil-content-orders.active {
+  display: flex;
+}
+
+.profil-content-wishlist {
+  display: flex;
+  display: none;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+.profil-content-wishlist .profil-content-wishlist-content {
+  margin-top: 20px;
+  border: 1px solid #c4c4c4;
+  padding: 20px;
+  border-radius: 10px;
+}
+.profil-content-wishlist .profil-content-wishlist-content .profil-content-wishlist-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0px;
+}
+.profil-content-wishlist .profil-content-wishlist-content .profil-content-wishlist-item:not(:last-child) {
+  border-bottom: 1px solid #c4c4c4;
+}
+.profil-content-wishlist .profil-content-wishlist-content .profil-content-wishlist-item .profil-content-wishlist-item-brand {
+  display: flex;
+  align-items: center;
+}
+.profil-content-wishlist .profil-content-wishlist-content .profil-content-wishlist-item .profil-content-wishlist-item-brand .profil-content-wishlist-item-brand-image {
+  width: 100px;
+}
+.profil-content-wishlist .profil-content-wishlist-content .profil-content-wishlist-item .profil-content-wishlist-item-brand .profil-content-wishlist-item-brand-image img {
+  width: 75%;
+  height: 80px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 5px;
+}
+.profil-content-wishlist .profil-content-wishlist-content .profil-content-wishlist-item .profil-content-wishlist-item-brand .profil-content-wishlist-item-brand-name span {
+  color: #7a7a7a;
+}
+.profil-content-wishlist .profil-content-wishlist-content .profil-content-wishlist-item .profil-content-wishlist-item-button button {
+  padding: 10px 20px;
+  border: 1px solid #c4c4c4;
+  border-radius: 10px;
+  background: none;
+}
+
+.profil-content-wishlist.active {
+  display: flex;
+}
+
+.profil-content-security {
+  display: flex;
+  display: none;
+  flex-direction: column;
+}
+.profil-content-security .profil-content-security-content {
+  margin: 20px 0px 40px 0px;
+}
+.profil-content-security .profil-content-security-content .profil-content-security-password-change {
+  padding-bottom: 30px;
+  border-bottom: 1px solid #7a7a7a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.profil-content-security .profil-content-security-content .profil-content-security-password-change .profil-content-security-password-change-brand span {
+  color: #7a7a7a;
+}
+.profil-content-security .profil-content-security-content .profil-content-security-password-change .profil-content-security-password-change-button button {
+  padding: 10px 20px;
+  border: 1px solid #c4c4c4;
+  border-radius: 10px;
+  outline: none;
+  cursor: pointer;
+  background: none;
+  width: 100px;
+}
+.profil-content-security .profil-content-security-content .profil-content-security-authentification {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.profil-content-security .profil-content-security-content .profil-content-security-authentification .profil-content-security-authentification-brand span {
+  color: #7a7a7a;
+}
+.profil-content-security .profil-content-security-content .profil-content-security-authentification .profil-content-security-authentification-button button {
+  padding: 10px 20px;
+  border: 1px solid #c4c4c4;
+  border-radius: 10px;
+  outline: none;
+  cursor: pointer;
+  background: none;
+  width: 100px;
+}
+
+.profil-content-security.active {
+  display: flex;
+}
+
+.remodal {
+  border-radius: 10px;
+}
+.remodal .remodal-close {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 10px 0px 0px 0px;
+}
+.remodal .addAdress-form-container form {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.remodal .addAdress-form-container form div {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+.remodal .addAdress-form-container form div:last-child {
+  margin-top: 30px;
+}
+.remodal .addAdress-form-container form div:last-child button {
+  width: 100%;
+  padding: 10px 15px;
+  background: black;
+  border-radius: 5px;
+  color: white;
+  border: 1px solid black;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+}
+.remodal .addAdress-form-container form div input {
+  margin-top: 10px;
+  border: 1px solid #7a7a7a;
+  background: none;
+  border-radius: 5px;
+  outline: none;
+  padding: 10px 10px;
+  width: 100%;
+}
+
+@media (min-width: 480px) {
+  .profil-container .profil-navigation {
+    width: 450px;
+  }
+  .profil-container .profil-content .profil-content-orders .profil-content-orders-content .profil-content-order .profil-content-order-informations .profil-content-order-informations-content {
+    display: flex;
+    align-items: center;
+  }
+  .profil-container .profil-content .profil-content-orders .profil-content-orders-content .profil-content-order .profil-content-order-informations .profil-content-order-informations-content h4 {
+    margin-right: 10px;
+  }
+  .profil-container .profil-content .profil-content-orders .profil-content-orders-content .profil-content-order .profil-content-order-informations .profil-content-order-informations-content span {
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 30px;
+  }
+}
+@media (min-width: 768px) {
+  .profil-container .profil-navigation {
+    width: 720px;
+  }
+}
+@media (min-width: 960px) {
+  .profil-container {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    margin-top: 40px;
+    gap: 40px;
+  }
+  .profil-container .profil-navigation {
+    width: 220px;
+    display: flex;
+    flex-direction: column;
+  }
+  .profil-container .profil-content {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+  }
+}
+@media (min-width: 1024px) {
+  footer {
+    bottom: 0;
+  }
+}/*# sourceMappingURL=profile.css.map */
