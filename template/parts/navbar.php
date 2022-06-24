@@ -43,11 +43,7 @@
         <button class="dropbtn"><i class="fas fa-user"></i> Mon profil</button>
         <div class="dropdown-content">
           <a href="<?= $router->generate('profile'); ?>"><i class="fa-solid fa-gear"></i> Mon compte </a>
-<<<<<<< HEAD
-          <a href="<?= $router->generate('logout'); ?>"><i class="fa-solid fa-arrow-right-from-bracket"></i> Déconnexion</a>
-=======
           <a href="<?= $router->generate('page',['pageslug'=> 'logout']); ?>"><i class="fa-solid fa-arrow-right-from-bracket"></i> Déconnexion</a>
->>>>>>> b55c60ca3f618f598e4c38a12fa0493f433c238f
         </div>
       </div>
       <div class="checkcart">
@@ -65,11 +61,7 @@
     <a href="<?= $router->generate('contact'); ?>"> Contact </a>
     <a href="<?= $router->generate('profile'); ?>"> Mon profil </a>
     <a href="<?= $router->generate('basket'); ?>"> Mon panier </a>
-<<<<<<< HEAD
-    <a href="<?= $router->generate('logout'); ?>"> Se déconnecter </a>
-=======
     <a href="<?= $router->generate('page',['pageslug'=> 'logout']); ?>"> Se déconnecter </a>
->>>>>>> b55c60ca3f618f598e4c38a12fa0493f433c238f
   </div>
 
   <?php } ?>
