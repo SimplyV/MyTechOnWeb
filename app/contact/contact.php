@@ -43,11 +43,6 @@
     </div>
     <div class="contact-form">
       <form action="<?= $router->generate('contactprocess'); ?>" method="POST" id="contact-form">
-<<<<<<<< HEAD:app/contact/contact.php
-      
-========
-
->>>>>>>> b55c60ca3f618f598e4c38a12fa0493f433c238f:contact/contact.php
       <div class="input-name-block">
         <div class="input-firstname">
           <label for="firstname"> Prénom </label>

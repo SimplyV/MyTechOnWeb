@@ -40,7 +40,7 @@
       </div>
   </div>
 
-  <div class="categories-showcase">
+  <!-- <div class="categories-showcase">
     <div class="categories-showcase-title">
       <h2> Catégories populaires</h2>
     </div>
@@ -48,21 +48,21 @@
       <div class="swiper popularCatSwiper">
         <div class="swiper-wrapper">
         <?php 
-            $donnees = $bdd->query('SELECT id, name FROM category');
-            while ($reponse = $donnees->fetch()){ ?>
-            <?php $imageFilename = getFiles('assets/img/category_images/'.$reponse['id'].''); ?>
-              <a href="productslist?cat=<?php echo $reponse['id'] ?>"class="swiper-slide" style="background-image: url('assets/img/category_images/<?php echo $reponse['id']?>/<?php echo $imageFilename['4'] ?>');">
-                <span> <?php echo $reponse['name']?> </span>
-              </a>
-            <?php 
-          }
+          //   $donnees = $bdd->query('SELECT id, name FROM category');
+          //   while ($reponse = $donnees->fetch()){ ?>
+          //   <?php $imageFilename = getFiles('assets/img/category_images/'.$reponse['id'].''); ?>
+          //     <a href="productslist?cat=<?php echo $reponse['id'] ?>"class="swiper-slide" style="background: url('assets/img/category_images/<?php echo $reponse['id']?>/<?php echo $imageFilename['4'] ?>')!important;">
+          //       <span> <?php echo $reponse['name']?> </span>
+          //     </a>
+          //   <?php 
+          // }
         ?>
         </div>
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
        </div>
       </div>
-  </div>
+  </div> -->
 
   <div class="home-about">
     <div class="home-about-image">

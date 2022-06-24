@@ -15,11 +15,7 @@
   
     $product = $_GET['prod_id'];
 
-<<<<<<< HEAD:app/product/singleproduct.php
     if(isset($_SESSION['id_user'])){
-=======
-    if(check($_SESSION['id_user'])){
->>>>>>> b55c60ca3f618f598e4c38a12fa0493f433c238f:product/singleproduct.php
       $datawishlist = $bdd->prepare('SELECT * FROM wishlist WHERE user_id=:user_id');
       $datawishlist->execute([':user_id' => $_SESSION['id_user']]);
       while($reponsewishlist = $datawishlist->fetch()){ 
@@ -130,14 +126,14 @@
           <p> <?php echo $description ?></p>
         </div>
       </div>
-      <div class="single-product-perks">
+      <!-- <div class="single-product-perks">
         <div class="single-product-perks-title">
           <h2> Caractéristiques du produit </h2>
         </div>
         <div class="single-product-perk">
           <p><?php echo $perks ?></p>
         </div>
-      </div>
+      </div> -->
     </div>
     
     <div class="single-product-reviews">

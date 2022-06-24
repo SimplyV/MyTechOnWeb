@@ -11,11 +11,7 @@
         $category_id[] = $reponse['id']; 
     }
 
-<<<<<<< HEAD:app/product/productslist.php
     if(isset($_SESSION['id_user'])){
-=======
-    if(check($_SESSION['id_user'])){
->>>>>>> b55c60ca3f618f598e4c38a12fa0493f433c238f:product/productslist.php
       $datawishlist = $bdd->prepare('SELECT * FROM wishlist WHERE user_id=:user_id');
       $datawishlist->execute([':user_id' => $_SESSION['id_user']]);
       while($reponsewishlist = $datawishlist->fetch()){ 

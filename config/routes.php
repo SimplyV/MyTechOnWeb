@@ -6,7 +6,7 @@ $router = new AltoRouter();
 $router->setBasePath('/MyTechOnWeb');
 
 $router->map('GET', '/', 'app/accueil' , 'home');
-$router->map('GET', '/productsdsds', 'app/product/products', 'products');
+$router->map('GET', '/products', 'app/product/products', 'products');
 $router->map('GET', '/productslist', 'app/product/productslist', 'productslist');
 $router->map('GET', '/singleproduct', 'app/product/singleproduct', 'singleproduct');
 $router->map('GET', '/contact-us', 'app/contact/contact', 'contact');

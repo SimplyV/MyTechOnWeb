@@ -18,15 +18,9 @@
   else{
     $wishlistStatus = 'empty';
   }
-<<<<<<<< HEAD:app/profile/profile.php
 
   $dataAdress = $bdd->prepare('SELECT * FROM users_adresses WHERE user_id=:id_user');
   $dataAdress->execute([':id_user' => $_SESSION['id_user']]);
-
-
-
-========
->>>>>>>> b55c60ca3f618f598e4c38a12fa0493f433c238f:profile/profile.php
 ?>
 
   <div class="profil-container">
@@ -45,11 +39,7 @@
               <label for="image"><i class="fa-solid fa-plus"></i> </label>
               <input type="file" name="image">
               <?php if(check($profil['avatar'])){
-<<<<<<<< HEAD:app/profile/profile.php
                 echo '<img src="assets/img/user_images/'.$profil['id_user'].'/'.$profil['avatar'].'">';
-========
-                echo '<img src="assets/img/user_images/'.$profil['avatar'].'">';
->>>>>>>> b55c60ca3f618f598e4c38a12fa0493f433c238f:profile/profile.php
               } 
               else{
                 echo '<img src="assets/img/user_images/avatar.png">';

@@ -15,7 +15,6 @@
     $isFrontend = true;
     $attempt = null;
 
-    pre($match);
 
     if(is_array($match)) {
       if(isset($match['params']['pageslug'])){

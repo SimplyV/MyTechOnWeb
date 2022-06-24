@@ -1,6 +1,9 @@
 <?php 
 
-<<<<<<<< HEAD:app/checkout/checkout.php
+  if(!isset($_COOKIE['basket_id'])){
+    $_COOKIE['basket_id'] = rand(10, 10000);
+  }
+
   if(isset($_COOKIE['basket_id'])){
     $donnees = $bdd->prepare('SELECT * FROM basketline WHERE basket_id=:basket_id');
     $donnees->execute([':basket_id' => $_COOKIE['basket_id']]);
@@ -12,32 +15,12 @@
       $basketStatus = 'empty';
     }
 
-    if(check($_COOKIE['basket_id'])){
+    if(isset($_COOKIE['basket_id'])){
       $donneesbdd = $bdd->prepare('SELECT * FROM basketline JOIN products ON basketline.product_id = products.id WHERE basket_id=:basket_id');
       $donneesbdd->execute([':basket_id' => $_COOKIE['basket_id']]);
     }
-  
-    $hasAddress;
-========
-  if(check($_SESSION['basket_id'])){
-    $_SESSION['basket_id'] = rand(10, 10000);
-  }
 
-  $donnees = $bdd->prepare('SELECT * FROM basketline WHERE basket_id=:basket_id');
-  $donnees->execute([':basket_id' => $_SESSION['basket_id']]);
 
-  if($donnees->rowCount() > 0){
-    $basketStatus = 'full';
-  }
-  else{
-    $basketStatus = 'empty';
-  }
-
-  if(check($_SESSION['basket_id'])){
-    $donneesbdd = $bdd->prepare('SELECT * FROM basketline JOIN products ON basketline.product_id = products.id WHERE basket_id=:basket_id');
-    $donneesbdd->execute([':basket_id' => $_SESSION['basket_id']]);
-  }
->>>>>>>> b55c60ca3f618f598e4c38a12fa0493f433c238f:checkout/checkout.php
 
   }
 
@@ -95,7 +78,7 @@
         <?php if($_SESSION['verify']){?>
         <div class="check-container-useadress">
           <div class="check-container-useadress-text">
-            <p> Je souhaite utiliser mon adresse de facturation comme adresse de livraison. </p>
+            <p> Ne pas utiliser mon adresse principale. </p>
           </div>
           <div class="check-container-useadress-switch">
           <label class="switch" for="checkbox">
@@ -109,8 +92,9 @@
             <p> Connectez-vous pour entrer votre adresse. </p>
             <a href="<?= $router->generate('page',['pageslug'=> 'login']); ?>"><button> Se connecter </button></a>
           </div>
-      
+   
       </div>
+      <?php } ?>
 
 
       <div class="check-container-payments">
@@ -157,7 +141,7 @@
             <div class="check-container-listing">
             <?php 
               $total = 0;
-               if(check($_COOKIE['basket_id'])){
+               if(isset($_COOKIE['basket_id'])){
                 $donnees = $bdd->prepare('SELECT * FROM basketline JOIN products ON basketline.product_id = products.id WHERE basket_id=:basket_id');
                 $donnees->execute([':basket_id' => $_COOKIE['basket_id']]);
               }
@@ -196,10 +180,10 @@
       </div>
       </form>
     </div>
-    <?php } }}?>
+    <?php } }?>
     
    
   </div>
- 
+            </div>
 </div>
 

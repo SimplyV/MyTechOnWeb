@@ -1,12 +1,8 @@
 <?php 
-<<<<<<<< HEAD:app/login/login.php
-  if(check($_SESSION['verify']) && $_SESSION['verify'] == true){
+
+  if(isset($_SESSION['verify']) && $_SESSION['verify'] == true){
 		header('Location: '.$router->generate('home').'');
-========
-  if(isset($_SESSION['verify']) == true){
-		header('Location: accueil');
->>>>>>>> b55c60ca3f618f598e4c38a12fa0493f433c238f:login/login.php
-	} 
+  }
   ?>
 
 <div class="form-container">

@@ -332,8 +332,8 @@
     gap: 20px;
   }
   .check-container .check-container-proceed form .check-container-form {
-    width: 70%;
-    justify-content: center;
+    width: 100%;
+    justify-content: space-between;
   }
   .check-container .check-container-proceed form .check-container-form .check-container-connection {
     width: initial;
