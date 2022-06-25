@@ -89,11 +89,12 @@
   <?php 
     $donnees = $bdd->query('SELECT id, name FROM category');
     while ($reponse = $donnees->fetch()){ ?>
-    <?php $imageFilename = getFiles('assets/img/category_images/'.$reponse['id'].''); ?>
+    <?php $imageFilename = getFiles('assets/img/category_images/'.$reponse['id'].''); 
+    ?>
        <div class="cat-prod-block">
           <a href="productslist?cat=<?php echo $reponse['id']; ?>">
             <span> <?php echo $reponse['name']?> </span>
-            <img src="assets/img/category_images/<?php echo $reponse['id']?>/<?php echo $imageFilename['4'];?>">
+            <img src="assets/img/category_images/<?php echo $reponse['id']?>/<?php echo $imageFilename[3];?>">
           </a>
     </div>
     <?php 
